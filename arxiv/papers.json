@@ -1,0 +1,1038 @@
+{
+  "generated_at": "2026-02-13T06:01:22.167928Z",
+  "papers": [
+    {
+      "id": "2602.10385",
+      "title": "Time-to-Event Transformer to Capture Timing Attention of Events in EHR Time Series",
+      "authors": [
+        "Jia Li",
+        "Yu Hou",
+        "Rui Zhang"
+      ],
+      "abstract": "Automatically discovering personalized sequential events from large-scale time-series data is crucial for enabling precision medicine in clinical research, yet it remains a formidable challenge even for contemporary AI models. For example, while transformers capture rich associations, they are mostly agnostic to event timing and ordering, thereby bypassing potential causal reasoning. Intuitively, we need a method capable of evaluating the \"degree of alignment\" among patient-specific trajectories and identifying their shared patterns, i.e., the significant events in a consistent sequence. This necessitates treating timing as a true \\emph{computable} dimension, allowing models to assign ``relative timestamps'' to candidate events beyond their observed physical times. In this work, we introduce LITT, a novel Timing-Transformer architecture that enables temporary alignment of sequential events on a virtual ``relative timeline'', thereby enabling \\emph{event-timing-focused attention} and personalized interpretations of clinical trajectories. Its interpretability and effectiveness are validated on real-world longitudinal EHR data from 3,276 breast cancer patients to predict the onset timing of cardiotoxicity-induced heart disease. Furthermore, LITT outperforms both the benchmark and state-of-the-art survival analysis methods on public datasets, positioning it as a significant step forward for precision medicine in clinical AI.",
+      "published": "2026-02-11",
+      "updated": "2026-02-11",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2602.10385",
+      "pdf_url": "https://arxiv.org/pdf/2602.10385.pdf"
+    },
+    {
+      "id": "2602.03569",
+      "title": "EHRWorld: A Patient-Centric Medical World Model for Long-Horizon Clinical Trajectories",
+      "authors": [
+        "Linjie Mu",
+        "Zhongzhen Huang",
+        "Yannian Gu",
+        "Shengqian Qin",
+        "Shaoting Zhang",
+        "Xiaofan Zhang"
+      ],
+      "abstract": "World models offer a principled framework for simulating future states under interventions, but realizing such models in complex, high-stakes domains like medicine remains challenging. Recent large language models (LLMs) have achieved strong performance on static medical reasoning tasks, raising the question of whether they can function as dynamic medical world models capable of simulating disease progression and treatment outcomes over time. In this work, we show that LLMs only incorporating medical knowledge struggle to maintain consistent patient states under sequential interventions, leading to error accumulation in long-horizon clinical simulation. To address this limitation, we introduce EHRWorld, a patient-centric medical world model trained under a causal sequential paradigm, together with EHRWorld-110K, a large-scale longitudinal clinical dataset derived from real-world electronic health records. Extensive evaluations demonstrate that EHRWorld significantly outperforms naive LLM-based baselines, achieving more stable long-horizon simulation, improved modeling of clinically sensitive events, and favorable reasoning efficiency, highlighting the necessity of training on causally grounded, temporally evolving clinical data for reliable and robust medical world modeling.",
+      "published": "2026-02-03",
+      "updated": "2026-02-03",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2602.03569",
+      "pdf_url": "https://arxiv.org/pdf/2602.03569.pdf"
+    },
+    {
+      "id": "2602.03340",
+      "title": "MentalSeek-Dx: Towards Progressive Hypothetico-Deductive Reasoning for Real-world Psychiatric Diagnosis",
+      "authors": [
+        "Xiao Sun",
+        "Yuming Yang",
+        "Junnan Zhu",
+        "Jiang Zhong",
+        "Xinyu Zhou",
+        "Kaiwen Wei"
+      ],
+      "abstract": "Mental health disorders represent a burgeoning global public health challenge. While Large Language Models (LLMs) have demonstrated potential in psychiatric assessment, their clinical utility is severely constrained by benchmarks that lack ecological validity and fine-grained diagnostic supervision. To bridge this gap, we introduce \\textbf{MentalDx Bench}, the first benchmark dedicated to disorder-level psychiatric diagnosis within real-world clinical settings. Comprising 712 de-identified electronic health records annotated by board-certified psychiatrists under ICD-11 guidelines, the benchmark covers 76 disorders across 16 diagnostic categories. Evaluation of 18 LLMs reveals a critical \\textit{paradigm misalignment}: strong performance at coarse diagnostic categorization contrasts with systematic failure at disorder-level diagnosis, underscoring a gap between pattern-based modeling and clinical hypothetico-deductive reasoning. In response, we propose \\textbf{MentalSeek-Dx}, a medical-specialized LLM trained to internalize this clinical reasoning process through supervised trajectory construction and curriculum-based reinforcement learning. Experiments on MentalDx Bench demonstrate that MentalSeek-Dx achieves state-of-the-art (SOTA) performance with only 14B parameters, establishing a clinically grounded framework for reliable psychiatric diagnosis.",
+      "published": "2026-02-03",
+      "updated": "2026-02-03",
+      "categories": [
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2602.03340",
+      "pdf_url": "https://arxiv.org/pdf/2602.03340.pdf"
+    },
+    {
+      "id": "2602.02766",
+      "title": "Privately Fine-Tuned LLMs Preserve Temporal Dynamics in Tabular Data",
+      "authors": [
+        "Lucas Rosenblatt",
+        "Peihan Liu",
+        "Ryan McKenna",
+        "Natalia Ponomareva"
+      ],
+      "abstract": "Research on differentially private synthetic tabular data has largely focused on independent and identically distributed rows where each record corresponds to a unique individual. This perspective neglects the temporal complexity in longitudinal datasets, such as electronic health records, where a user contributes an entire (sub) table of sequential events. While practitioners might attempt to model such data by flattening user histories into high-dimensional vectors for use with standard marginal-based mechanisms, we demonstrate that this strategy is insufficient. Flattening fails to preserve temporal coherence even when it maintains valid marginal distributions. We introduce PATH, a novel generative framework that treats the full table as the unit of synthesis and leverages the autoregressive capabilities of privately fine-tuned large language models. Extensive evaluations show that PATH effectively captures long-range dependencies that traditional methods miss. Empirically, our method reduces the distributional distance to real trajectories by over 60% and reduces state transition errors by nearly 50% compared to leading marginal mechanisms while achieving similar marginal fidelity.",
+      "published": "2026-02-02",
+      "updated": "2026-02-02",
+      "categories": [
+        "cs.LG",
+        "cs.CL",
+        "cs.CR"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2602.02766",
+      "pdf_url": "https://arxiv.org/pdf/2602.02766.pdf"
+    },
+    {
+      "id": "2602.02731",
+      "title": "Predicting first-episode homelessness among US Veterans using longitudinal EHR data: time-varying models and social risk factors",
+      "authors": [
+        "Rohan Pandey",
+        "Haijuan Yan",
+        "Hong Yu",
+        "Jack Tsai"
+      ],
+      "abstract": "Homelessness among US veterans remains a critical public health challenge, yet risk prediction offers a pathway for proactive intervention. In this retrospective prognostic study, we analyzed electronic health record (EHR) data from 4,276,403 Veterans Affairs patients during a 2016 observation period to predict first-episode homelessness occurring 3-12 months later in 2017 (prevalence: 0.32-1.19%). We constructed static and time-varying EHR representations, utilizing clinician-informed logic to model the persistence of clinical conditions and social risks over time. We then compared the performance of classical machine learning, transformer-based masked language models, and fine-tuned large language models (LLMs). We demonstrate that incorporating social and behavioral factors into longitudinal models improved precision-recall area under the curve (PR-AUC) by 15-30%. In the top 1% risk tier, models yielded positive predictive values ranging from 3.93-4.72% at 3 months, 7.39-8.30% at 6 months, 9.84-11.41% at 9 months, and 11.65-13.80% at 12 months across model architectures. Large language models underperformed encoder-based models on discrimination but showed smaller performance disparities across racial groups. These results demonstrate that longitudinal, socially informed EHR modeling concentrates homelessness risk into actionable strata, enabling targeted and data-informed prevention strategies for at-risk veterans.",
+      "published": "2026-02-02",
+      "updated": "2026-02-02",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2602.02731",
+      "pdf_url": "https://arxiv.org/pdf/2602.02731.pdf"
+    },
+    {
+      "id": "2602.00726",
+      "title": "Augmenting Clinical Decision-Making with an Interactive and Interpretable AI Copilot: A Real-World User Study with Clinicians in Nephrology and Obstetrics",
+      "authors": [
+        "Yinghao Zhu",
+        "Dehao Sui",
+        "Zixiang Wang",
+        "Xuning Hu",
+        "Lei Gu",
+        "Yifan Qi",
+        "Tianchen Wu",
+        "Ling Wang",
+        "Yuan Wei",
+        "Wen Tang",
+        "Zhihan Cui",
+        "Yasha Wang",
+        "Lequan Yu",
+        "Ewen M Harrison",
+        "Junyi Gao",
+        "Liantao Ma"
+      ],
+      "abstract": "Clinician skepticism toward opaque AI hinders adoption in high-stakes healthcare. We present AICare, an interactive and interpretable AI copilot for collaborative clinical decision-making. By analyzing longitudinal electronic health records, AICare grounds dynamic risk predictions in scrutable visualizations and LLM-driven diagnostic recommendations. Through a within-subjects counterbalanced study with 16 clinicians across nephrology and obstetrics, we comprehensively evaluated AICare using objective measures (task completion time and error rate), subjective assessments (NASA-TLX, SUS, and confidence ratings), and semi-structured interviews. Our findings indicate AICare's reduced cognitive workload. Beyond performance metrics, qualitative analysis reveals that trust is actively constructed through verification, with interaction strategies diverging by expertise: junior clinicians used the system as cognitive scaffolding to structure their analysis, while experts engaged in adversarial verification to challenge the AI's logic. This work offers design implications for creating AI systems that function as transparent partners, accommodating diverse reasoning styles to augment rather than replace clinical judgment.",
+      "published": "2026-01-31",
+      "updated": "2026-01-31",
+      "categories": [
+        "cs.HC",
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2602.00726",
+      "pdf_url": "https://arxiv.org/pdf/2602.00726.pdf"
+    },
+    {
+      "id": "2601.22128",
+      "title": "The Patient is not a Moving Document: A World Model Training Paradigm for Longitudinal EHR",
+      "authors": [
+        "Irsyad Adam",
+        "Zekai Chen",
+        "David Laprade",
+        "Shaun Porwal",
+        "David Laub",
+        "Erik Reinertsen",
+        "Arda Pekis",
+        "Kevin Brown"
+      ],
+      "abstract": "Large language models (LLMs) trained with next-word-prediction have achieved success as clinical foundation models. Representations from these language backbones yield strong linear probe performance across biomedical tasks, suggesting that patient semantics emerge from next-token prediction at scale. However, this paradigm treats patients as a document to be summarized rather than a dynamical system to be simulated; a patient's trajectory emerges from their state evolving under interventions and time, requiring models that simulate dynamics rather than predict tokens. To address this, we introduce SMB-Structure, a world model for structured EHR that grounds a joint-embedding prediction architecture (JEPA) with next-token prediction (SFT). SFT grounds our model to reconstruct future patient states in token space, while JEPA predicts those futures in latent space from the initial patient representation alone, forcing trajectory dynamics to be encoded before the next state is observed. We validate across two large-scale cohorts: Memorial Sloan Kettering (23,319 oncology patients; 323,000+ patient-years) and INSPECT (19,402 pulmonary embolism patients). Using a linear probe evaluated at multiple points along the disease trajectory, we demonstrate that our training paradigm learns embeddings that capture disease dynamics not recoverable by autoregressive baselines, enabling SMB-Structure to achieve competitive performance on complex tasks characterized by high patient heterogeneity. Model weights are available at https://huggingface.co/standardmodelbio/SMB-v1-1.7B-Structure.",
+      "published": "2026-01-29",
+      "updated": "2026-01-29",
+      "categories": [
+        "cs.AI",
+        "cs.CE",
+        "q-bio.QM"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2601.22128",
+      "pdf_url": "https://arxiv.org/pdf/2601.22128.pdf"
+    },
+    {
+      "id": "2601.21955",
+      "title": "From Generative Modeling to Clinical Classification: A GPT-Based Architecture for EHR Notes",
+      "authors": [
+        "Fariba Afrin Irany"
+      ],
+      "abstract": "The increasing availability of unstructured clinical narratives in electronic health records (EHRs) has created new opportunities for automated disease characterization, cohort identification, and clinical decision support. However, modeling long, domain-specific clinical text remains challenging due to limited labeled data, severe class imbalance, and the high computational cost of adapting large pretrained language models. This study presents a GPT-based architecture for clinical text classification that adapts a pretrained decoder-only Transformer using a selective fine-tuning strategy. Rather than updating all model parameters, the majority of the GPT-2 backbone is frozen, and training is restricted to the final Transformer block, the final layer normalization, and a lightweight classification head. This approach substantially reduces the number of trainable parameters while preserving the representational capacity required to model complex clinical language. The proposed method is evaluated on radiology reports from the MIMIC-IV-Note dataset using uncertainty-aware CheXpert-style labels derived directly from report text. Experiments cover multiple problem formulations, including multi-label classification of radiographic findings, binary per-label classification under different uncertainty assumptions, and aggregate disease outcome prediction. Across varying dataset sizes, the model exhibits stable convergence behavior and strong classification performance, particularly in settings dominated by non-mention and negated findings. Overall, the results indicate that selective fine-tuning of pretrained generative language models provides an efficient and effective pathway for clinical text classification, enabling scalable adaptation to real-world EHR data while significantly reducing computational complexity.",
+      "published": "2026-01-29",
+      "updated": "2026-02-03",
+      "categories": [
+        "cs.CL"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2601.21955",
+      "pdf_url": "https://arxiv.org/pdf/2601.21955.pdf"
+    },
+    {
+      "id": "2601.17310",
+      "title": "High-Fidelity Longitudinal Patient Simulation Using Real-World Data",
+      "authors": [
+        "Yu Akagi",
+        "Tomohisa Seki",
+        "Hiromasa Ito",
+        "Toru Takiguchi",
+        "Kazuhiko Ohe",
+        "Yoshimasa Kawazoe"
+      ],
+      "abstract": "Simulation is a powerful tool for exploring uncertainty. Its potential in clinical medicine is transformative and includes personalized treatment planning and virtual clinical trials. However, simulating patient trajectories is challenging because of complex biological and sociocultural influences. Here, we show that real-world clinical records can be leveraged to empirically model patient timelines. We developed a generative simulator model that takes a patient's history as input and synthesizes fine-grained, realistic future trajectories. The model was pretrained on more than 200 million clinical records. It produced high-fidelity future timelines, closely matching event occurrence rates, laboratory test results, and temporal dynamics in real patient future data. It also accurately estimated future event probabilities, with observed-to-expected ratios consistently near 1.0 across diverse outcomes and time horizons. Our results reveal the untapped value of real-world data in electronic health records and introduce a scalable framework for in silico modeling of clinical care.",
+      "published": "2026-01-24",
+      "updated": "2026-01-24",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2601.17310",
+      "pdf_url": "https://arxiv.org/pdf/2601.17310.pdf"
+    },
+    {
+      "id": "2601.13388",
+      "title": "Structured Insight from Unstructured Data: Large Language Models for SDOH-Driven Diabetes Risk Prediction",
+      "authors": [
+        "Sasha Ronaghi",
+        "Prerit Choudhary",
+        "David H Rehkopf",
+        "Bryant Lin"
+      ],
+      "abstract": "Social determinants of health (SDOH) play a critical role in Type 2 Diabetes (T2D) management but are often absent from electronic health records and risk prediction models. Most individual-level SDOH data is collected through structured screening tools, which lack the flexibility to capture the complexity of patient experiences and unique needs of a clinic's population. This study explores the use of large language models (LLMs) to extract structured SDOH information from unstructured patient life stories and evaluate the predictive value of both the extracted features and the narratives themselves for assessing diabetes control. We collected unstructured interviews from 65 T2D patients aged 65 and older, focused on their lived experiences, social context, and diabetes management. These narratives were analyzed using LLMs with retrieval-augmented generation to produce concise, actionable qualitative summaries for clinical interpretation and structured quantitative SDOH ratings for risk prediction modeling. The structured SDOH ratings were used independently and in combination with traditional laboratory biomarkers as inputs to linear and tree-based machine learning models (Ridge, Lasso, Random Forest, and XGBoost) to demonstrate how unstructured narrative data can be applied in conventional risk prediction workflows. Finally, we evaluated several LLMs on their ability to predict a patient's level of diabetes control (low, medium, high) directly from interview text with A1C values redacted. LLMs achieved 60% accuracy in predicting diabetes control levels from interview text. This work demonstrates how LLMs can translate unstructured SDOH-related data into structured insights, offering a scalable approach to augment clinical risk models and decision-making.",
+      "published": "2026-01-19",
+      "updated": "2026-01-19",
+      "categories": [
+        "cs.CL"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2601.13388",
+      "pdf_url": "https://arxiv.org/pdf/2601.13388.pdf"
+    },
+    {
+      "id": "2601.12981",
+      "title": "Early Prediction of Type 2 Diabetes Using Multimodal data and Tabular Transformers",
+      "authors": [
+        "Sulaiman Khan",
+        "Md. Rafiul Biswas",
+        "Zubair Shah"
+      ],
+      "abstract": "This study introduces a novel approach for early Type 2 Diabetes Mellitus (T2DM) risk prediction using a tabular transformer (TabTrans) architecture to analyze longitudinal patient data. By processing patients` longitudinal health records and bone-related tabular data, our model captures complex, long-range dependencies in disease progression that conventional methods often overlook. We validated our TabTrans model on a retrospective Qatar BioBank (QBB) cohort of 1,382 subjects, comprising 725 men (146 diabetic, 579 healthy) and 657 women (133 diabetic, 524 healthy). The study integrated electronic health records (EHR) with dual-energy X-ray absorptiometry (DXA) data. To address class imbalance, we employed SMOTE and SMOTE-ENN resampling techniques. The proposed model`s performance is evaluated against conventional machine learning (ML) and generative AI models, including Claude 3.5 Sonnet (Anthropic`s constitutional AI), GPT-4 (OpenAI`s generative pre-trained transformer), and Gemini Pro (Google`s multimodal language model). Our TabTrans model demonstrated superior predictive performance, achieving ROC AUC $\\geq$ 79.7 % for T2DM prediction compared to both generative AI models and conventional ML approaches. Feature interpretation analysis identified key risk indicators, with visceral adipose tissue (VAT) mass and volume, ward bone mineral density (BMD) and bone mineral content (BMC), T and Z-scores, and L1-L4 scores emerging as the most important predictors associated with diabetes development in Qatari adults. These findings demonstrate the significant potential of TabTrans for analyzing complex tabular healthcare data, providing a powerful tool for proactive T2DM management and personalized clinical interventions in the Qatari population. Index Terms: tabular transformers, multimodal data, DXA data, diabetes, T2DM, feature interpretation, tabular data",
+      "published": "2026-01-19",
+      "updated": "2026-01-19",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2601.12981",
+      "pdf_url": "https://arxiv.org/pdf/2601.12981.pdf"
+    },
+    {
+      "id": "2601.06140",
+      "title": "Causal and Federated Multimodal Learning for Cardiovascular Risk Prediction under Heterogeneous Populations",
+      "authors": [
+        "Rohit Kaushik",
+        "Eva Kaushik"
+      ],
+      "abstract": "Cardiovascular disease (CVD) continues to be the major cause of death globally, calling for predictive models that not only handle diverse and high-dimensional biomedical signals but also maintain interpretability and privacy. We create a single multimodal learning framework that integrates cross modal transformers with graph neural networks and causal representation learning to measure personalized CVD risk. The model combines genomic variation, cardiac MRI, ECG waveforms, wearable streams, and structured EHR data to predict risk while also implementing causal invariance constraints across different clinical subpopulations. To maintain transparency, we employ SHAP based feature attribution, counterfactual explanations and causal latent alignment for understandable risk factors. Besides, we position the design in a federated, privacy, preserving optimization protocol and establish rules for convergence, calibration and uncertainty quantification under distributional shift. Experimental studies based on large-scale biobank and multi institutional datasets reveal state discrimination and robustness, exhibiting fair performance across demographic strata and clinically distinct cohorts. This study paves the way for a principled approach to clinically trustworthy, interpretable and privacy respecting CVD prediction at the population level.",
+      "published": "2026-01-05",
+      "updated": "2026-01-05",
+      "categories": [
+        "cs.LG",
+        "stat.ML"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2601.06140",
+      "pdf_url": "https://arxiv.org/pdf/2601.06140.pdf"
+    },
+    {
+      "id": "2512.14563",
+      "title": "Residual GRU+MHSA: A Lightweight Hybrid Recurrent Attention Model for Cardiovascular Disease Detection",
+      "authors": [
+        "Tejaswani Dash",
+        "Gautam Datla",
+        "Anudeep Vurity",
+        "Tazeem Ahmad",
+        "Mohd Adnan",
+        "Saima Rafi",
+        "Saisha Patro",
+        "Saina Patro"
+      ],
+      "abstract": "Cardiovascular disease (CVD) remains the leading cause of mortality worldwide, underscoring the need for reliable and efficient predictive tools that support early intervention. Traditional diagnostic approaches rely on handcrafted features and clinician expertise, while machine learning methods improve reproducibility but often struggle to generalize across noisy and heterogeneous clinical data. In this work, we propose Residual GRU with Multi-Head Self-Attention, a compact deep learning architecture designed for tabular clinical records. The model integrates residual bidirectional gated recurrent units for sequential modeling of feature columns, a channel reweighting block, and multi-head self-attention pooling with a learnable classification token to capture global context. We evaluate the model on the UCI Heart Disease dataset using 5-fold stratified cross-validation and compare it against classical methods such as Logistic Regression, Random Forest, and Support Vector Machines, as well as modern deep learning baselines including DeepMLP, convolutional networks, recurrent networks, and Transformers. The proposed model achieves an accuracy of 0.861, macro-F1 of 0.860, ROC-AUC of 0.908, and PR-AUC of 0.904, outperforming all baselines. Ablation studies confirm the individual contributions of residual recurrence, channel gating, and attention pooling. t-SNE visualizations further indicate that the learned embeddings exhibit clearer separation between disease and non-disease classes compared to raw features. These results demonstrate that lightweight hybrid recurrent and attention-based architectures provide a strong balance between accuracy and efficiency for clinical risk prediction, supporting deployment in resource-constrained healthcare settings.",
+      "published": "2025-12-16",
+      "updated": "2025-12-16",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2512.14563",
+      "pdf_url": "https://arxiv.org/pdf/2512.14563.pdf"
+    },
+    {
+      "id": "2511.22199",
+      "title": "PULSE-ICU: A Pretrained Unified Long-Sequence Encoder for Multi-task Prediction in Intensive Care Units",
+      "authors": [
+        "Sejeong Jang",
+        "Joo Heung Yoon",
+        "Hyo Kyung Lee"
+      ],
+      "abstract": "Intensive care unit (ICU) data are highly irregular, heterogeneous, and temporally fragmented, posing challenges for generalizable clinical prediction. We present PULSE-ICU, a self-supervised foundation model that learns event-level ICU representations from large-scale EHR sequences without resampling or manual feature engineering. A unified embedding module encodes event identity, continuous values, units, and temporal attributes, while a Longformer-based encoder enables efficient modeling of long trajectories. PULSE-ICU was fine-tuned across 18 prediction tasks, including mortality, intervention forecasting, and phenotype identification, achieving strong performance across task types. External validation on eICU, HiRID, and P12 showed substantial improvements with minimal fine-tuning, demonstrating robustness to domain shift and variable constraints. These findings suggest that foundation-style modeling can improve data efficiency and adaptability, providing a scalable framework for ICU decision support across diverse clinical environments.",
+      "published": "2025-11-27",
+      "updated": "2025-11-27",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2511.22199",
+      "pdf_url": "https://arxiv.org/pdf/2511.22199.pdf"
+    },
+    {
+      "id": "2511.21561",
+      "title": "Machine Learning Approaches to Clinical Risk Prediction: Multi-Scale Temporal Alignment in Electronic Health Records",
+      "authors": [
+        "Wei-Chen Chang",
+        "Lu Dai",
+        "Ting Xu"
+      ],
+      "abstract": "This study proposes a risk prediction method based on a Multi-Scale Temporal Alignment Network (MSTAN) to address the challenges of temporal irregularity, sampling interval differences, and multi-scale dynamic dependencies in Electronic Health Records (EHR). The method focuses on temporal feature modeling by introducing a learnable temporal alignment mechanism and a multi-scale convolutional feature extraction structure to jointly model long-term trends and short-term fluctuations in EHR sequences. At the input level, the model maps multi-source clinical features into a unified high-dimensional semantic space and employs temporal embedding and alignment modules to dynamically weight irregularly sampled data, reducing the impact of temporal distribution differences on model performance. The multi-scale feature extraction module then captures key patterns across different temporal granularities through multi-layer convolution and hierarchical fusion, achieving a fine-grained representation of patient states. Finally, an attention-based aggregation mechanism integrates global temporal dependencies to generate individual-level risk representations for disease risk prediction and health status assessment. Experiments conducted on publicly available EHR datasets show that the proposed model outperforms mainstream baselines in accuracy, recall, precision, and F1-Score, demonstrating the effectiveness and robustness of multi-scale temporal alignment in complex medical time-series analysis. This study provides a new solution for intelligent representation of high-dimensional asynchronous medical sequences and offers important technical support for EHR-driven clinical risk prediction.",
+      "published": "2025-11-26",
+      "updated": "2025-11-26",
+      "categories": [
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2511.21561",
+      "pdf_url": "https://arxiv.org/pdf/2511.21561.pdf"
+    },
+    {
+      "id": "2511.16839",
+      "title": "Analysis of heart failure patient trajectories using sequence modeling",
+      "authors": [
+        "Falk Dippel",
+        "Yinan Yu",
+        "Annika Rosengren",
+        "Martin Lindgren",
+        "Christina E. Lundberg",
+        "Erik Aerts",
+        "Martin Adiels",
+        "Helen Sjöland"
+      ],
+      "abstract": "Transformers have defined the state-of-the-art for clinical prediction tasks involving electronic health records (EHRs). The recently introduced Mamba architecture outperformed an advanced Transformer (Transformer++) based on Llama in handling long context lengths, while using fewer model parameters. Despite the impressive performance of these architectures, a systematic approach to empirically analyze model performance and efficiency under various settings is not well established in the medical domain. The performances of six sequence models were investigated across three architecture classes (Transformers, Transformers++, Mambas) in a large Swedish heart failure (HF) cohort (N = 42820), providing a clinically relevant case study. Patient data included diagnoses, vital signs, laboratories, medications and procedures extracted from in-hospital EHRs. The models were evaluated on three one-year prediction tasks: clinical instability (a readmission phenotype) after initial HF hospitalization, mortality after initial HF hospitalization and mortality after latest hospitalization. Ablations account for modifications of the EHR-based input patient sequence, architectural model configurations, and temporal preprocessing techniques for data collection. Llama achieves the highest predictive discrimination, best calibration, and showed robustness across all tasks, followed by Mambas. Both architectures demonstrate efficient representation learning, with tiny configurations surpassing other large-scaled Transformers. At equal model size, Llama and Mambas achieve superior performance using 25% less training data. This paper presents a first ablation study with systematic design choices for input tokenization, model configuration and temporal data preprocessing. Future model development in clinical prediction tasks using EHRs could build upon this study's recommendation as a starting point.",
+      "published": "2025-11-20",
+      "updated": "2025-11-24",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2511.16839",
+      "pdf_url": "https://arxiv.org/pdf/2511.16839.pdf"
+    },
+    {
+      "id": "2511.16333",
+      "title": "Beyond Generative AI: World Models for Clinical Prediction, Counterfactuals, and Planning",
+      "authors": [
+        "Mohammad Areeb Qazi",
+        "Maryam Nadeem",
+        "Mohammad Yaqub"
+      ],
+      "abstract": "Healthcare requires AI that is predictive, reliable, and data-efficient. However, recent generative models lack physical foundation and temporal reasoning required for clinical decision support. As scaling language models show diminishing returns for grounded clinical reasoning, world models are gaining traction because they learn multimodal, temporally coherent, and action-conditioned representations that reflect the physical and causal structure of care. This paper reviews World Models for healthcare systems that learn predictive dynamics to enable multistep rollouts, counterfactual evaluation and planning. We survey recent work across three domains: (i) medical imaging and diagnostics (e.g., longitudinal tumor simulation, projection-transition modeling, and Joint Embedding Predictive Architecture i.e., JEPA-style predictive representation learning), (ii) disease progression modeling from electronic health records (generative event forecasting at scale), and (iii) robotic surgery and surgical planning (action-conditioned guidance and control). We also introduce a capability rubric: L1 temporal prediction, L2 action-conditioned prediction, L3 counterfactual rollouts for decision support, and L4 planning/control. Most reviewed systems achieve L1--L2, with fewer instances of L3 and rare L4. We identify cross-cutting gaps that limit clinical reliability; under-specified action spaces and safety constraints, weak interventional validation, incomplete multimodal state construction, and limited trajectory-level uncertainty calibration. This review outlines a research agenda for clinically robust prediction-first world models that integrate generative backbones (transformers, diffusion, VAE) with causal/mechanical foundation for safe decision support in healthcare.",
+      "published": "2025-11-20",
+      "updated": "2025-11-20",
+      "categories": [
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2511.16333",
+      "pdf_url": "https://arxiv.org/pdf/2511.16333.pdf"
+    },
+    {
+      "id": "2511.11293",
+      "title": "Toward Scalable Early Cancer Detection: Evaluating EHR-Based Predictive Models Against Traditional Screening Criteria",
+      "authors": [
+        "Jiheum Park",
+        "Chao Pang",
+        "Tristan Y. Lee",
+        "Jeong Yun Yang",
+        "Jacob Berkowitz",
+        "Alexander Z. Wei",
+        "Nicholas Tatonetti"
+      ],
+      "abstract": "Current cancer screening guidelines cover only a few cancer types and rely on narrowly defined criteria such as age or a single risk factor like smoking history, to identify high-risk individuals. Predictive models using electronic health records (EHRs), which capture large-scale longitudinal patient-level health information, may provide a more effective tool for identifying high-risk groups by detecting subtle prediagnostic signals of cancer. Recent advances in large language and foundation models have further expanded this potential, yet evidence remains limited on how useful EHR-based models are compared with traditional risk factors currently used in screening guidelines. We systematically evaluated the clinical utility of EHR-based predictive models against traditional risk factors, including gene mutations and family history of cancer, for identifying high-risk individuals across eight major cancers (breast, lung, colorectal, prostate, ovarian, liver, pancreatic, and stomach), using data from the All of Us Research Program, which integrates EHR, genomic, and survey data from over 865,000 participants. Even with a baseline modeling approach, EHR-based models achieved a 3- to 6-fold higher enrichment of true cancer cases among individuals identified as high risk compared with traditional risk factors alone, whether used as a standalone or complementary tool. The EHR foundation model, a state-of-the-art approach trained on comprehensive patient trajectories, further improved predictive performance across 26 cancer types, demonstrating the clinical potential of EHR-based predictive modeling to support more precise and scalable early detection strategies.",
+      "published": "2025-11-14",
+      "updated": "2026-01-23",
+      "categories": [
+        "cs.LG",
+        "q-bio.QM"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2511.11293",
+      "pdf_url": "https://arxiv.org/pdf/2511.11293.pdf"
+    },
+    {
+      "id": "2511.04998",
+      "title": "BiPETE: A Bi-Positional Embedding Transformer Encoder for Risk Assessment of Alcohol and Substance Use Disorder with Electronic Health Records",
+      "authors": [
+        "Daniel S. Lee",
+        "Mayra S. Haedo-Cruz",
+        "Chen Jiang",
+        "Oshin Miranda",
+        "LiRong Wang"
+      ],
+      "abstract": "Transformer-based deep learning models have shown promise for disease risk prediction using electronic health records(EHRs), but modeling temporal dependencies remains a key challenge due to irregular visit intervals and lack of uniform structure. We propose a Bi-Positional Embedding Transformer Encoder or BiPETE for single-disease prediction, which integrates rotary positional embeddings to encode relative visit timing and sinusoidal embeddings to preserve visit order. Without relying on large-scale pretraining, BiPETE is trained on EHR data from two mental health cohorts-depressive disorder and post-traumatic stress disorder (PTSD)-to predict the risk of alcohol and substance use disorders (ASUD). BiPETE outperforms baseline models, improving the area under the precision-recall curve (AUPRC) by 34% and 50% in the depression and PTSD cohorts, respectively. An ablation study further confirms the effectiveness of the dual positional encoding strategy. We apply the Integrated Gradients method to interpret model predictions, identifying key clinical features associated with ASUD risk and protection, such as abnormal inflammatory, hematologic, and metabolic markers, as well as specific medications and comorbidities. Overall, these key clinical features identified by the attribution methods contribute to a deeper understanding of the risk assessment process and offer valuable clues for mitigating potential risks. In summary, our study presents a practical and interpretable framework for disease risk prediction using EHR data, which can achieve strong performance.",
+      "published": "2025-11-07",
+      "updated": "2025-11-07",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "q-bio.QM"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2511.04998",
+      "pdf_url": "https://arxiv.org/pdf/2511.04998.pdf"
+    },
+    {
+      "id": "2511.01249",
+      "title": "KAT-GNN: A Knowledge-Augmented Temporal Graph Neural Network for Risk Prediction in Electronic Health Records",
+      "authors": [
+        "Kun-Wei Lin",
+        "Yu-Chen Kuo",
+        "Hsin-Yao Wang",
+        "Yi-Ju Tseng"
+      ],
+      "abstract": "Clinical risk prediction using electronic health records (EHRs) is vital to facilitate timely interventions and clinical decision support. However, modeling heterogeneous and irregular temporal EHR data presents significant challenges. We propose \\textbf{KAT-GNN} (Knowledge-Augmented Temporal Graph Neural Network), a graph-based framework that integrates clinical knowledge and temporal dynamics for risk prediction. KAT-GNN first constructs modality-specific patient graphs from EHRs. These graphs are then augmented using two knowledge sources: (1) ontology-driven edges derived from SNOMED CT and (2) co-occurrence priors extracted from EHRs. Subsequently, a time-aware transformer is employed to capture longitudinal dynamics from the graph-encoded patient representations. KAT-GNN is evaluated on three distinct datasets and tasks: coronary artery disease (CAD) prediction using the Chang Gung Research Database (CGRD) and in-hospital mortality prediction using the MIMIC-III and MIMIC-IV datasets. KAT-GNN achieves state-of-the-art performance in CAD prediction (AUROC: 0.9269 $\\pm$ 0.0029) and demonstrated strong results in mortality prediction in MIMIC-III (AUROC: 0.9230 $\\pm$ 0.0070) and MIMIC-IV (AUROC: 0.8849 $\\pm$ 0.0089), consistently outperforming established baselines such as GRASP and RETAIN. Ablation studies confirm that both knowledge-based augmentation and the temporal modeling component are significant contributors to performance gains. These findings demonstrate that the integration of clinical knowledge into graph representations, coupled with a time-aware attention mechanism, provides an effective and generalizable approach for risk prediction across diverse clinical tasks and datasets.",
+      "published": "2025-11-03",
+      "updated": "2025-11-03",
+      "categories": [
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2511.01249",
+      "pdf_url": "https://arxiv.org/pdf/2511.01249.pdf"
+    },
+    {
+      "id": "2510.24654",
+      "title": "Evolving Interactive Diagnostic Agents in a Virtual Clinical Environment",
+      "authors": [
+        "Pengcheng Qiu",
+        "Chaoyi Wu",
+        "Junwei Liu",
+        "Qiaoyu Zheng",
+        "Yusheng Liao",
+        "Haowen Wang",
+        "Yun Yue",
+        "Qianrui Fan",
+        "Shuai Zhen",
+        "Jian Wang",
+        "Jinjie Gu",
+        "Yanfeng Wang",
+        "Ya Zhang",
+        "Weidi Xie"
+      ],
+      "abstract": "We present a framework for training large language models (LLMs) as diagnostic agents with reinforcement learning, enabling them to manage multi-turn interactive diagnostic processes, adaptively select examinations, and commit to final diagnoses. Unlike instruction-tuned models trained on static data, our method acquires diagnostic strategies through dynamic exploration and outcome-based feedback, mapping evolving patient states to the next optimal examination and subsequent diagnosis. Our contributions include: (i) DiagGym, a diagnostics world model trained with electronic health records, serving as a virtual clinical environment to support closed-loop in-silico training and evaluation for interactive diagnosis; (ii) DiagAgent, trained via end-to-end multi-turn RL to learn dynamic diagnostic policies that optimize both interactive effectiveness and final accuracy; (iii) DiagBench, a multi-center diagnostic benchmark designed to evaluate multi-turn diagnostic interaction trajectories. The benchmark comprises 2.2K physician-validated cases sourced from 4 distinct distributions, alongside 3.3K physician-written rubrics for granular process-oriented evaluation. (iv) Extensive evaluations demonstrate DiagAgent's superior performance across both in-domain and out-of-domain (OOD) settings. DiagAgent significantly outperforms 11 SOTA LLMs and 2 prompt-engineered agents. In the end-to-end setting, it delivers a 11.20% increase in diagnostic accuracy and a 17.58% boost in examination recommendation F1 score, while consistently maintaining SOTA performance across all three external centers. Furthermore, in rubric-based evaluations, it surpasses the next-best model by 7.1% in weighted rubric score. These findings indicate that learning policies in interactive clinical environments confers long-term diagnostic management abilities unattainable through passive training.",
+      "published": "2025-10-28",
+      "updated": "2026-02-10",
+      "categories": [
+        "cs.CL"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2510.24654",
+      "pdf_url": "https://arxiv.org/pdf/2510.24654.pdf"
+    },
+    {
+      "id": "2510.14286",
+      "title": "Stable Prediction of Adverse Events in Medical Time-Series Data",
+      "authors": [
+        "Mayank Keoliya",
+        "Seewon Choi",
+        "Rajeev Alur",
+        "Mayur Naik",
+        "Eric Wong"
+      ],
+      "abstract": "Early event prediction (EEP) systems continuously estimate a patient's imminent risk to support clinical decision-making. For bedside trust, risk trajectories must be accurate and temporally stable, shifting only with new, relevant evidence. However, current benchmarks (a) ignore stability of risk scores and (b) evaluate mainly on tabular inputs, leaving trajectory behavior untested. To address this gap, we introduce CAREBench, an EEP benchmark that evaluates deployability using multi-modal inputs-tabular EHR, ECG waveforms, and clinical text-and assesses temporal stability alongside predictive accuracy. We propose a stability metric that quantifies short-term variability in per-patient risk and penalizes abrupt oscillations based on local-Lipschitz constants. CAREBench spans six prediction tasks such as sepsis onset and compares classical learners, deep sequence models, and zero-shot LLMs. Across tasks, existing methods, especially LLMs, struggle to jointly optimize accuracy and stability, with notably poor recall at high-precision operating points. These results highlight the need for models that produce evidence-aligned, stable trajectories to earn clinician trust in continuous monitoring settings. (Code: https://github.com/SeewonChoi/CAREBench.)",
+      "published": "2025-10-16",
+      "updated": "2025-10-16",
+      "categories": [
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2510.14286",
+      "pdf_url": "https://arxiv.org/pdf/2510.14286.pdf"
+    },
+    {
+      "id": "2510.10454",
+      "title": "Traj-CoA: Patient Trajectory Modeling via Chain-of-Agents for Lung Cancer Risk Prediction",
+      "authors": [
+        "Sihang Zeng",
+        "Yujuan Fu",
+        "Sitong Zhou",
+        "Zixuan Yu",
+        "Lucas Jing Liu",
+        "Jun Wen",
+        "Matthew Thompson",
+        "Ruth Etzioni",
+        "Meliha Yetisgen"
+      ],
+      "abstract": "Large language models (LLMs) offer a generalizable approach for modeling patient trajectories, but suffer from the long and noisy nature of electronic health records (EHR) data in temporal reasoning. To address these challenges, we introduce Traj-CoA, a multi-agent system involving chain-of-agents for patient trajectory modeling. Traj-CoA employs a chain of worker agents to process EHR data in manageable chunks sequentially, distilling critical events into a shared long-term memory module, EHRMem, to reduce noise and preserve a comprehensive timeline. A final manager agent synthesizes the worker agents' summary and the extracted timeline in EHRMem to make predictions. In a zero-shot one-year lung cancer risk prediction task based on five-year EHR data, Traj-CoA outperforms baselines of four categories. Analysis reveals that Traj-CoA exhibits clinically aligned temporal reasoning, establishing it as a promisingly robust and generalizable approach for modeling complex patient trajectories.",
+      "published": "2025-10-12",
+      "updated": "2025-10-12",
+      "categories": [
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2510.10454",
+      "pdf_url": "https://arxiv.org/pdf/2510.10454.pdf"
+    },
+    {
+      "id": "2510.09159",
+      "title": "Cross-Representation Benchmarking in Time-Series Electronic Health Records for Clinical Outcome Prediction",
+      "authors": [
+        "Tianyi Chen",
+        "Mingcheng Zhu",
+        "Zhiyao Luo",
+        "Tingting Zhu"
+      ],
+      "abstract": "Electronic Health Records (EHRs) enable deep learning for clinical predictions, but the optimal method for representing patient data remains unclear due to inconsistent evaluation practices. We present the first systematic benchmark to compare EHR representation methods, including multivariate time-series, event streams, and textual event streams for LLMs. This benchmark standardises data curation and evaluation across two distinct clinical settings: the MIMIC-IV dataset for ICU tasks (mortality, phenotyping) and the EHRSHOT dataset for longitudinal care (30-day readmission, 1-year pancreatic cancer). For each paradigm, we evaluate appropriate modelling families--including Transformers, MLP, LSTMs and Retain for time-series, CLMBR and count-based models for event streams, 8-20B LLMs for textual streams--and analyse the impact of feature pruning based on data missingness. Our experiments reveal that event stream models consistently deliver the strongest performance. Pre-trained models like CLMBR are highly sample-efficient in few-shot settings, though simpler count-based models can be competitive given sufficient data. Furthermore, we find that feature selection strategies must be adapted to the clinical setting: pruning sparse features improves ICU predictions, while retaining them is critical for longitudinal tasks. Our results, enabled by a unified and reproducible pipeline, provide practical guidance for selecting EHR representations based on the clinical context and data regime.",
+      "published": "2025-10-10",
+      "updated": "2025-10-10",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.DB"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2510.09159",
+      "pdf_url": "https://arxiv.org/pdf/2510.09159.pdf"
+    },
+    {
+      "id": "2509.25591",
+      "title": "Building the EHR Foundation Model via Next Event Prediction",
+      "authors": [
+        "Zekai Chen",
+        "Arda Pekis",
+        "Kevin Brown"
+      ],
+      "abstract": "Electronic Health Records (EHRs) contain rich temporal dynamics that conventional encoding approaches fail to adequately capture. While Large Language Models (LLMs) show promise for EHR modeling, they struggle to reason about sequential clinical events and temporal dependencies. We propose Next Event Prediction (NEP), a framework that enhances LLMs' temporal reasoning through autoregressive fine-tuning on clinical event sequences. By reformulating EHRs as timestamped event chains and predicting future medical events, NEP explicitly models disease progression patterns and causal relationships. Extensive evaluations across oncology survival prediction and clinical diagnosis tasks demonstrate NEP's superiority, outperforming specialized EHR models by 4.6% AUROC and general-purpose LLMs by 7.2% C-index in temporal reasoning tasks. Our analyses reveal dual benefits: state-of-the-art prediction accuracy combined with clinically interpretable attention patterns that align with known disease pathways.",
+      "published": "2025-09-29",
+      "updated": "2025-09-29",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "q-bio.OT"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2509.25591",
+      "pdf_url": "https://arxiv.org/pdf/2509.25591.pdf"
+    },
+    {
+      "id": "2509.22920",
+      "title": "Beyond the Clinic: A Large-Scale Evaluation of Augmenting EHR with Wearable Data for Diverse Health Prediction",
+      "authors": [
+        "Will Ke Wang",
+        "Rui Yang",
+        "Chao Pang",
+        "Karthik Natarajan",
+        "Nan Liu",
+        "Daniel McDuff",
+        "David J Slotwiner",
+        "Fei Wang",
+        "Matthew B. A. McDermott",
+        "Xuhai \"Orson\" Xu"
+      ],
+      "abstract": "Electronic health records (EHRs) provide a powerful basis for predicting the onset of health outcomes. Yet EHRs primarily capture in-clinic events and miss aspects of daily behavior and lifestyle containing rich health information. Consumer wearables, by contrast, continuously measure activity, heart rate, and sleep, and more, offering complementary signals that can fill this gap. Despite this potential, there has been little systematic evaluation of the benefit that wearable data can bring to health outcome prediction on top of EHRs. In this study, we present an extensible framework for multimodal health outcome prediction that integrates EHR and wearable data streams. Using data from the All of Us Program, we systematically compared the combination of different encoding methods on EHR and wearable data, including the traditional feature engineering approach, as well as foundation model embeddings. Across ten clinical outcomes, wearable integration consistently improved model performance relative to EHR-only baselines, e.g., average delta AUROC +6.8% for major depressive disorder, +9.7% for hypertension, and +12.6% for diabetes. On average across all ten outcomes, fusing EHRs with wearable features shows 8.5% improvement in AUROC. To our knowledge, this is the first large-scale evaluation of wearable-EHR fusion, underscoring the utility of wearable-derived signals in complementing EHRs and enabling more holistic, personalized health outcome predictions. Meanwhile, our analysis elucidates future directions for optimizing foundation models for wearable data and its integration with EHR data.",
+      "published": "2025-09-26",
+      "updated": "2025-12-07",
+      "categories": [
+        "q-bio.QM"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2509.22920",
+      "pdf_url": "https://arxiv.org/pdf/2509.22920.pdf"
+    },
+    {
+      "id": "2509.10538",
+      "title": "DualAlign: Generating Clinically Grounded Synthetic Data",
+      "authors": [
+        "Rumeng Li",
+        "Xun Wang",
+        "Hong Yu"
+      ],
+      "abstract": "Synthetic clinical data are increasingly important for advancing AI in healthcare, given strict privacy constraints on real-world EHRs, limited availability of annotated rare-condition data, and systemic biases in observational datasets. While large language models (LLMs) can generate fluent clinical text, producing synthetic data that is both realistic and clinically meaningful remains challenging. We introduce DualAlign, a framework that enhances statistical fidelity and clinical plausibility through dual alignment: (1) statistical alignment, which conditions generation on patient demographics and risk factors; and (2) semantic alignment, which incorporates real-world symptom trajectories to guide content generation. Using Alzheimer's disease (AD) as a case study, DualAlign produces context-grounded symptom-level sentences that better reflect real-world clinical documentation. Fine-tuning an LLaMA 3.1-8B model with a combination of DualAlign-generated and human-annotated data yields substantial performance gains over models trained on gold data alone or unguided synthetic baselines. While DualAlign does not fully capture longitudinal complexity, it offers a practical approach for generating clinically grounded, privacy-preserving synthetic data to support low-resource clinical text analysis.",
+      "published": "2025-09-05",
+      "updated": "2025-09-05",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.CY"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2509.10538",
+      "pdf_url": "https://arxiv.org/pdf/2509.10538.pdf"
+    },
+    {
+      "id": "2509.03643",
+      "title": "CEHR-XGPT: A Scalable Multi-Task Foundation Model for Electronic Health Records",
+      "authors": [
+        "Chao Pang",
+        "Jiheum Park",
+        "Xinzhuo Jiang",
+        "Nishanth Parameshwar Pavinkurve",
+        "Krishna S. Kalluri",
+        "Shalmali Joshi",
+        "Noémie Elhadad",
+        "Karthik Natarajan"
+      ],
+      "abstract": "Electronic Health Records (EHRs) provide a rich, longitudinal view of patient health and hold significant potential for advancing clinical decision support, risk prediction, and data-driven healthcare research. However, most artificial intelligence (AI) models for EHRs are designed for narrow, single-purpose tasks, limiting their generalizability and utility in real-world settings. Here, we present CEHR-XGPT, a general-purpose foundation model for EHR data that unifies three essential capabilities - feature representation, zero-shot prediction, and synthetic data generation - within a single architecture. To support temporal reasoning over clinical sequences, CEHR-XGPT incorporates a novel time-token-based learning framework that explicitly encodes patients' dynamic timelines into the model structure. CEHR-XGPT demonstrates strong performance across all three tasks and generalizes effectively to external datasets through vocabulary expansion and fine-tuning. Its versatility enables rapid model development, cohort discovery, and patient outcome forecasting without the need for task-specific retraining.",
+      "published": "2025-09-03",
+      "updated": "2025-09-05",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2509.03643",
+      "pdf_url": "https://arxiv.org/pdf/2509.03643.pdf"
+    },
+    {
+      "id": "2509.01794",
+      "title": "A Multi-target Bayesian Transformer Framework for Predicting Cardiovascular Disease Biomarkers during Pandemics",
+      "authors": [
+        "Trusting Inekwe",
+        "Winnie Mkandawire",
+        "Emmanuel Agu",
+        "Andres Colubri"
+      ],
+      "abstract": "The COVID-19 pandemic disrupted healthcare systems worldwide, disproportionately impacting individuals with chronic conditions such as cardiovascular disease (CVD). These disruptions -- through delayed care and behavioral changes, affected key CVD biomarkers, including LDL cholesterol (LDL-C), HbA1c, BMI, and systolic blood pressure (SysBP). Accurate modeling of these changes is crucial for predicting disease progression and guiding preventive care. However, prior work has not addressed multi-target prediction of CVD biomarker from Electronic Health Records (EHRs) using machine learning (ML), while jointly capturing biomarker interdependencies, temporal patterns, and predictive uncertainty. In this paper, we propose MBT-CB, a Multi-target Bayesian Transformer (MBT) with pre-trained BERT-based transformer framework to jointly predict LDL-C, HbA1c, BMI and SysBP CVD biomarkers from EHR data. The model leverages Bayesian Variational Inference to estimate uncertainties, embeddings to capture temporal relationships and a DeepMTR model to capture biomarker inter-relationships. We evaluate MBT-CT on retrospective EHR data from 3,390 CVD patient records (304 unique patients) in Central Massachusetts during the Covid-19 pandemic. MBT-CB outperformed a comprehensive set of baselines including other BERT-based ML models, achieving an MAE of 0.00887, RMSE of 0.0135 and MSE of 0.00027, while effectively capturing data and model uncertainty, patient biomarker inter-relationships, and temporal dynamics via its attention and embedding mechanisms. MBT-CB's superior performance highlights its potential to improve CVD biomarker prediction and support clinical decision-making during pandemics.",
+      "published": "2025-09-01",
+      "updated": "2025-11-06",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2509.01794",
+      "pdf_url": "https://arxiv.org/pdf/2509.01794.pdf"
+    },
+    {
+      "id": "2509.04485",
+      "title": "ASCENDgpt: A Phenotype-Aware Transformer Model for Cardiovascular Risk Prediction from Electronic Health Records",
+      "authors": [
+        "Chris Sainsbury",
+        "Andreas Karwath"
+      ],
+      "abstract": "We present ASCENDgpt, a transformer-based model specifically designed for cardiovascular risk prediction from longitudinal electronic health records (EHRs). Our approach introduces a novel phenotype-aware tokenization scheme that maps 47,155 raw ICD codes to 176 clinically meaningful phenotype tokens, achieving 99.6\\% consolidation of diagnosis codes while preserving semantic information. This phenotype mapping contributes to a total vocabulary of 10,442 tokens - a 77.9\\% reduction when compared with using raw ICD codes directly. We pretrain ASCENDgpt on sequences derived from 19402 unique individuals using a masked language modeling objective, then fine-tune for time-to-event prediction of five cardiovascular outcomes: myocardial infarction (MI), stroke, major adverse cardiovascular events (MACE), cardiovascular death, and all-cause mortality. Our model achieves excellent discrimination on the held-out test set with an average C-index of 0.816, demonstrating strong performance across all outcomes (MI: 0.792, stroke: 0.824, MACE: 0.800, cardiovascular death: 0.842, all-cause mortality: 0.824). The phenotype-based approach enables clinically interpretable predictions while maintaining computational efficiency. Our work demonstrates the effectiveness of domain-specific tokenization and pretraining for EHR-based risk prediction tasks.",
+      "published": "2025-08-31",
+      "updated": "2025-08-31",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2509.04485",
+      "pdf_url": "https://arxiv.org/pdf/2509.04485.pdf"
+    },
+    {
+      "id": "2508.17554",
+      "title": "Bridging Graph and State-Space Modeling for Intensive Care Unit Length of Stay Prediction",
+      "authors": [
+        "Shuqi Zi",
+        "Haitz Sáez de Ocáriz Borde",
+        "Emma Rocheteau",
+        "Pietro Lio'"
+      ],
+      "abstract": "Predicting a patient's length of stay (LOS) in the intensive care unit (ICU) is a critical task for hospital resource management, yet remains challenging due to the heterogeneous and irregularly sampled nature of electronic health records (EHRs). In this work, we propose S$^2$G-Net, a novel neural architecture that unifies state-space sequence modeling with multi-view Graph Neural Networks (GNNs) for ICU LOS prediction. The temporal path employs Mamba state-space models (SSMs) to capture patient trajectories, while the graph path leverages an optimized GraphGPS backbone, designed to integrate heterogeneous patient similarity graphs derived from diagnostic, administrative, and semantic features. Experiments on the large-scale MIMIC-IV cohort dataset show that S$^2$G-Net consistently outperforms sequence models (BiLSTM, Mamba, Transformer), graph models (classic GNNs, GraphGPS), and hybrid approaches across all primary metrics. Extensive ablation studies and interpretability analyses highlight the complementary contributions of each component of our architecture and underscore the importance of principled graph construction. These results demonstrate that S$^2$G-Net provides an effective and scalable solution for ICU LOS prediction with multi-modal clinical data. The code can be found at https://github.com/ShuqiZi1/S2G-Net.",
+      "published": "2025-08-24",
+      "updated": "2025-10-11",
+      "categories": [
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2508.17554",
+      "pdf_url": "https://arxiv.org/pdf/2508.17554.pdf"
+    },
+    {
+      "id": "2508.13579",
+      "title": "Toward Better EHR Reasoning in LLMs: Reinforcement Learning with Expert Attention Guidance",
+      "authors": [
+        "Yue Fang",
+        "Yuxin Guo",
+        "Jiaran Gao",
+        "Hongxin Ding",
+        "Xinke Jiang",
+        "Weibin Liao",
+        "Yongxin Xu",
+        "Yinghao Zhu",
+        "Zhibang Yang",
+        "Liantao Ma",
+        "Junfeng Zhao",
+        "Yasha Wang"
+      ],
+      "abstract": "Improving large language models (LLMs) for electronic health record (EHR) reasoning is essential for enabling accurate and generalizable clinical predictions. While LLMs excel at medical text understanding, they underperform on EHR-based prediction tasks due to challenges in modeling temporally structured, high-dimensional data. Existing approaches often rely on hybrid paradigms, where LLMs serve merely as frozen prior retrievers while downstream deep learning (DL) models handle prediction, failing to improve the LLM's intrinsic reasoning capacity and inheriting the generalization limitations of DL models. To this end, we propose EAG-RL, a novel two-stage training framework designed to intrinsically enhance LLMs' EHR reasoning ability through expert attention guidance, where expert EHR models refer to task-specific DL models trained on EHR data. Concretely, EAG-RL first constructs high-quality, stepwise reasoning trajectories using expert-guided Monte Carlo Tree Search to effectively initialize the LLM's policy. Then, EAG-RL further optimizes the policy via reinforcement learning by aligning the LLM's attention with clinically salient features identified by expert EHR models. Extensive experiments on two real-world EHR datasets show that EAG-RL improves the intrinsic EHR reasoning ability of LLMs by an average of 14.62%, while also enhancing robustness to feature perturbations and generalization to unseen clinical domains. These results demonstrate the practical potential of EAG-RL for real-world deployment in clinical prediction tasks. Our code have been available at https://github.com/devilran6/EAG-RL.",
+      "published": "2025-08-19",
+      "updated": "2025-08-19",
+      "categories": [
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2508.13579",
+      "pdf_url": "https://arxiv.org/pdf/2508.13579.pdf"
+    },
+    {
+      "id": "2508.06627",
+      "title": "Early Detection of Pancreatic Cancer Using Multimodal Learning on Electronic Health Records",
+      "authors": [
+        "Mosbah Aouad",
+        "Anirudh Choudhary",
+        "Awais Farooq",
+        "Steven Nevers",
+        "Lusine Demirkhanyan",
+        "Bhrandon Harris",
+        "Suguna Pappu",
+        "Christopher Gondi",
+        "Ravishankar Iyer"
+      ],
+      "abstract": "Pancreatic ductal adenocarcinoma (PDAC) is one of the deadliest cancers, and early detection remains a major clinical challenge due to the absence of specific symptoms and reliable biomarkers. In this work, we propose a new multimodal approach that integrates longitudinal diagnosis code histories and routinely collected laboratory measurements from electronic health records to detect PDAC up to one year prior to clinical diagnosis. Our method combines neural controlled differential equations to model irregular lab time series, pretrained language models and recurrent networks to learn diagnosis code trajectory representations, and cross-attention mechanisms to capture interactions between the two modalities. We develop and evaluate our approach on a real-world dataset of nearly 4,700 patients and achieve significant improvements in AUC ranging from 6.5% to 15.5% over state-of-the-art methods. Furthermore, our model identifies diagnosis codes and laboratory panels associated with elevated PDAC risk, including both established and new biomarkers. Our code is available at https://github.com/MosbahAouad/EarlyPDAC-MML.",
+      "published": "2025-08-08",
+      "updated": "2025-08-18",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2508.06627",
+      "pdf_url": "https://arxiv.org/pdf/2508.06627.pdf"
+    },
+    {
+      "id": "2508.01970",
+      "title": "Improving Hospital Risk Prediction with Knowledge-Augmented Multimodal EHR Modeling",
+      "authors": [
+        "Rituparna Datta",
+        "Jiaming Cui",
+        "Zihan Guan",
+        "Vishal G. Reddy",
+        "Joshua C. Eby",
+        "Gregory Madden",
+        "Rupesh Silwal",
+        "Anil Vullikanti"
+      ],
+      "abstract": "Accurate prediction of clinical outcomes using Electronic Health Records (EHRs) is critical for early intervention, efficient resource allocation, and improved patient care. EHRs contain multimodal data, including both structured data and unstructured clinical notes that provide rich, context-specific information. In this work, we introduce a unified framework that seamlessly integrates these diverse modalities, leveraging all relevant available information through a two-stage architecture for clinical risk prediction. In the first stage, a fine-tuned Large Language Model (LLM) extracts crucial, task-relevant information from clinical notes, which is enhanced by graph-based retrieval of external domain knowledge from sources such as a medical corpus like PubMed, grounding the LLM's understanding. The second stage combines both unstructured representations and features derived from the structured data to generate the final predictions. This approach supports a wide range of clinical tasks. Here, we demonstrate its effectiveness on 30-day readmission and in-hospital mortality prediction. Experimental results show that our framework achieves strong performance, with AUC scores of $0.84$ and $0.92$, respectively, despite these tasks involving severely imbalanced datasets, with positive rates ranging from approximately $4\\%$ to $13\\%$. Moreover, it outperforms all existing baselines and clinical practices, including established risk scoring systems. To the best of our knowledge, this is one of the first frameworks for healthcare prediction which enhances the power of an LLM-based graph-guided knowledge retrieval method by combining it with structured data for improved clinical outcome prediction.",
+      "published": "2025-08-04",
+      "updated": "2025-08-27",
+      "categories": [
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2508.01970",
+      "pdf_url": "https://arxiv.org/pdf/2508.01970.pdf"
+    },
+    {
+      "id": "2508.01956",
+      "title": "Scaling Clinician-Grade Feature Generation from Clinical Notes with Multi-Agent Language Models",
+      "authors": [
+        "Jiayi Wang",
+        "Jacqueline Jil Vallon",
+        "Nikhil V. Kotha",
+        "Neil Panjwani",
+        "Xi Ling",
+        "Margaret Redfield",
+        "Sushmita Vij",
+        "Sandy Srinivas",
+        "John Leppert",
+        "Mark K. Buyyounouski",
+        "Mohsen Bayati"
+      ],
+      "abstract": "Developing accurate clinical prediction models is often bottlenecked by the difficulty of deriving meaningful structured features from unstructured EHR notes, a process that traditionally requires manual, unscalable clinical abstraction. In this study, we first established a rigorous patient-level Clinician Feature Generation (CFG) protocol, in which domain experts manually reviewed notes to define and extract nuanced features for a cohort of 147 patients with prostate cancer. As a high-fidelity ground truth, this labor-intensive process provided the blueprint for SNOW (Scalable Note-to-Outcome Workflow), a transparent multi-agent large language model (LLM) system designed to autonomously mimic the iterative reasoning and validation workflow of clinical experts. On 5-year cancer recurrence prediction, SNOW (AUC-ROC 0.767) achieved performance comparable to manual CFG (0.762) and outperformed structured baselines, clinician-guided LLM extraction, and six representational feature generation (RFG) approaches. Once configured, SNOW produced the full patient-level feature table in 12 hours with 5 hours of clinician oversight, reducing human expert effort by approximately 48-fold versus manual CFG. To test scalability where manual CFG is infeasible, we deployed SNOW on an external heart failure with preserved ejection fraction (HFpEF) cohort from MIMIC-IV (n=2,084); without task-specific tuning, SNOW generated prognostic features that outperformed baseline and RFG methods for 30-day (SNOW: 0.851) and 1-year (SNOW: 0.763) mortality prediction. These results demonstrate that a modular LLM agent-based system can scale expert-level feature generation from clinical notes, while enabling interpretable use of unstructured EHR text in outcome prediction and preserving generalizability across a variety of settings and conditions.",
+      "published": "2025-08-03",
+      "updated": "2025-12-28",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2508.01956",
+      "pdf_url": "https://arxiv.org/pdf/2508.01956.pdf"
+    },
+    {
+      "id": "2508.00615",
+      "title": "Similarity-Based Self-Construct Graph Model for Predicting Patient Criticalness Using Graph Neural Networks and EHR Data",
+      "authors": [
+        "Mukesh Kumar Sahu",
+        "Pinki Roy"
+      ],
+      "abstract": "Accurately predicting the criticalness of ICU patients (such as in-ICU mortality risk) is vital for early intervention in critical care. However, conventional models often treat each patient in isolation and struggle to exploit the relational structure in Electronic Health Records (EHR). We propose a Similarity-Based Self-Construct Graph Model (SBSCGM) that dynamically builds a patient similarity graph from multi-modal EHR data, and a HybridGraphMedGNN architecture that operates on this graph to predict patient mortality and a continuous criticalness score. SBSCGM uses a hybrid similarity measure (combining feature-based and structural similarities) to connect patients with analogous clinical profiles in real-time. The HybridGraphMedGNN integrates Graph Convolutional Network (GCN), GraphSAGE, and Graph Attention Network (GAT) layers to learn robust patient representations, leveraging both local and global graph patterns. In experiments on 6,000 ICU stays from the MIMIC-III dataset, our model achieves state-of-the-art performance (AUC-ROC $0.94$) outperforming baseline classifiers and single-type GNN models. We also demonstrate improved precision/recall and show that the attention mechanism provides interpretable insights into model predictions. Our framework offers a scalable and interpretable solution for critical care risk prediction, with potential to support clinicians in real-world ICU deployment.",
+      "published": "2025-08-01",
+      "updated": "2025-08-01",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2508.00615",
+      "pdf_url": "https://arxiv.org/pdf/2508.00615.pdf"
+    },
+    {
+      "id": "2507.22533",
+      "title": "CliCARE: Grounding Large Language Models in Clinical Guidelines for Decision Support over Longitudinal Cancer Electronic Health Records",
+      "authors": [
+        "Dongchen Li",
+        "Jitao Liang",
+        "Wei Li",
+        "Xiaoyu Wang",
+        "Longbing Cao",
+        "Kun Yu"
+      ],
+      "abstract": "Large Language Models (LLMs) hold significant promise for improving clinical decision support and reducing physician burnout by synthesizing complex, longitudinal cancer Electronic Health Records (EHRs). However, their implementation in this critical field faces three primary challenges: the inability to effectively process the extensive length and fragmented nature of patient records for accurate temporal analysis; a heightened risk of clinical hallucination, as conventional grounding techniques such as Retrieval-Augmented Generation (RAG) do not adequately incorporate process-oriented clinical guidelines; and unreliable evaluation metrics that hinder the validation of AI systems in oncology. To address these issues, we propose CliCARE, a framework for Grounding Large Language Models in Clinical Guidelines for Decision Support over Longitudinal Cancer Electronic Health Records. The framework operates by transforming unstructured, longitudinal EHRs into patient-specific Temporal Knowledge Graphs (TKGs) to capture long-range dependencies, and then grounding the decision support process by aligning these real-world patient trajectories with a normative guideline knowledge graph. This approach provides oncologists with evidence-grounded decision support by generating a high-fidelity clinical summary and an actionable recommendation. We validated our framework using large-scale, longitudinal data from a private Chinese cancer dataset and the public English MIMIC-IV dataset. In these settings, CliCARE significantly outperforms baselines, including leading long-context LLMs and Knowledge Graph-enhanced RAG methods. The clinical validity of our results is supported by a robust evaluation protocol, which demonstrates a high correlation with assessments made by oncologists.",
+      "published": "2025-07-30",
+      "updated": "2026-01-09",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2507.22533",
+      "pdf_url": "https://arxiv.org/pdf/2507.22533.pdf"
+    },
+    {
+      "id": "2507.14847",
+      "title": "Time-Aware Attention for Enhanced Electronic Health Records Modeling",
+      "authors": [
+        "Junhan Yu",
+        "Zhunyi Feng",
+        "Junwei Lu",
+        "Tianxi Cai",
+        "Doudou Zhou"
+      ],
+      "abstract": "Electronic Health Records (EHR) contain valuable clinical information for predicting patient outcomes and guiding healthcare decisions. However, effectively modeling Electronic Health Records (EHRs) requires addressing data heterogeneity and complex temporal patterns. Standard approaches often struggle with irregular time intervals between clinical events. We propose TALE-EHR, a Transformer-based framework featuring a novel time-aware attention mechanism that explicitly models continuous temporal gaps to capture fine-grained sequence dynamics. To complement this temporal modeling with robust semantics, TALE-EHR leverages embeddings derived from standardized code descriptions using a pre-trained Large Language Model (LLM), providing a strong foundation for understanding clinical concepts. Experiments on the MIMIC-IV and PIC dataset demonstrate that our approach outperforms state-of-the-art baselines on tasks such as disease progression forecasting. TALE-EHR underscores the benefit of integrating explicit, continuous temporal modeling with strong semantic representations provides a powerful solution for advancing EHR analysis.",
+      "published": "2025-07-20",
+      "updated": "2025-07-20",
+      "categories": [
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2507.14847",
+      "pdf_url": "https://arxiv.org/pdf/2507.14847.pdf"
+    },
+    {
+      "id": "2507.03433",
+      "title": "Improving Social Determinants of Health Documentation in French EHRs Using Large Language Models",
+      "authors": [
+        "Adrien Bazoge",
+        "Pacôme Constant dit Beaufils",
+        "Mohammed Hmitouch",
+        "Romain Bourcier",
+        "Emmanuel Morin",
+        "Richard Dufour",
+        "Béatrice Daille",
+        "Pierre-Antoine Gourraud",
+        "Matilde Karakachoff"
+      ],
+      "abstract": "Social determinants of health (SDoH) significantly influence health outcomes, shaping disease progression, treatment adherence, and health disparities. However, their documentation in structured electronic health records (EHRs) is often incomplete or missing. This study presents an approach based on large language models (LLMs) for extracting 13 SDoH categories from French clinical notes. We trained Flan-T5-Large on annotated social history sections from clinical notes at Nantes University Hospital, France. We evaluated the model at two levels: (i) identification of SDoH categories and associated values, and (ii) extraction of detailed SDoH with associated temporal and quantitative information. The model performance was assessed across four datasets, including two that we publicly release as open resources. The model achieved strong performance for identifying well-documented categories such as living condition, marital status, descendants, job, tobacco, and alcohol use (F1 score > 0.80). Performance was lower for categories with limited training data or highly variable expressions, such as employment status, housing, physical activity, income, and education. Our model identified 95.8% of patients with at least one SDoH, compared to 2.8% for ICD-10 codes from structured EHR data. Our error analysis showed that performance limitations were linked to annotation inconsistencies, reliance on English-centric tokenizer, and reduced generalizability due to the model being trained on social history sections only. These results demonstrate the effectiveness of NLP in improving the completeness of real-world SDoH data in a non-English EHR system.",
+      "published": "2025-07-04",
+      "updated": "2025-07-04",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2507.03433",
+      "pdf_url": "https://arxiv.org/pdf/2507.03433.pdf"
+    },
+    {
+      "id": "2507.02998",
+      "title": "A Weakly Supervised Transformer for Rare Disease Diagnosis and Subphenotyping from EHRs with Pulmonary Case Studies",
+      "authors": [
+        "Kimberly F. Greco",
+        "Zongxin Yang",
+        "Mengyan Li",
+        "Han Tong",
+        "Sara Morini Sweet",
+        "Alon Geva",
+        "Kenneth D. Mandl",
+        "Benjamin A. Raby",
+        "Tianxi Cai"
+      ],
+      "abstract": "Rare diseases affect an estimated 300-400 million people worldwide, yet individual conditions remain underdiagnosed and poorly characterized due to their low prevalence and limited clinician familiarity. Computational phenotyping offers a scalable approach to improving rare disease detection, but algorithm development is hindered by the scarcity of high-quality labeled data for training. Expert-labeled datasets from chart reviews and registries are clinically accurate but limited in scope and availability, whereas labels derived from electronic health records (EHRs) provide broader coverage but are often noisy or incomplete. To address these challenges, we propose WEST (WEakly Supervised Transformer for rare disease phenotyping and subphenotyping from EHRs), a framework that combines routinely collected EHR data with a limited set of expert-validated cases and controls to enable large-scale phenotyping. At its core, WEST employs a weakly supervised transformer model trained on extensive probabilistic silver-standard labels - derived from both structured and unstructured EHR features - that are iteratively refined during training to improve model calibration. We evaluate WEST on two rare pulmonary diseases using EHR data from Boston Children's Hospital and show that it outperforms existing methods in phenotype classification, identification of clinically meaningful subphenotypes, and prediction of disease progression. By reducing reliance on manual annotation, WEST enables data-efficient rare disease phenotyping that improves cohort definition, supports earlier and more accurate diagnosis, and accelerates data-driven discovery for the rare disease community.",
+      "published": "2025-07-01",
+      "updated": "2025-10-16",
+      "categories": [
+        "cs.LG",
+        "cs.CL",
+        "stat.ML"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2507.02998",
+      "pdf_url": "https://arxiv.org/pdf/2507.02998.pdf"
+    },
+    {
+      "id": "2506.23358",
+      "title": "Federated Timeline Synthesis: Scalable and Private Methodology For Model Training and Deployment",
+      "authors": [
+        "Pawel Renc",
+        "Michal K. Grzeszczyk",
+        "Linglong Qian",
+        "Nassim Oufattole",
+        "Jeff Rasley",
+        "Arkadiusz Sitek"
+      ],
+      "abstract": "We present Federated Timeline Synthesis (FTS), a novel framework for training generative foundation models across distributed timeseries data applied to electronic health records (EHR). At its core, FTS represents patient history as tokenized Patient Health Timelines (PHTs), language-agnostic sequences encoding temporal, categorical, and continuous clinical information. Each institution trains an autoregressive transformer on its local PHTs and transmits only model weights to a central server. The server uses the generators to synthesize a large corpus of trajectories and train a Global Generator (GG), enabling zero-shot inference via Monte Carlo simulation of future PHTs. We evaluate FTS on five clinically meaningful prediction tasks using MIMIC-IV data, showing that models trained on synthetic data generated by GG perform comparably to those trained on real data. FTS offers strong privacy guarantees, scalability across institutions, and extensibility to diverse prediction and simulation tasks especially in healthcare, including counterfactual inference, early warning detection, and synthetic trial design.",
+      "published": "2025-06-29",
+      "updated": "2025-06-29",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2506.23358",
+      "pdf_url": "https://arxiv.org/pdf/2506.23358.pdf"
+    },
+    {
+      "id": "2506.15809",
+      "title": "DeepJ: Graph Convolutional Transformers with Differentiable Pooling for Patient Trajectory Modeling",
+      "authors": [
+        "Deyi Li",
+        "Zijun Yao",
+        "Muxuan Liang",
+        "Mei Liu"
+      ],
+      "abstract": "In recent years, graph learning has gained significant interest for modeling complex interactions among medical events in structured Electronic Health Record (EHR) data. However, existing graph-based approaches often work in a static manner, either restricting interactions within individual encounters or collapsing all historical encounters into a single snapshot. As a result, when it is necessary to identify meaningful groups of medical events spanning longitudinal encounters, existing methods are inadequate in modeling interactions cross encounters while accounting for temporal dependencies. To address this limitation, we introduce Deep Patient Journey (DeepJ), a novel graph convolutional transformer model with differentiable graph pooling to effectively capture intra-encounter and inter-encounter medical event interactions. DeepJ can identify groups of temporally and functionally related medical events, offering valuable insights into key event clusters pertinent to patient outcome prediction. DeepJ significantly outperformed five state-of-the-art baseline models while enhancing interpretability, demonstrating its potential for improved patient risk stratification.",
+      "published": "2025-06-18",
+      "updated": "2025-06-18",
+      "categories": [
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2506.15809",
+      "pdf_url": "https://arxiv.org/pdf/2506.15809.pdf"
+    },
+    {
+      "id": "2506.15118",
+      "title": "CKD-EHR:Clinical Knowledge Distillation for Electronic Health Records",
+      "authors": [
+        "Junke Wang",
+        "Hongshun Ling",
+        "Li Zhang",
+        "Longqian Zhang",
+        "Fang Wang",
+        "Yuan Gao",
+        "Zhi Li"
+      ],
+      "abstract": "Electronic Health Records (EHR)-based disease prediction models have demonstrated significant clinical value in promoting precision medicine and enabling early intervention. However, existing large language models face two major challenges: insufficient representation of medical knowledge and low efficiency in clinical deployment. To address these challenges, this study proposes the CKD-EHR (Clinical Knowledge Distillation for EHR) framework, which achieves efficient and accurate disease risk prediction through knowledge distillation techniques. Specifically, the large language model Qwen2.5-7B is first fine-tuned on medical knowledge-enhanced data to serve as the teacher model.It then generates interpretable soft labels through a multi-granularity attention distillation mechanism. Finally, the distilled knowledge is transferred to a lightweight BERT student model. Experimental results show that on the MIMIC-III dataset, CKD-EHR significantly outperforms the baseline model:diagnostic accuracy is increased by 9%, F1-score is improved by 27%, and a 22.2 times inference speedup is achieved. This innovative solution not only greatly improves resource utilization efficiency but also significantly enhances the accuracy and timeliness of diagnosis, providing a practical technical approach for resource optimization in clinical settings. The code and data for this research are available athttps://github.com/209506702/CKD_EHR.",
+      "published": "2025-06-18",
+      "updated": "2025-06-18",
+      "categories": [
+        "cs.CL"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2506.15118",
+      "pdf_url": "https://arxiv.org/pdf/2506.15118.pdf"
+    },
+    {
+      "id": "2506.04831",
+      "title": "From EHRs to Patient Pathways: Scalable Modeling of Longitudinal Health Trajectories with LLMs",
+      "authors": [
+        "Chantal Pellegrini",
+        "Ege Özsoy",
+        "David Bani-Harouni",
+        "Matthias Keicher",
+        "Nassir Navab"
+      ],
+      "abstract": "Healthcare systems face significant challenges in managing and interpreting vast, heterogeneous patient data for personalized care. Existing approaches often focus on narrow use cases with a limited feature space, overlooking the complex, longitudinal interactions needed for a holistic understanding of patient health. In this work, we propose a novel approach to patient pathway modeling by transforming diverse electronic health record (EHR) data into a structured representation and designing a holistic pathway prediction model, EHR2Path, optimized to predict future health trajectories. Further, we introduce a novel summary mechanism that embeds long-term temporal context into topic-specific summary tokens, improving performance over text-only models, while being much more token-efficient. EHR2Path demonstrates strong performance in both next time-step prediction and longitudinal simulation, outperforming competitive baselines. It enables detailed simulations of patient trajectories, inherently targeting diverse evaluation tasks, such as forecasting vital signs, lab test results, or length-of-stay, opening a path towards predictive and personalized healthcare.",
+      "published": "2025-06-05",
+      "updated": "2025-06-05",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2506.04831",
+      "pdf_url": "https://arxiv.org/pdf/2506.04831.pdf"
+    },
+    {
+      "id": "2506.00209",
+      "title": "Intercept Cancer: Cancer Pre-Screening with Large Scale Healthcare Foundation Models",
+      "authors": [
+        "Liwen Sun",
+        "Hao-Ren Yao",
+        "Gary Gao",
+        "Ophir Frieder",
+        "Chenyan Xiong"
+      ],
+      "abstract": "Cancer screening, leading to early detection, saves lives. Unfortunately, existing screening techniques require expensive and intrusive medical procedures, not globally available, resulting in too many lost would-be-saved lives. We present CATCH-FM, CATch Cancer early with Healthcare Foundation Models, a cancer pre-screening methodology that identifies high-risk patients for further screening solely based on their historical medical records. With millions of electronic healthcare records (EHR), we establish the scaling law of EHR foundation models pretrained on medical code sequences, pretrain compute-optimal foundation models of up to 2.4 billion parameters, and finetune them on clinician-curated cancer risk prediction cohorts. In our retrospective evaluation comprising of thirty thousand patients, CATCH-FM achieves strong efficacy, with 50% sensitivity in predicting first cancer risks at 99% specificity cutoff, and outperforming feature-based tree models and both general and medical LLMs by up to 20% AUPRC. Despite significant demographic, healthcare system, and EHR coding differences, CATCH-FM achieves state-of-the-art pancreatic cancer risk prediction on the EHRSHOT few-shot leaderboard, outperforming EHR foundation models pretrained using on-site patient data. Our analysis demonstrates the robustness of CATCH-FM in various patient distributions, the benefits of operating in the ICD code space, and its ability to capture non-trivial cancer risk factors. Our code will be open-sourced.",
+      "published": "2025-05-30",
+      "updated": "2025-09-26",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2506.00209",
+      "pdf_url": "https://arxiv.org/pdf/2506.00209.pdf"
+    },
+    {
+      "id": "2505.21680",
+      "title": "multivariateGPT: a decoder-only transformer for multivariate categorical and numeric data",
+      "authors": [
+        "Andrew J. Loza",
+        "Jun Yup Kim",
+        "Shangzheng Song",
+        "Yihang Liu",
+        "Joseph J. Y. Sung",
+        "R Andrew Taylor",
+        "Dennis L. Shung"
+      ],
+      "abstract": "Real-world processes often generate data that are a mix of categorical and numeric values that are recorded at irregular and informative intervals. Discrete token-based approaches are limited in numeric representation capacity while methods like neural ordinary differential equations are not well suited for categorical data or informative sampling and require augmentation to handle certain classes of trajectories. Here, we present multivariateGPT, a single architecture for modeling sequences of mixed categorical (including tokenized text) and numeric data. This is accomplished with an autoregressive sequence decomposition, embedding scheme, and loss function that extend the next token prediction task to likelihood estimation of the joint distribution of next token class and value. We demonstrate how this approach can efficiently learn to generalize patterns in simple physical systems and model complex time series including electrocardiograms and multivariate electronic health record data. This work extends the utility of transformer based models to additional classes of data.",
+      "published": "2025-05-27",
+      "updated": "2025-05-29",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2505.21680",
+      "pdf_url": "https://arxiv.org/pdf/2505.21680.pdf"
+    },
+    {
+      "id": "2505.18246",
+      "title": "Will Large Language Models Transform Clinical Prediction?",
+      "authors": [
+        "Yusuf Yildiz",
+        "Goran Nenadic",
+        "Meghna Jani",
+        "David A. Jenkins"
+      ],
+      "abstract": "Objective: Large language models (LLMs) are attracting increasing interest in healthcare. This commentary evaluates the potential of LLMs to improve clinical prediction models (CPMs) for diagnostic and prognostic tasks, with a focus on their ability to process longitudinal electronic health record (EHR) data. Findings: LLMs show promise in handling multimodal and longitudinal EHR data and can support multi-outcome predictions for diverse health conditions. However, methodological, validation, infrastructural, and regulatory chal- lenges remain. These include inadequate methods for time-to-event modelling, poor calibration of predictions, limited external validation, and bias affecting underrepresented groups. High infrastructure costs and the absence of clear regulatory frameworks further prevent adoption. Implications: Further work and interdisciplinary collaboration are needed to support equitable and effective integra- tion into the clinical prediction. Developing temporally aware, fair, and explainable models should be a priority focus for transforming clinical prediction workflow.",
+      "published": "2025-05-23",
+      "updated": "2025-11-06",
+      "categories": [
+        "cs.CY",
+        "cs.CL"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2505.18246",
+      "pdf_url": "https://arxiv.org/pdf/2505.18246.pdf"
+    },
+    {
+      "id": "2504.21795",
+      "title": "Balancing Interpretability and Flexibility in Modeling Diagnostic Trajectories with an Embedded Neural Hawkes Process Model",
+      "authors": [
+        "Yuankang Zhao",
+        "Matthew Engelhard"
+      ],
+      "abstract": "The Hawkes process (HP) is commonly used to model event sequences with self-reinforcing dynamics, including electronic health records (EHRs). Traditional HPs capture self-reinforcement via parametric impact functions that can be inspected to understand how each event modulates the intensity of others. Neural network-based HPs offer greater flexibility, resulting in improved fit and prediction performance, but at the cost of interpretability, which is often critical in healthcare. In this work, we aim to understand and improve upon this tradeoff. We propose a novel HP formulation in which impact functions are modeled by defining a flexible impact kernel, instantiated as a neural network, in event embedding space, which allows us to model large-scale event sequences with many event types. This approach is more flexible than traditional HPs yet more interpretable than other neural network approaches, and allows us to explicitly trade flexibility for interpretability by adding transformer encoder layers to further contextualize the event embeddings. Results show that our method accurately recovers impact functions in simulations, achieves competitive performance on MIMIC-IV procedure dataset, and gains clinically meaningful interpretation on Duke-EHR with children diagnosis dataset even without transformer layers. This suggests that our flexible impact kernel is often sufficient to capture self-reinforcing dynamics in EHRs and other data effectively, implying that interpretability can be maintained without loss of performance.",
+      "published": "2025-04-30",
+      "updated": "2025-08-17",
+      "categories": [
+        "stat.ML",
+        "cs.LG",
+        "stat.AP"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2504.21795",
+      "pdf_url": "https://arxiv.org/pdf/2504.21795.pdf"
+    },
+    {
+      "id": "2504.12350",
+      "title": "A Large-Language Model Framework for Relative Timeline Extraction from PubMed Case Reports",
+      "authors": [
+        "Jing Wang",
+        "Jeremy C Weiss"
+      ],
+      "abstract": "Timing of clinical events is central to characterization of patient trajectories, enabling analyses such as process tracing, forecasting, and causal reasoning. However, structured electronic health records capture few data elements critical to these tasks, while clinical reports lack temporal localization of events in structured form. We present a system that transforms case reports into textual time series-structured pairs of textual events and timestamps. We contrast manual and large language model (LLM) annotations (n=320 and n=390 respectively) of ten randomly-sampled PubMed open-access (PMOA) case reports (N=152,974) and assess inter-LLM agreement (n=3,103; N=93). We find that the LLM models have moderate event recall(O1-preview: 0.80) but high temporal concordance among identified events (O1-preview: 0.95). By establishing the task, annotation, and assessment systems, and by demonstrating high concordance, this work may serve as a benchmark for leveraging the PMOA corpus for temporal analytics.",
+      "published": "2025-04-15",
+      "updated": "2025-04-15",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2504.12350",
+      "pdf_url": "https://arxiv.org/pdf/2504.12350.pdf"
+    },
+    {
+      "id": "2504.10422",
+      "title": "Foundation models for electronic health records: representation dynamics and transferability",
+      "authors": [
+        "Michael C. Burkhart",
+        "Bashar Ramadan",
+        "Zewei Liao",
+        "Kaveri Chhikara",
+        "Juan C. Rojas",
+        "William F. Parker",
+        "Brett K. Beaulieu-Jones"
+      ],
+      "abstract": "Foundation models (FMs) trained on electronic health records (EHRs) have shown strong performance on a range of clinical prediction tasks. However, adapting these models to local health systems remains challenging due to limited data availability and resource constraints. In this study, we investigated what these models learn and evaluated the transferability of an FM trained on MIMIC-IV to an institutional EHR dataset at the University of Chicago Medical Center. We assessed their ability to identify outlier patients and examined representation-space patient trajectories in relation to future clinical outcomes. We also evaluated the performance of supervised fine-tuned classifiers on both source and target datasets. Our findings offer insights into the adaptability of FMs across different healthcare systems, highlight considerations for their effective implementation, and provide an empirical analysis of the underlying factors that contribute to their predictive performance.",
+      "published": "2025-04-14",
+      "updated": "2025-04-14",
+      "categories": [
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2504.10422",
+      "pdf_url": "https://arxiv.org/pdf/2504.10422.pdf"
+    }
+  ]
+}

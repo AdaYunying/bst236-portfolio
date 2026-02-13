@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pac-Man: Valentine's Edition 💘</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a12;
+            color: #e0e0f0;
+            font-family: 'Rajdhani', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #ff69b4;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .back-link:hover {
+            color: #00f0ff;
+            text-shadow: 0 0 10px #00f0ff;
+        }
+
+        h1 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+            background: linear-gradient(90deg, #ff69b4, #ff1493, #ff69b4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.4;
+        }
+
+        .game-container {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .game-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .instructions-panel {
+            width: 280px;
+            background: rgba(12, 12, 25, 0.8);
+            border: 1px solid rgba(255, 105, 180, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            color: #e0e0f0;
+        }
+
+        .instructions-panel h3 {
+            color: #ff69b4;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .instruction-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .instruction-icon {
+            font-size: 28px;
+            min-width: 35px;
+            text-align: center;
+        }
+
+        .instruction-content strong {
+            display: block;
+            color: #00f0ff;
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+
+        .instruction-content p {
+            font-size: 0.9em;
+            color: #b0b0c0;
+            margin: 3px 0;
+            line-height: 1.4;
+        }
+
+        .instruction-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 105, 180, 0.3), transparent);
+            margin: 15px 0;
+        }
+
+        #gameCanvas {
+            border: 2px solid #ff69b4;
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+            background: #0a0a12;
+        }
+
+        .ui-panel {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            padding: 15px 30px;
+            background: rgba(12, 12, 25, 0.8);
+            border: 1px solid rgba(255, 105, 180, 0.3);
+            border-radius: 10px;
+            min-width: 560px;
+        }
+
+        .score, .lives {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .score-label, .lives-label {
+            color: #ff69b4;
+            font-weight: bold;
+        }
+
+        .score-value {
+            color: #00f0ff;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .hearts {
+            display: flex;
+            gap: 5px;
+            font-size: 20px;
+        }
+
+        .power-timer {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            min-width: 150px;
+        }
+
+        .power-timer-label {
+            color: #ff69b4;
+            font-size: 14px;
+        }
+
+        .power-timer-bar {
+            width: 100%;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .power-timer-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff69b4, #ff1493);
+            width: 0%;
+            transition: width 0.1s linear;
+            box-shadow: 0 0 10px #ff69b4;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="back-link">← Back to Home</a>
+
+    <h1>Pac-Man: Valentine's Edition 💘</h1>
+
+    <div class="game-container">
+        <div class="game-area">
+            <canvas id="gameCanvas" width="560" height="620"></canvas>
+
+            <div class="ui-panel">
+                <div class="score">
+                    <span class="score-label">Score:</span>
+                    <span class="score-value" id="scoreDisplay">0</span>
+                </div>
+                <div class="lives">
+                    <span class="lives-label">Lives:</span>
+                    <div class="hearts" id="heartsDisplay"></div>
+                </div>
+                <div class="power-timer" id="powerTimer" style="visibility: hidden;">
+                    <span class="power-timer-label">Power-Up</span>
+                    <div class="power-timer-bar">
+                        <div class="power-timer-fill" id="powerTimerFill"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions-panel">
+            <h3>🎮 How to Play</h3>
+
+            <div class="instruction-item">
+                <div class="instruction-icon">⌨️</div>
+                <div class="instruction-content">
+                    <strong>Controls</strong>
+                    <p>↑ ↓ ← → Arrow Keys - Move</p>
+                    <p>P / ESC - Pause</p>
+                    <p>Q - Quit (when paused)</p>
+                </div>
+            </div>
+
+            <div class="instruction-divider"></div>
+
+            <div class="instruction-item">
+                <div class="instruction-icon">🎯</div>
+                <div class="instruction-content">
+                    <strong>Objectives</strong>
+                    <p>Eat all white pellets to win</p>
+                    <p>Avoid ghosts (or eat them!)</p>
+                    <p>Score as many points as you can</p>
+                </div>
+            </div>
+
+
+            <div class="instruction-divider"></div>
+
+            <div class="instruction-item">
+                <div class="instruction-icon">🌹</div>
+                <div class="instruction-content">
+                    <strong>Power-Up (8s)</strong>
+                    <p>Collect roses for power mode</p>
+                    <p>Shoot hearts automatically</p>
+                    <p>Eat ghosts on contact!</p>
+                </div>
+            </div>
+
+            <div class="instruction-divider"></div>
+
+            <!-- <div class="instruction-item">
+                <div class="instruction-icon">👻</div>
+                <div class="instruction-content">
+                    <strong>Ghosts</strong>
+                    <p>🔴 Red - Chases you directly</p>
+                    <p>🔵 Cyan - Ambushes ahead</p>
+                    <p>🟠 Orange - Moves randomly</p>
+                </div>
+            </div> -->
+
+            <div class="instruction-divider"></div>
+
+            <div class="instruction-item">
+                <div class="instruction-icon">💯</div>
+                <div class="instruction-content">
+                    <strong>Scoring</strong>
+                    <p>Pellet: 10 pts</p>
+                    <p>Rose: 50 pts</p>
+                    <p>Ghost: 200 pts</p>
+                    <p>Win bonus: 1000 pts</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const scoreDisplay = document.getElementById('scoreDisplay');
+        const heartsDisplay = document.getElementById('heartsDisplay');
+        const powerTimer = document.getElementById('powerTimer');
+        const powerTimerFill = document.getElementById('powerTimerFill');
+
+        // 游戏常量
+        const TILE_SIZE = 20;
+        const MAZE_WIDTH = 28;
+        const MAZE_HEIGHT = 31;
+        const PACMAN_SPEED = 0.15;  // 每毫秒移动像素数 (约90像素/秒)
+        const GHOST_SPEED = 0.09;   // 每毫秒移动像素数 (约54像素/秒)
+        const HEART_SPEED = 0.3;    // 每毫秒移动像素数 (约180像素/秒)
+        const POWER_UP_DURATION = 8000;
+        const ROSE_SPAWN_MIN = 10000;  // 提前出现：15000 -> 10000
+        const ROSE_SPAWN_MAX = 15000;  // 调整：20000 -> 15000
+        const ROSE_DESPAWN = 10000;
+        const HEART_FIRE_INTERVAL = 500;
+
+        // 迷宫布局 (0=墙, 1=路径+豆子, 2=路径无豆子, 3=鬼屋)
+        const ORIGINAL_MAZE = [
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,0],
+            [0,1,0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,1,0],
+            [0,1,0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,1,0],
+            [0,1,0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,1,0],
+            [0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0],
+            [0,1,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,1,0],
+            [0,1,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,1,0],
+            [0,1,1,1,1,1,1,0,0,1,1,1,1,0,0,1,1,1,1,0,0,1,1,1,1,1,1,0],
+            [0,0,0,0,0,0,1,0,0,0,0,0,2,0,0,2,0,0,0,0,0,1,0,0,0,0,0,0],
+            [0,0,0,0,0,0,1,0,0,0,0,0,2,0,0,2,0,0,0,0,0,1,0,0,0,0,0,0],
+            [0,0,0,0,0,0,1,0,0,2,2,2,2,2,2,2,2,2,2,0,0,1,0,0,0,0,0,0],
+            [0,0,0,0,0,0,1,0,0,2,0,0,0,3,3,0,0,0,2,0,0,1,0,0,0,0,0,0],
+            [0,0,0,0,0,0,1,0,0,2,0,3,3,3,3,3,3,0,2,0,0,1,0,0,0,0,0,0],
+            [2,2,2,2,2,2,1,2,2,2,0,3,3,3,3,3,3,0,2,2,2,1,2,2,2,2,2,2],
+            [0,0,0,0,0,0,1,0,0,2,0,3,3,3,3,3,3,0,2,0,0,1,0,0,0,0,0,0],
+            [0,0,0,0,0,0,1,0,0,2,0,0,0,0,0,0,0,0,2,0,0,1,0,0,0,0,0,0],
+            [0,0,0,0,0,0,1,0,0,2,2,2,2,2,2,2,2,2,2,0,0,1,0,0,0,0,0,0],
+            [0,0,0,0,0,0,1,0,0,2,0,0,0,0,0,0,0,0,2,0,0,1,0,0,0,0,0,0],
+            [0,0,0,0,0,0,1,0,0,2,0,0,0,0,0,0,0,0,2,0,0,1,0,0,0,0,0,0],
+            [0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,0],
+            [0,1,0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,1,0],
+            [0,1,0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,1,0],
+            [0,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,0],
+            [0,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0],
+            [0,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0],
+            [0,1,1,1,1,1,1,0,0,1,1,1,1,0,0,1,1,1,1,0,0,1,1,1,1,1,1,0],
+            [0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0],
+            [0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0],
+            [0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        ];
+
+        // 工作副本（会被修改）
+        let maze = [];
+
+        // 游戏状态
+        let gameState = {
+            screen: 'start', // start, playing, gameover, win
+            score: 0,
+            lives: 5,
+            pelletsRemaining: 0,
+            frame: 0,
+            lastTime: 0
+        };
+
+        // 吃豆人
+        let pacman = {
+            gridX: 14,
+            gridY: 23,
+            pixelX: 14 * TILE_SIZE,
+            pixelY: 23 * TILE_SIZE,
+            direction: 'right',
+            nextDirection: null,
+            speed: PACMAN_SPEED,
+            mouthAngle: 0,
+            mouthOpen: true,
+            powered: false,
+            powerEndTime: 0,     // 能量结束的绝对时间戳
+            lastHeartTime: 0
+        };
+
+        // 鬼魂
+        let ghosts = [
+            {
+                name: 'red',
+                color: '#FF0000',
+                gridX: 14,
+                gridY: 14,
+                pixelX: 14 * TILE_SIZE,
+                pixelY: 14 * TILE_SIZE,
+                direction: 'up',
+                speed: GHOST_SPEED,
+                aiType: 'chase',
+                mode: 'leaving',  // 初始状态：离开鬼屋
+                respawnTimer: 0
+            },
+            {
+                name: 'cyan',
+                color: '#00FFFF',
+                gridX: 13,
+                gridY: 14,
+                pixelX: 13 * TILE_SIZE,
+                pixelY: 14 * TILE_SIZE,
+                direction: 'up',
+                speed: GHOST_SPEED,
+                aiType: 'ambush',
+                mode: 'leaving',  // 初始状态：离开鬼屋
+                respawnTimer: 1000
+            },
+            {
+                name: 'orange',
+                color: '#FFA500',
+                gridX: 15,
+                gridY: 14,
+                pixelX: 15 * TILE_SIZE,
+                pixelY: 14 * TILE_SIZE,
+                direction: 'up',
+                speed: GHOST_SPEED,
+                aiType: 'random',
+                mode: 'leaving',  // 初始状态：离开鬼屋
+                respawnTimer: 2000
+            }
+        ];
+
+        // 玫瑰道具
+        let rose = {
+            active: false,
+            gridX: 0,
+            gridY: 0,
+            spawnTimer: ROSE_SPAWN_MIN + Math.random() * (ROSE_SPAWN_MAX - ROSE_SPAWN_MIN),
+            despawnTimer: 0,
+            glowPhase: 0
+        };
+
+        // 心形投射物数组
+        let hearts = [];
+
+        // 方向向量
+        const DIRECTIONS = {
+            'up': { x: 0, y: -1 },
+            'down': { x: 0, y: 1 },
+            'left': { x: -1, y: 0 },
+            'right': { x: 1, y: 0 }
+        };
+
+        // 重置迷宫（恢复所有豆子）
+        function resetMaze() {
+            // 深拷贝原始迷宫
+            maze = ORIGINAL_MAZE.map(row => [...row]);
+
+            // 重新计算豆子数量
+            gameState.pelletsRemaining = 0;
+            for (let y = 0; y < MAZE_HEIGHT; y++) {
+                for (let x = 0; x < MAZE_WIDTH; x++) {
+                    if (maze[y][x] === 1) {
+                        gameState.pelletsRemaining++;
+                    }
+                }
+            }
+        }
+
+        // 初始化游戏
+        function init() {
+            // 初始化迷宫
+            resetMaze();
+
+            updateUI();
+            gameLoop(0);
+        }
+
+        // 更新UI显示
+        function updateUI() {
+            scoreDisplay.textContent = gameState.score;
+            heartsDisplay.innerHTML = '❤️'.repeat(gameState.lives);
+
+            if (pacman.powered) {
+                powerTimer.style.visibility = 'visible';
+                const remaining = Math.max(0, pacman.powerEndTime - Date.now());
+                const percent = (remaining / POWER_UP_DURATION) * 100;
+                powerTimerFill.style.width = percent + '%';
+            } else {
+                powerTimer.style.visibility = 'hidden';
+            }
+        }
+
+        // 键盘输入
+        document.addEventListener('keydown', (e) => {
+            if (gameState.screen === 'start' && e.key === 'Enter') {
+                startGame();
+            } else if ((gameState.screen === 'gameover' || gameState.screen === 'win') && e.key === 'Enter') {
+                restartGame();
+            } else if (gameState.screen === 'playing') {
+                // 暂停
+                if (e.key === 'p' || e.key === 'P' || e.key === 'Escape') {
+                    e.preventDefault();
+                    gameState.screen = 'paused';
+                }
+                // 方向控制
+                else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    pacman.nextDirection = 'up';
+                } else if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    pacman.nextDirection = 'down';
+                } else if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    pacman.nextDirection = 'left';
+                } else if (e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    pacman.nextDirection = 'right';
+                }
+            } else if (gameState.screen === 'paused') {
+                // 恢复游戏
+                if (e.key === 'p' || e.key === 'P' || e.key === 'Escape') {
+                    e.preventDefault();
+                    gameState.screen = 'playing';
+                }
+                // 退出到开始屏幕
+                else if (e.key === 'q' || e.key === 'Q') {
+                    e.preventDefault();
+                    gameState.screen = 'start';
+                }
+            }
+        });
+
+        // 鼠标点击
+        canvas.addEventListener('click', () => {
+            if (gameState.screen === 'start') {
+                startGame();
+            } else if (gameState.screen === 'gameover' || gameState.screen === 'win') {
+                restartGame();
+            }
+        });
+
+        // 开始游戏
+        function startGame() {
+            gameState.screen = 'playing';
+            gameState.score = 0;
+            gameState.lives = 5;
+
+            // 重置迷宫（恢复所有豆子）
+            resetMaze();
+
+            resetPositions();
+            updateUI();
+        }
+
+        // 重置位置
+        function resetPositions() {
+            pacman.gridX = 14;
+            pacman.gridY = 23;
+            pacman.pixelX = 14 * TILE_SIZE;
+            pacman.pixelY = 23 * TILE_SIZE;
+            pacman.direction = 'right';
+            pacman.nextDirection = null;
+            pacman.powered = false;
+            pacman.powerEndTime = 0;
+
+            ghosts[0].gridX = 14;
+            ghosts[0].gridY = 14;
+            ghosts[0].pixelX = 14 * TILE_SIZE;
+            ghosts[0].pixelY = 14 * TILE_SIZE;
+            ghosts[0].mode = 'leaving';
+
+            ghosts[1].gridX = 13;
+            ghosts[1].gridY = 14;
+            ghosts[1].pixelX = 13 * TILE_SIZE;
+            ghosts[1].pixelY = 14 * TILE_SIZE;
+            ghosts[1].mode = 'leaving';
+
+            ghosts[2].gridX = 15;
+            ghosts[2].gridY = 14;
+            ghosts[2].pixelX = 15 * TILE_SIZE;
+            ghosts[2].pixelY = 14 * TILE_SIZE;
+            ghosts[2].mode = 'leaving';
+
+            hearts = [];
+        }
+
+        // 重新开始
+        function restartGame() {
+            startGame();
+        }
+
+        // 检查是否可以移动到某个格子
+        function canMove(gridX, gridY) {
+            // 处理隧道环绕
+            let x = gridX;
+            let y = gridY;
+
+            if (x < 0) x = MAZE_WIDTH - 1;
+            if (x >= MAZE_WIDTH) x = 0;
+            if (y < 0) y = MAZE_HEIGHT - 1;
+            if (y >= MAZE_HEIGHT) y = 0;
+
+            return maze[y][x] !== 0;
+        }
+
+        // 检查实体是否在网格中心
+        function isAtGridCenter(entity) {
+            const targetX = entity.gridX * TILE_SIZE;
+            const targetY = entity.gridY * TILE_SIZE;
+            return Math.abs(entity.pixelX - targetX) < 1 && Math.abs(entity.pixelY - targetY) < 1;
+        }
+
+        // 更新吃豆人
+        function updatePacman(deltaTime) {
+            const targetX = pacman.gridX * TILE_SIZE;
+            const targetY = pacman.gridY * TILE_SIZE;
+
+            // 检查是否到达目标（增加容差防止浮点误差）
+            const tolerance = 0.5;
+            const reachedX = Math.abs(pacman.pixelX - targetX) < tolerance;
+            const reachedY = Math.abs(pacman.pixelY - targetY) < tolerance;
+
+            // 如果还在移动中，继续移动
+            if (!reachedX || !reachedY) {
+                const movement = pacman.speed * deltaTime;
+                if (!reachedX) {
+                    if (pacman.pixelX < targetX) {
+                        pacman.pixelX = Math.min(pacman.pixelX + movement, targetX);
+                    } else {
+                        pacman.pixelX = Math.max(pacman.pixelX - movement, targetX);
+                    }
+                }
+
+                if (!reachedY) {
+                    if (pacman.pixelY < targetY) {
+                        pacman.pixelY = Math.min(pacman.pixelY + movement, targetY);
+                    } else {
+                        pacman.pixelY = Math.max(pacman.pixelY - movement, targetY);
+                    }
+                }
+                return; // 还在移动中，不做其他处理
+            }
+
+            // 完全到达目标，强制对齐（防止浮点误差累积）
+            pacman.pixelX = targetX;
+            pacman.pixelY = targetY;
+
+            // 尝试应用缓冲的方向
+            if (pacman.nextDirection) {
+                const dir = DIRECTIONS[pacman.nextDirection];
+                if (canMove(pacman.gridX + dir.x, pacman.gridY + dir.y)) {
+                    pacman.direction = pacman.nextDirection;
+                    pacman.nextDirection = null;
+                }
+            }
+
+            // 继续当前方向移动
+            const dir = DIRECTIONS[pacman.direction];
+            let nextX = pacman.gridX + dir.x;
+            let nextY = pacman.gridY + dir.y;
+
+            // 隧道环绕
+            if (nextX < 0) nextX = MAZE_WIDTH - 1;
+            if (nextX >= MAZE_WIDTH) nextX = 0;
+            if (nextY < 0) nextY = MAZE_HEIGHT - 1;
+            if (nextY >= MAZE_HEIGHT) nextY = 0;
+
+            if (canMove(nextX, nextY)) {
+                pacman.gridX = nextX;
+                pacman.gridY = nextY;
+            }
+
+            // 嘴巴动画
+            pacman.mouthAngle += 0.15;
+            if (pacman.mouthAngle > Math.PI * 2) {
+                pacman.mouthAngle = 0;
+            }
+
+            // 能量状态更新（使用绝对时间）
+            if (pacman.powered) {
+                const now = Date.now();
+
+                // 检查能量是否过期
+                if (now >= pacman.powerEndTime) {
+                    pacman.powered = false;
+                    pacman.powerEndTime = 0;
+                } else {
+                    // 发射心形
+                    if (now - pacman.lastHeartTime > HEART_FIRE_INTERVAL) {
+                        shootHeart();
+                        pacman.lastHeartTime = now;
+                    }
+                }
+            }
+        }
+
+        // 更新鬼魂
+        function updateGhost(ghost, deltaTime) {
+            // 如果在复活中
+            if (ghost.respawnTimer > 0) {
+                ghost.respawnTimer -= deltaTime;
+                return;
+            }
+
+            // 如果处于离开鬼屋状态
+            if (ghost.mode === 'leaving') {
+                const targetX = ghost.gridX * TILE_SIZE;
+                const targetY = ghost.gridY * TILE_SIZE;
+                const movement = ghost.speed * deltaTime;
+
+                // 移动到目标位置
+                if (ghost.pixelX < targetX) {
+                    ghost.pixelX = Math.min(ghost.pixelX + movement, targetX);
+                } else if (ghost.pixelX > targetX) {
+                    ghost.pixelX = Math.max(ghost.pixelX - movement, targetX);
+                }
+
+                if (ghost.pixelY < targetY) {
+                    ghost.pixelY = Math.min(ghost.pixelY + movement, targetY);
+                } else if (ghost.pixelY > targetY) {
+                    ghost.pixelY = Math.max(ghost.pixelY - movement, targetY);
+                }
+
+                if (isAtGridCenter(ghost)) {
+                    ghost.pixelX = targetX;
+                    ghost.pixelY = targetY;
+
+                    // 先移动到中心 X=14
+                    if (ghost.gridX < 14) {
+                        ghost.direction = 'right';
+                        ghost.gridX++;
+                    } else if (ghost.gridX > 14) {
+                        ghost.direction = 'left';
+                        ghost.gridX--;
+                    } else {
+                        // X 已对齐，向上移动
+                        ghost.direction = 'up';
+
+                        // 到达出口（Y=11）时切换到追逐模式
+                        if (ghost.gridY <= 11) {
+                            ghost.mode = 'chase';
+                        } else {
+                            ghost.gridY--;
+                        }
+                    }
+                }
+                return;
+            }
+
+            // 如果处于返回鬼屋状态
+            if (ghost.mode === 'eaten') {
+                const targetX = ghost.gridX * TILE_SIZE;
+                const targetY = ghost.gridY * TILE_SIZE;
+                const movement = ghost.speed * deltaTime * 2; // 被吃掉后移动更快
+
+                // 移动到目标位置
+                if (ghost.pixelX < targetX) {
+                    ghost.pixelX = Math.min(ghost.pixelX + movement, targetX);
+                } else if (ghost.pixelX > targetX) {
+                    ghost.pixelX = Math.max(ghost.pixelX - movement, targetX);
+                }
+
+                if (ghost.pixelY < targetY) {
+                    ghost.pixelY = Math.min(ghost.pixelY + movement, targetY);
+                } else if (ghost.pixelY > targetY) {
+                    ghost.pixelY = Math.max(ghost.pixelY - movement, targetY);
+                }
+
+                if (isAtGridCenter(ghost)) {
+                    if (ghost.gridX === 14 && ghost.gridY === 14) {
+                        ghost.mode = 'leaving';  // 复活后重新离开鬼屋
+                        ghost.respawnTimer = 3000;
+                    } else {
+                        // 朝鬼屋移动
+                        ghost.direction = getDirectionTo(ghost, { gridX: 14, gridY: 14 });
+                        const dir = DIRECTIONS[ghost.direction];
+                        ghost.gridX += dir.x;
+                        ghost.gridY += dir.y;
+                    }
+                }
+                return;
+            }
+
+            const targetX = ghost.gridX * TILE_SIZE;
+            const targetY = ghost.gridY * TILE_SIZE;
+            const movement = ghost.speed * deltaTime;
+
+            // 移动到目标位置
+            if (ghost.pixelX < targetX) {
+                ghost.pixelX = Math.min(ghost.pixelX + movement, targetX);
+            } else if (ghost.pixelX > targetX) {
+                ghost.pixelX = Math.max(ghost.pixelX - movement, targetX);
+            }
+
+            if (ghost.pixelY < targetY) {
+                ghost.pixelY = Math.min(ghost.pixelY + movement, targetY);
+            } else if (ghost.pixelY > targetY) {
+                ghost.pixelY = Math.max(ghost.pixelY - movement, targetY);
+            }
+
+            // 到达网格中心时选择新方向
+            if (isAtGridCenter(ghost)) {
+                ghost.pixelX = targetX;
+                ghost.pixelY = targetY;
+
+                // AI逻辑
+                if (ghost.aiType === 'chase') {
+                    ghost.direction = getDirectionTo(ghost, pacman);
+                } else if (ghost.aiType === 'ambush') {
+                    const target = getAmbushTarget();
+                    ghost.direction = getDirectionTo(ghost, target);
+                } else if (ghost.aiType === 'random') {
+                    ghost.direction = getRandomDirection(ghost);
+                }
+
+                const dir = DIRECTIONS[ghost.direction];
+                let nextX = ghost.gridX + dir.x;
+                let nextY = ghost.gridY + dir.y;
+
+                // 隧道环绕
+                if (nextX < 0) nextX = MAZE_WIDTH - 1;
+                if (nextX >= MAZE_WIDTH) nextX = 0;
+                if (nextY < 0) nextY = MAZE_HEIGHT - 1;
+                if (nextY >= MAZE_HEIGHT) nextY = 0;
+
+                if (canMove(nextX, nextY)) {
+                    ghost.gridX = nextX;
+                    ghost.gridY = nextY;
+                }
+            }
+        }
+
+        // 获取朝向目标的方向
+        function getDirectionTo(entity, target) {
+            const directions = ['up', 'down', 'left', 'right'];
+            const opposite = {
+                'up': 'down',
+                'down': 'up',
+                'left': 'right',
+                'right': 'left'
+            };
+
+            let bestDir = entity.direction;
+            let minDist = Infinity;
+
+            directions.forEach(dir => {
+                if (dir === opposite[entity.direction]) return; // 不走回头路
+
+                const dv = DIRECTIONS[dir];
+                const nextX = entity.gridX + dv.x;
+                const nextY = entity.gridY + dv.y;
+
+                if (canMove(nextX, nextY)) {
+                    const dist = Math.abs(nextX - target.gridX) + Math.abs(nextY - target.gridY);
+                    if (dist < minDist) {
+                        minDist = dist;
+                        bestDir = dir;
+                    }
+                }
+            });
+
+            return bestDir;
+        }
+
+        // 获取伏击目标点
+        function getAmbushTarget() {
+            const dir = DIRECTIONS[pacman.direction];
+            return {
+                gridX: pacman.gridX + dir.x * 4,
+                gridY: pacman.gridY + dir.y * 4
+            };
+        }
+
+        // 获取随机方向
+        function getRandomDirection(entity) {
+            const directions = ['up', 'down', 'left', 'right'];
+            const opposite = {
+                'up': 'down',
+                'down': 'up',
+                'left': 'right',
+                'right': 'left'
+            };
+
+            const validDirs = directions.filter(dir => {
+                if (dir === opposite[entity.direction]) return false;
+                const dv = DIRECTIONS[dir];
+                return canMove(entity.gridX + dv.x, entity.gridY + dv.y);
+            });
+
+            if (validDirs.length === 0) return entity.direction;
+            return validDirs[Math.floor(Math.random() * validDirs.length)];
+        }
+
+        // 更新玫瑰
+        function updateRose(deltaTime) {
+            if (!rose.active) {
+                rose.spawnTimer -= deltaTime;
+                if (rose.spawnTimer <= 0) {
+                    spawnRose();
+                }
+            } else {
+                rose.despawnTimer -= deltaTime;
+                rose.glowPhase += 0.05;
+
+                if (rose.despawnTimer <= 0) {
+                    rose.active = false;
+                    rose.spawnTimer = ROSE_SPAWN_MIN + Math.random() * (ROSE_SPAWN_MAX - ROSE_SPAWN_MIN);
+                }
+            }
+        }
+
+        // 生成玫瑰
+        function spawnRose() {
+            const validTiles = [];
+            for (let y = 1; y < MAZE_HEIGHT - 1; y++) {  // 避开边缘
+                for (let x = 1; x < MAZE_WIDTH - 1; x++) {
+                    if ((maze[y][x] === 1 || maze[y][x] === 2) &&
+                        // 确保离吃豆人至少5格远
+                        Math.abs(x - pacman.gridX) + Math.abs(y - pacman.gridY) > 5) {
+                        validTiles.push({ x, y });
+                    }
+                }
+            }
+
+            if (validTiles.length > 0) {
+                const tile = validTiles[Math.floor(Math.random() * validTiles.length)];
+                rose.gridX = tile.x;
+                rose.gridY = tile.y;
+                rose.active = true;
+                rose.despawnTimer = ROSE_DESPAWN;
+                console.log('🌹 玫瑰生成！位置:', rose.gridX, rose.gridY);
+            } else {
+                console.log('⚠️ 没有合适的位置生成玫瑰');
+            }
+        }
+
+        // 收集玫瑰
+        function collectRose() {
+            rose.active = false;
+            rose.spawnTimer = ROSE_SPAWN_MIN + Math.random() * (ROSE_SPAWN_MAX - ROSE_SPAWN_MIN);
+
+            // 强制对齐到网格中心（防止穿墙bug）
+            pacman.pixelX = pacman.gridX * TILE_SIZE;
+            pacman.pixelY = pacman.gridY * TILE_SIZE;
+
+            // 使用绝对时间
+            const now = Date.now();
+            pacman.powered = true;
+            pacman.powerEndTime = now + POWER_UP_DURATION;
+            pacman.lastHeartTime = now;
+
+            gameState.score += 50;
+            console.log('💖 收集玫瑰！能量模式激活8秒');
+        }
+
+        // 发射心形
+        function shootHeart() {
+            hearts.push({
+                pixelX: pacman.pixelX + TILE_SIZE / 2,
+                pixelY: pacman.pixelY + TILE_SIZE / 2,
+                direction: pacman.direction,
+                speed: HEART_SPEED,
+                trail: []
+            });
+        }
+
+        // 更新心形
+        function updateHearts(deltaTime) {
+            for (let i = hearts.length - 1; i >= 0; i--) {
+                const heart = hearts[i];
+                const dir = DIRECTIONS[heart.direction];
+                const movement = heart.speed * deltaTime;
+
+                heart.pixelX += dir.x * movement;
+                heart.pixelY += dir.y * movement;
+
+                // 拖尾效果
+                heart.trail.unshift({ x: heart.pixelX, y: heart.pixelY });
+                if (heart.trail.length > 5) {
+                    heart.trail.pop();
+                }
+
+                // 检查碰撞墙壁
+                const gridX = Math.floor(heart.pixelX / TILE_SIZE);
+                const gridY = Math.floor(heart.pixelY / TILE_SIZE);
+
+                if (!canMove(gridX, gridY)) {
+                    hearts.splice(i, 1);
+                    continue;
+                }
+
+                // 检查碰撞鬼魂
+                let hitGhost = false;
+                ghosts.forEach(ghost => {
+                    if (ghost.mode !== 'eaten' && ghost.respawnTimer <= 0) {
+                        const dist = Math.sqrt(
+                            Math.pow(heart.pixelX - (ghost.pixelX + TILE_SIZE / 2), 2) +
+                            Math.pow(heart.pixelY - (ghost.pixelY + TILE_SIZE / 2), 2)
+                        );
+
+                        if (dist < TILE_SIZE) {
+                            ghost.mode = 'eaten';
+                            gameState.score += 200;
+                            hitGhost = true;
+                        }
+                    }
+                });
+
+                if (hitGhost) {
+                    hearts.splice(i, 1);
+                }
+            }
+        }
+
+        // 碰撞检测
+        function checkCollisions() {
+            // 吃豆子
+            if (maze[pacman.gridY][pacman.gridX] === 1) {
+                maze[pacman.gridY][pacman.gridX] = 2;
+                gameState.score += 10;
+                gameState.pelletsRemaining--;
+
+                if (gameState.pelletsRemaining === 0) {
+                    gameState.score += 1000;
+                    gameState.screen = 'win';
+                }
+            }
+
+            // 碰到玫瑰
+            if (rose.active && rose.gridX === pacman.gridX && rose.gridY === pacman.gridY) {
+                collectRose();
+            }
+
+            // 碰到鬼魂
+            ghosts.forEach(ghost => {
+                if (ghost.mode !== 'eaten' && ghost.respawnTimer <= 0) {
+                    // 使用像素位置计算距离，而不是网格位置
+                    const dx = pacman.pixelX - ghost.pixelX;
+                    const dy = pacman.pixelY - ghost.pixelY;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    // 如果距离小于一个网格的大小，就算碰撞
+                    if (distance < TILE_SIZE * 0.8) {  // 稍微宽松一点，避免太敏感
+                        if (pacman.powered) {
+                            // 能量模式：消灭幽灵
+                            ghost.mode = 'eaten';
+                            gameState.score += 200;
+                            console.log('👻 消灭了', ghost.name, '幽灵！+200分');
+                        } else {
+                            // 正常模式：吃豆人死
+                            pacmanDie();
+                        }
+                    }
+                }
+            });
+        }
+
+        // 吃豆人死亡
+        function pacmanDie() {
+            gameState.lives--;
+
+            if (gameState.lives <= 0) {
+                gameState.screen = 'gameover';
+            } else {
+                resetPositions();
+            }
+
+            updateUI();
+        }
+
+        // 渲染迷宫
+        function renderMaze() {
+            ctx.strokeStyle = '#ff69b4';
+            ctx.lineWidth = 2;
+
+            for (let y = 0; y < MAZE_HEIGHT; y++) {
+                for (let x = 0; x < MAZE_WIDTH; x++) {
+                    if (maze[y][x] === 0) {
+                        ctx.strokeRect(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
+                    }
+                }
+            }
+        }
+
+        // 渲染豆子
+        function renderPellets() {
+            ctx.fillStyle = '#FFFFFF';
+
+            for (let y = 0; y < MAZE_HEIGHT; y++) {
+                for (let x = 0; x < MAZE_WIDTH; x++) {
+                    if (maze[y][x] === 1) {
+                        ctx.beginPath();
+                        ctx.arc(
+                            x * TILE_SIZE + TILE_SIZE / 2,
+                            y * TILE_SIZE + TILE_SIZE / 2,
+                            2,
+                            0,
+                            Math.PI * 2
+                        );
+                        ctx.fill();
+                    }
+                }
+            }
+        }
+
+        // 渲染吃豆人
+        function renderPacman() {
+            const centerX = pacman.pixelX + TILE_SIZE / 2;
+            const centerY = pacman.pixelY + TILE_SIZE / 2;
+            const radius = TILE_SIZE * 0.4;
+
+            ctx.save();
+            ctx.translate(centerX, centerY);
+
+            // 旋转根据方向
+            const rotations = {
+                'right': 0,
+                'down': Math.PI / 2,
+                'left': Math.PI,
+                'up': -Math.PI / 2
+            };
+            ctx.rotate(rotations[pacman.direction]);
+
+            // 能量光环
+            if (pacman.powered) {
+                ctx.strokeStyle = 'rgba(255, 105, 180, 0.5)';
+                ctx.lineWidth = 3;
+                ctx.beginPath();
+                ctx.arc(0, 0, radius * 1.5, 0, Math.PI * 2);
+                ctx.stroke();
+            }
+
+            // 黄色身体（嘴巴动画）
+            ctx.fillStyle = '#FFD700';
+            ctx.beginPath();
+            const mouthSize = Math.abs(Math.sin(pacman.mouthAngle)) * 0.4;
+            ctx.arc(0, 0, radius, mouthSize, Math.PI * 2 - mouthSize);
+            ctx.lineTo(0, 0);
+            ctx.fill();
+
+            // 粉色蝴蝶结
+            ctx.fillStyle = '#ff69b4';
+            const bowY = -radius * 0.7;
+            const bowSize = radius * 0.3;
+
+            // 左边三角形
+            ctx.beginPath();
+            ctx.moveTo(-bowSize, bowY);
+            ctx.lineTo(-bowSize * 0.3, bowY - bowSize * 0.5);
+            ctx.lineTo(-bowSize * 0.3, bowY + bowSize * 0.5);
+            ctx.fill();
+
+            // 右边三角形
+            ctx.beginPath();
+            ctx.moveTo(bowSize, bowY);
+            ctx.lineTo(bowSize * 0.3, bowY - bowSize * 0.5);
+            ctx.lineTo(bowSize * 0.3, bowY + bowSize * 0.5);
+            ctx.fill();
+
+            // 中间圆点
+            ctx.beginPath();
+            ctx.arc(0, bowY, bowSize * 0.2, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.restore();
+        }
+
+        // 渲染鬼魂
+        function renderGhost(ghost) {
+            const centerX = ghost.pixelX + TILE_SIZE / 2;
+            const centerY = ghost.pixelY + TILE_SIZE / 2;
+            const radius = TILE_SIZE * 0.4;
+
+            if (ghost.respawnTimer > 0) return; // 不渲染正在复活的鬼魂
+
+            if (ghost.mode === 'eaten') {
+                // 只画眼睛
+                ctx.fillStyle = '#FFFFFF';
+                ctx.beginPath();
+                ctx.arc(centerX - radius * 0.3, centerY - radius * 0.2, radius * 0.2, 0, Math.PI * 2);
+                ctx.arc(centerX + radius * 0.3, centerY - radius * 0.2, radius * 0.2, 0, Math.PI * 2);
+                ctx.fill();
+
+                ctx.fillStyle = '#000000';
+                ctx.beginPath();
+                ctx.arc(centerX - radius * 0.3, centerY - radius * 0.2, radius * 0.1, 0, Math.PI * 2);
+                ctx.arc(centerX + radius * 0.3, centerY - radius * 0.2, radius * 0.1, 0, Math.PI * 2);
+                ctx.fill();
+                return;
+            }
+
+            // 鬼魂身体
+            ctx.fillStyle = ghost.color;
+            ctx.beginPath();
+            ctx.arc(centerX, centerY - radius * 0.3, radius, Math.PI, 0);
+            ctx.lineTo(centerX + radius, centerY + radius);
+
+            // 波浪底部
+            const waves = 3;
+            for (let i = 0; i < waves; i++) {
+                ctx.lineTo(
+                    centerX + radius - (i + 0.5) * (radius * 2 / waves),
+                    centerY + radius - radius * 0.3
+                );
+                ctx.lineTo(
+                    centerX + radius - (i + 1) * (radius * 2 / waves),
+                    centerY + radius
+                );
+            }
+
+            ctx.closePath();
+            ctx.fill();
+
+            // 眼睛
+            ctx.fillStyle = '#FFFFFF';
+            ctx.beginPath();
+            ctx.arc(centerX - radius * 0.3, centerY - radius * 0.2, radius * 0.3, 0, Math.PI * 2);
+            ctx.arc(centerX + radius * 0.3, centerY - radius * 0.2, radius * 0.3, 0, Math.PI * 2);
+            ctx.fill();
+
+            // 瞳孔
+            ctx.fillStyle = '#000000';
+            const eyeOffsetX = DIRECTIONS[ghost.direction].x * radius * 0.15;
+            const eyeOffsetY = DIRECTIONS[ghost.direction].y * radius * 0.15;
+            ctx.beginPath();
+            ctx.arc(centerX - radius * 0.3 + eyeOffsetX, centerY - radius * 0.2 + eyeOffsetY, radius * 0.15, 0, Math.PI * 2);
+            ctx.arc(centerX + radius * 0.3 + eyeOffsetX, centerY - radius * 0.2 + eyeOffsetY, radius * 0.15, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        // 渲染玫瑰
+        function renderRose() {
+            if (!rose.active) return;
+
+            const x = rose.gridX * TILE_SIZE + TILE_SIZE / 2;
+            const y = rose.gridY * TILE_SIZE + TILE_SIZE / 2;
+
+            // 发光效果
+            const glow = Math.sin(rose.glowPhase) * 0.3 + 0.7;
+            ctx.save();
+            ctx.shadowBlur = 15 * glow;
+            ctx.shadowColor = '#ff1493';
+
+            ctx.font = '16px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('🌹', x, y);
+
+            ctx.restore();
+        }
+
+        // 渲染心形
+        function renderHearts() {
+            hearts.forEach(heart => {
+                // 拖尾
+                heart.trail.forEach((pos, i) => {
+                    const alpha = 1 - (i / heart.trail.length);
+                    ctx.fillStyle = `rgba(255, 105, 180, ${alpha * 0.3})`;
+                    ctx.font = '12px Arial';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    ctx.fillText('❤️', pos.x, pos.y);
+                });
+
+                // 主体
+                ctx.save();
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = '#ff1493';
+                ctx.font = '14px Arial';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText('❤️', heart.pixelX, heart.pixelY);
+                ctx.restore();
+            });
+        }
+
+        // 渲染开始屏幕
+        function renderStartScreen() {
+            ctx.fillStyle = '#0a0a12';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#ff69b4';
+            ctx.font = '24px "Press Start 2P"';
+            ctx.textAlign = 'center';
+            ctx.fillText('Pac-Man:', canvas.width / 2, 130);
+            ctx.fillText('Valentine\'s Edition', canvas.width / 2, 170);
+
+            ctx.fillStyle = '#e0e0f0';
+            ctx.font = '14px "Press Start 2P"';
+            ctx.fillText('Press ENTER', canvas.width / 2, 250);
+            ctx.fillText('or Click to Start', canvas.width / 2, 280);
+
+            ctx.font = '10px "Press Start 2P"';
+            ctx.fillStyle = '#00f0ff';
+            ctx.fillText('Arrow keys to move', canvas.width / 2, 350);
+            ctx.fillText('Eat all pellets', canvas.width / 2, 380);
+            ctx.fillText('Avoid ghosts', canvas.width / 2, 410);
+            ctx.fillText('Collect roses for power!', canvas.width / 2, 440);
+        }
+
+        // 渲染游戏结束屏幕
+        function renderGameOverScreen() {
+            ctx.fillStyle = 'rgba(10, 10, 18, 0.8)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#ff1493';
+            ctx.font = '32px "Press Start 2P"';
+            ctx.textAlign = 'center';
+            ctx.fillText('Game Over', canvas.width / 2, canvas.height / 2 - 50);
+
+            ctx.fillStyle = '#e0e0f0';
+            ctx.font = '16px "Press Start 2P"';
+            ctx.fillText('Final Score: ' + gameState.score, canvas.width / 2, canvas.height / 2 + 20);
+
+            ctx.font = '12px "Press Start 2P"';
+            ctx.fillStyle = '#00f0ff';
+            ctx.fillText('Press ENTER', canvas.width / 2, canvas.height / 2 + 70);
+            ctx.fillText('or Click to Restart', canvas.width / 2, canvas.height / 2 + 95);
+        }
+
+        // 渲染胜利屏幕
+        function renderWinScreen() {
+            ctx.fillStyle = 'rgba(10, 10, 18, 0.8)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#ff69b4';
+            ctx.font = '32px "Press Start 2P"';
+            ctx.textAlign = 'center';
+            ctx.fillText('You Win!', canvas.width / 2, canvas.height / 2 - 50);
+
+            ctx.fillStyle = '#e0e0f0';
+            ctx.font = '16px "Press Start 2P"';
+            ctx.fillText('Final Score: ' + gameState.score, canvas.width / 2, canvas.height / 2 + 20);
+
+            ctx.font = '12px "Press Start 2P"';
+            ctx.fillStyle = '#00f0ff';
+            ctx.fillText('Press ENTER', canvas.width / 2, canvas.height / 2 + 70);
+            ctx.fillText('or Click to Play Again', canvas.width / 2, canvas.height / 2 + 95);
+        }
+
+        // 渲染暂停屏幕
+        function renderPausedScreen() {
+            // 半透明遮罩
+            ctx.fillStyle = 'rgba(10, 10, 18, 0.85)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#00f0ff';
+            ctx.font = '32px "Press Start 2P"';
+            ctx.textAlign = 'center';
+            ctx.fillText('PAUSED', canvas.width / 2, canvas.height / 2 - 40);
+
+            ctx.fillStyle = '#e0e0f0';
+            ctx.font = '12px "Press Start 2P"';
+            ctx.fillText('Press P or ESC', canvas.width / 2, canvas.height / 2 + 20);
+            ctx.fillText('to Resume', canvas.width / 2, canvas.height / 2 + 45);
+
+            ctx.fillStyle = '#ff69b4';
+            ctx.font = '12px "Press Start 2P"';
+            ctx.fillText('Press Q to Quit', canvas.width / 2, canvas.height / 2 + 85);
+        }
+
+        // 游戏循环
+        function gameLoop(timestamp) {
+            const deltaTime = timestamp - gameState.lastTime;
+            gameState.lastTime = timestamp;
+
+            if (gameState.screen === 'start') {
+                renderStartScreen();
+            } else if (gameState.screen === 'playing') {
+                // 更新
+                updatePacman(deltaTime);
+                ghosts.forEach(ghost => updateGhost(ghost, deltaTime));
+                updateRose(deltaTime);
+                updateHearts(deltaTime);
+                checkCollisions();
+                updateUI();
+
+                // 渲染
+                ctx.fillStyle = '#0a0a12';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                renderMaze();
+                renderPellets();
+                renderRose();
+                renderHearts();
+                ghosts.forEach(ghost => renderGhost(ghost));
+                renderPacman();
+
+                // 显示快捷键提示
+                ctx.fillStyle = 'rgba(224, 224, 240, 0.5)';
+                ctx.font = '12px Rajdhani';
+                ctx.textAlign = 'right';
+                ctx.fillText('[P] Pause  [Q] Quit', canvas.width - 10, 20);
+
+            } else if (gameState.screen === 'paused') {
+                // 先渲染游戏画面（静止）
+                ctx.fillStyle = '#0a0a12';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                renderMaze();
+                renderPellets();
+                renderRose();
+                renderHearts();
+                ghosts.forEach(ghost => renderGhost(ghost));
+                renderPacman();
+
+                // 然后渲染暂停遮罩
+                renderPausedScreen();
+
+            } else if (gameState.screen === 'gameover') {
+                renderGameOverScreen();
+            } else if (gameState.screen === 'win') {
+                renderWinScreen();
+            }
+
+            gameState.frame++;
+            requestAnimationFrame(gameLoop);
+        }
+
+        // 启动游戏
+        init();
+    </script>
+</body>
+</html>
