@@ -1,15 +1,8 @@
 # Homework 1 - Code with AI
 
 ## 🌐 Live Website
-
-- **Homepage**  
-  https://AdaYunying.github.io/bst236-portfolio/
-
-- **Pac-Man (Valentine’s Special)**  
-  https://AdaYunying.github.io/bst236-portfolio/pacman/
-
-- **Auto-Updating arXiv Feed**  
-  https://AdaYunying.github.io/bst236-portfolio/arxiv/
+ 
+ https://AdaYunying.github.io/bst236-portfolio/
   
   ---
 
