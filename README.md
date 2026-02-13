@@ -39,7 +39,7 @@ Key prompting technique:
 > Ask for design options first, then select and refine.
 
 Implementation was handled primarily by Claude (structure) and Copilot (refinement).  
-Textual content was iteratively improved using Gemini.
+Textual content was iteratively improved using Gemini.   
 This structured approach reduced ambiguity and allowed the initial implementation to closely match design expectations.
 
 ---
