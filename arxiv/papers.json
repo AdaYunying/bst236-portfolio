@@ -1,6 +1,41 @@
 {
-  "generated_at": "2026-02-15T05:30:39.864090Z",
+  "generated_at": "2026-02-16T05:35:36.898927Z",
   "papers": [
+    {
+      "id": "2602.12833",
+      "title": "TRACE: Temporal Reasoning via Agentic Context Evolution for Streaming Electronic Health Records (EHRs)",
+      "authors": [
+        "Zhan Qu",
+        "Michael Färber"
+      ],
+      "abstract": "Large Language Models (LLMs) encode extensive medical knowledge but struggle to apply it reliably to longitudinal patient trajectories, where evolving clinical states, irregular timing, and heterogeneous events degrade performance over time. Existing adaptation strategies rely on fine-tuning or retrieval-based augmentation, which introduce computational overhead, privacy constraints, or instability under long contexts. We introduce TRACE (Temporal Reasoning via Agentic Context Evolution), a framework that enables temporal clinical reasoning with frozen LLMs by explicitly structuring and maintaining context rather than extending context windows or updating parameters. TRACE operates over a dual-memory architecture consisting of a static Global Protocol encoding institutional clinical rules and a dynamic Individual Protocol tracking patient-specific state. Four agentic components, Router, Reasoner, Auditor, and Steward, coordinate over this structured memory to support temporal inference and state evolution. The framework maintains bounded inference cost via structured state compression and selectively audits safety-critical clinical decisions. Evaluated on longitudinal clinical event streams from MIMIC-IV, TRACE significantly improves next-event prediction accuracy, protocol adherence, and clinical safety over long-context and retrieval-augmented baselines, while producing interpretable and auditable reasoning traces.",
+      "published": "2026-02-13",
+      "updated": "2026-02-13",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2602.12833",
+      "pdf_url": "https://arxiv.org/pdf/2602.12833.pdf"
+    },
+    {
+      "id": "2602.12828",
+      "title": "GRAIL: Geometry-Aware Retrieval-Augmented Inference with LLMs over Hyperbolic Representations of Patient Trajectories",
+      "authors": [
+        "Zhan Qu",
+        "Michael Färber"
+      ],
+      "abstract": "Predicting future clinical events from longitudinal electronic health records (EHRs) is challenging due to sparse multi-type clinical events, hierarchical medical vocabularies, and the tendency of large language models (LLMs) to hallucinate when reasoning over long structured histories. We study next-visit event prediction, which aims to forecast a patient's upcoming clinical events based on prior visits. We propose GRAIL, a framework that models longitudinal EHRs using structured geometric representations and structure-aware retrieval. GRAIL constructs a unified clinical graph by combining deterministic coding-system hierarchies with data-driven temporal associations across event types, embeds this graph in hyperbolic space, and summarizes each visit as a probabilistic Central Event that denoises sparse observations. At inference time, GRAIL retrieves a structured set of clinically plausible future events aligned with hierarchical and temporal progression, and optionally refines their ranking using an LLM as a constrained inference-time reranker. Experiments on MIMIC-IV show that GRAIL consistently improves multi-type next-visit prediction and yields more hierarchy-consistent forecasts.",
+      "published": "2026-02-13",
+      "updated": "2026-02-13",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2602.12828",
+      "pdf_url": "https://arxiv.org/pdf/2602.12828.pdf"
+    },
     {
       "id": "2602.10385",
       "title": "Time-to-Event Transformer to Capture Timing Attention of Events in EHR Time Series",
@@ -995,44 +1030,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2504.21795",
       "pdf_url": "https://arxiv.org/pdf/2504.21795.pdf"
-    },
-    {
-      "id": "2504.12350",
-      "title": "A Large-Language Model Framework for Relative Timeline Extraction from PubMed Case Reports",
-      "authors": [
-        "Jing Wang",
-        "Jeremy C Weiss"
-      ],
-      "abstract": "Timing of clinical events is central to characterization of patient trajectories, enabling analyses such as process tracing, forecasting, and causal reasoning. However, structured electronic health records capture few data elements critical to these tasks, while clinical reports lack temporal localization of events in structured form. We present a system that transforms case reports into textual time series-structured pairs of textual events and timestamps. We contrast manual and large language model (LLM) annotations (n=320 and n=390 respectively) of ten randomly-sampled PubMed open-access (PMOA) case reports (N=152,974) and assess inter-LLM agreement (n=3,103; N=93). We find that the LLM models have moderate event recall(O1-preview: 0.80) but high temporal concordance among identified events (O1-preview: 0.95). By establishing the task, annotation, and assessment systems, and by demonstrating high concordance, this work may serve as a benchmark for leveraging the PMOA corpus for temporal analytics.",
-      "published": "2025-04-15",
-      "updated": "2025-04-15",
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2504.12350",
-      "pdf_url": "https://arxiv.org/pdf/2504.12350.pdf"
-    },
-    {
-      "id": "2504.10422",
-      "title": "Foundation models for electronic health records: representation dynamics and transferability",
-      "authors": [
-        "Michael C. Burkhart",
-        "Bashar Ramadan",
-        "Zewei Liao",
-        "Kaveri Chhikara",
-        "Juan C. Rojas",
-        "William F. Parker",
-        "Brett K. Beaulieu-Jones"
-      ],
-      "abstract": "Foundation models (FMs) trained on electronic health records (EHRs) have shown strong performance on a range of clinical prediction tasks. However, adapting these models to local health systems remains challenging due to limited data availability and resource constraints. In this study, we investigated what these models learn and evaluated the transferability of an FM trained on MIMIC-IV to an institutional EHR dataset at the University of Chicago Medical Center. We assessed their ability to identify outlier patients and examined representation-space patient trajectories in relation to future clinical outcomes. We also evaluated the performance of supervised fine-tuned classifiers on both source and target datasets. Our findings offer insights into the adaptability of FMs across different healthcare systems, highlight considerations for their effective implementation, and provide an empirical analysis of the underlying factors that contribute to their predictive performance.",
-      "published": "2025-04-14",
-      "updated": "2025-04-14",
-      "categories": [
-        "cs.LG"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2504.10422",
-      "pdf_url": "https://arxiv.org/pdf/2504.10422.pdf"
     }
   ]
 }
