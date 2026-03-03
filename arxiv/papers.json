@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-02T05:28:45.514173Z",
+  "generated_at": "2026-03-03T05:27:18.197247Z",
   "papers": [
     {
       "id": "2602.12833",
@@ -193,11 +193,12 @@
       "id": "2601.21955",
       "title": "From Generative Modeling to Clinical Classification: A GPT-Based Architecture for EHR Notes",
       "authors": [
-        "Fariba Afrin Irany"
+        "Fariba Afrin Irany",
+        "Sampson Akwafuo"
       ],
       "abstract": "The increasing availability of unstructured clinical narratives in electronic health records (EHRs) has created new opportunities for automated disease characterization, cohort identification, and clinical decision support. However, modeling long, domain-specific clinical text remains challenging due to limited labeled data, severe class imbalance, and the high computational cost of adapting large pretrained language models. This study presents a GPT-based architecture for clinical text classification that adapts a pretrained decoder-only Transformer using a selective fine-tuning strategy. Rather than updating all model parameters, the majority of the GPT-2 backbone is frozen, and training is restricted to the final Transformer block, the final layer normalization, and a lightweight classification head. This approach substantially reduces the number of trainable parameters while preserving the representational capacity required to model complex clinical language. The proposed method is evaluated on radiology reports from the MIMIC-IV-Note dataset using uncertainty-aware CheXpert-style labels derived directly from report text. Experiments cover multiple problem formulations, including multi-label classification of radiographic findings, binary per-label classification under different uncertainty assumptions, and aggregate disease outcome prediction. Across varying dataset sizes, the model exhibits stable convergence behavior and strong classification performance, particularly in settings dominated by non-mention and negated findings. Overall, the results indicate that selective fine-tuning of pretrained generative language models provides an efficient and effective pathway for clinical text classification, enabling scalable adaptation to real-world EHR data while significantly reducing computational complexity.",
       "published": "2026-01-29",
-      "updated": "2026-02-03",
+      "updated": "2026-02-28",
       "categories": [
         "cs.CL"
       ],
