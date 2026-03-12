@@ -1,6 +1,27 @@
 {
-  "generated_at": "2026-03-11T05:25:55.329149Z",
+  "generated_at": "2026-03-12T05:28:12.060367Z",
   "papers": [
+    {
+      "id": "2603.10180",
+      "title": "DT-BEHRT: Disease Trajectory-aware Transformer for Interpretable Patient Representation Learning",
+      "authors": [
+        "Deyi Li",
+        "Zijun Yao",
+        "Qi Xu",
+        "Muxuan Liang",
+        "Lingyao Li",
+        "Zijian Xu",
+        "Mei Liu"
+      ],
+      "abstract": "The growing adoption of electronic health record (EHR) systems has provided unprecedented opportunities for predictive modeling to guide clinical decision making. Structured EHRs contain longitudinal observations of patients across hospital visits, where each visit is represented by a set of medical codes. While sequence-based, graph-based, and graph-enhanced sequence approaches have been developed to capture rich code interactions over time or within the same visits, they often overlook the inherent heterogeneous roles of medical codes arising from distinct clinical characteristics and contexts. To this end, in this study we propose the Disease Trajectory-aware Transformer for EHR (DT-BEHRT), a graph-enhanced sequential architecture that disentangles disease trajectories by explicitly modeling diagnosis-centric interactions within organ systems and capturing asynchronous progression patterns. To further enhance the representation robustness, we design a tailored pre-training methodology that combines trajectory-level code masking with ontology-informed ancestor prediction, promoting semantic alignment across multiple modeling modules. Extensive experiments on multiple benchmark datasets demonstrate that DT-BEHRT achieves strong predictive performance and provides interpretable patient representations that align with clinicians' disease-centered reasoning. The source code is publicly accessible at https://github.com/GatorAIM/DT-BEHRT.git.",
+      "published": "2026-03-10",
+      "updated": "2026-03-10",
+      "categories": [
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2603.10180",
+      "pdf_url": "https://arxiv.org/pdf/2603.10180.pdf"
+    },
     {
       "id": "2603.08278",
       "title": "TA-RNN-Medical-Hybrid: A Time-Aware and Interpretable Framework for Mortality Risk Prediction",
@@ -1011,26 +1032,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2506.15118",
       "pdf_url": "https://arxiv.org/pdf/2506.15118.pdf"
-    },
-    {
-      "id": "2506.04831",
-      "title": "From EHRs to Patient Pathways: Scalable Modeling of Longitudinal Health Trajectories with LLMs",
-      "authors": [
-        "Chantal Pellegrini",
-        "Ege Özsoy",
-        "David Bani-Harouni",
-        "Matthias Keicher",
-        "Nassir Navab"
-      ],
-      "abstract": "Healthcare systems face significant challenges in managing and interpreting vast, heterogeneous patient data for personalized care. Existing approaches often focus on narrow use cases with a limited feature space, overlooking the complex, longitudinal interactions needed for a holistic understanding of patient health. In this work, we propose a novel approach to patient pathway modeling by transforming diverse electronic health record (EHR) data into a structured representation and designing a holistic pathway prediction model, EHR2Path, optimized to predict future health trajectories. Further, we introduce a novel summary mechanism that embeds long-term temporal context into topic-specific summary tokens, improving performance over text-only models, while being much more token-efficient. EHR2Path demonstrates strong performance in both next time-step prediction and longitudinal simulation, outperforming competitive baselines. It enables detailed simulations of patient trajectories, inherently targeting diverse evaluation tasks, such as forecasting vital signs, lab test results, or length-of-stay, opening a path towards predictive and personalized healthcare.",
-      "published": "2025-06-05",
-      "updated": "2025-06-05",
-      "categories": [
-        "cs.LG",
-        "cs.CL"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2506.04831",
-      "pdf_url": "https://arxiv.org/pdf/2506.04831.pdf"
     }
   ]
 }
