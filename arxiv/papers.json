@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-12T05:28:12.060367Z",
+  "generated_at": "2026-03-13T05:26:35.819249Z",
   "papers": [
     {
       "id": "2603.10180",
@@ -94,7 +94,7 @@
       ],
       "abstract": "Electronic health records (EHR) are irregular, asynchronous multivariate time series. As time-series foundation models increasingly tokenize events rather than discretizing time, the input layout becomes a key design choice. Grids expose time$\\times$variable structure but require imputation or missingness masks, risking error or sampling-policy shortcuts. Point-set tokenization avoids discretization but loses within-variable trajectories and time-local cross-variable context (Fig.1). We restore these priors in STructure-AwaRe (STAR) Set Transformer by adding parameter-efficient soft attention biases: a temporal locality penalty $-|Δt|/τ$ with learnable timescales and a variable-type affinity $B_{s_i,s_j}$ from a learned feature-compatibility matrix. We benchmark 10 depth-wise fusion schedules (Fig.2). On three ICU prediction tasks, STAR-Set achieves AUC/APR of 0.7158/0.0026 (CPR), 0.9164/0.2033 (mortality), and 0.8373/0.1258 (vasopressor use), outperforming regular-grid, event-time grid, and prior set baselines. Learned $τ$ and $B$ provide interpretable summaries of temporal context and variable interactions, offering a practical plug-in for context-informed time-series models.",
       "published": "2026-02-18",
-      "updated": "2026-02-18",
+      "updated": "2026-03-12",
       "categories": [
         "cs.LG"
       ],
