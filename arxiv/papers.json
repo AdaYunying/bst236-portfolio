@@ -1,6 +1,40 @@
 {
-  "generated_at": "2026-03-23T05:36:39.378288Z",
+  "generated_at": "2026-03-24T05:34:01.148588Z",
   "papers": [
+    {
+      "id": "2603.21597",
+      "title": "A Multidisciplinary AI Board for Multimodal Dementia Characterization and Risk Assessment",
+      "authors": [
+        "Sheng Liu",
+        "Long Chen",
+        "Zeyun Zhao",
+        "Qinglin Gou",
+        "Qingyue Wei",
+        "Arjun Masurkar",
+        "Kevin M. Spiegler",
+        "Philip Kuball",
+        "Stefania C. Bray",
+        "Megan Bernath",
+        "Deanna R. Willis",
+        "Jiang Bian",
+        "Lei Xing",
+        "Eric Topol",
+        "Kyunghyun Cho",
+        "Yu Huang",
+        "Ruogu Fang",
+        "Narges Razavian",
+        "James Zou"
+      ],
+      "abstract": "Modern clinical practice increasingly depends on reasoning over heterogeneous, evolving, and incomplete patient data. Although recent advances in multimodal foundation models have improved performance on various clinical tasks, most existing models remain static, opaque, and poorly aligned with real-world clinical workflows. We present Cerebra, an interactive multi-agent AI team that coordinates specialized agents for EHR, clinical notes, and medical imaging analysis. These outputs are synthesized into a clinician-facing dashboard that combines visual analytics with a conversational interface, enabling clinicians to interrogate predictions and contextualize risk at the point of care. Cerebra supports privacy-preserving deployment by operating on structured representations and remains robust when modalities are incomplete. We evaluated Cerebra using a massive multi-institutional dataset spanning 3 million patients from four independent healthcare systems. Cerebra consistently outperformed both state-of-the-art single-modality models and large multimodal language model baselines. In dementia risk prediction, it achieved AUROCs up to 0.80, compared with 0.74 for the strongest single-modality model and 0.68 for language model baselines. For dementia diagnosis, it achieved an AUROC of 0.86, and for survival prediction, a C-index of 0.81. In a reader study with experienced physicians, Cerebra significantly improved expert performance, increasing accuracy by 17.5 percentage points in prospective dementia risk estimation. These results demonstrate Cerebra's potential for interpretable, robust decision support in clinical care.",
+      "published": "2026-03-23",
+      "updated": "2026-03-23",
+      "categories": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2603.21597",
+      "pdf_url": "https://arxiv.org/pdf/2603.21597.pdf"
+    },
     {
       "id": "2603.10180",
       "title": "DT-BEHRT: Disease Trajectory-aware Transformer for Interpretable Patient Representation Learning",
@@ -1011,27 +1045,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2506.15809",
       "pdf_url": "https://arxiv.org/pdf/2506.15809.pdf"
-    },
-    {
-      "id": "2506.15118",
-      "title": "CKD-EHR:Clinical Knowledge Distillation for Electronic Health Records",
-      "authors": [
-        "Junke Wang",
-        "Hongshun Ling",
-        "Li Zhang",
-        "Longqian Zhang",
-        "Fang Wang",
-        "Yuan Gao",
-        "Zhi Li"
-      ],
-      "abstract": "Electronic Health Records (EHR)-based disease prediction models have demonstrated significant clinical value in promoting precision medicine and enabling early intervention. However, existing large language models face two major challenges: insufficient representation of medical knowledge and low efficiency in clinical deployment. To address these challenges, this study proposes the CKD-EHR (Clinical Knowledge Distillation for EHR) framework, which achieves efficient and accurate disease risk prediction through knowledge distillation techniques. Specifically, the large language model Qwen2.5-7B is first fine-tuned on medical knowledge-enhanced data to serve as the teacher model.It then generates interpretable soft labels through a multi-granularity attention distillation mechanism. Finally, the distilled knowledge is transferred to a lightweight BERT student model. Experimental results show that on the MIMIC-III dataset, CKD-EHR significantly outperforms the baseline model:diagnostic accuracy is increased by 9%, F1-score is improved by 27%, and a 22.2 times inference speedup is achieved. This innovative solution not only greatly improves resource utilization efficiency but also significantly enhances the accuracy and timeliness of diagnosis, providing a practical technical approach for resource optimization in clinical settings. The code and data for this research are available athttps://github.com/209506702/CKD_EHR.",
-      "published": "2025-06-18",
-      "updated": "2025-06-18",
-      "categories": [
-        "cs.CL"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2506.15118",
-      "pdf_url": "https://arxiv.org/pdf/2506.15118.pdf"
     }
   ]
 }
