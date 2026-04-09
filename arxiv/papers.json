@@ -1,6 +1,25 @@
 {
-  "generated_at": "2026-04-08T05:39:09.714330Z",
+  "generated_at": "2026-04-09T05:39:32.236607Z",
   "papers": [
+    {
+      "id": "2604.06262",
+      "title": "From Exposure to Internalization: Dual-Stream Calibration for In-context Clinical Reasoning",
+      "authors": [
+        "Chuang Zhao",
+        "Hongke Zhao",
+        "Xiaofang Zhou",
+        "Xiaomeng Li"
+      ],
+      "abstract": "Contextual clinical reasoning demands robust inference grounded in complex, heterogeneous clinical records. While state-of-the-art fine-tuning, in-context learning (ICL), and retrieval-augmented generation (RAG) enable knowledge exposure, they often fall short of genuine contextual internalization: dynamically adjusting a model's internal representations to the subtle nuances of individual cases at inference time. To address this, we propose Dual-Stream Calibration (DSC), a test-time training framework that transcends superficial knowledge exposure to achieve deep internalization during inference. DSC facilitates input internalization by synergistically aligning two calibration streams. Unlike passive context exposure, the Semantic Calibration Stream enforces a deliberative reflection on core evidence, internalizing semantic anchors by minimizing entropy to stabilize generative trajectories. Simultaneously, the Structural Calibration Stream assimilates latent inferential dependencies through an iterative meta-learning objective. By training on specialized support sets at test-time, this stream enables the model to bridge the gap between external evidence and internal logic, synthesizing fragmented data into a coherent response. Our approach shifts the reasoning paradigm from passive attention-based matching to an active refinement of the latent inferential space. Validated against thirteen clinical datasets, DSC demonstrates superiority across three distinct task paradigms, consistently outstripping state-of-the-art baselines ranging from training-dependent models to test-time learning frameworks.",
+      "published": "2026-04-07",
+      "updated": "2026-04-07",
+      "categories": [
+        "q-bio.QM",
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2604.06262",
+      "pdf_url": "https://arxiv.org/pdf/2604.06262.pdf"
+    },
     {
       "id": "2604.04614",
       "title": "A Clinical Point Cloud Paradigm for In-Hospital Mortality Prediction from Multi-Level Incomplete Multimodal EHRs",
@@ -13,7 +32,7 @@
       ],
       "abstract": "Deep learning-based modeling of multimodal Electronic Health Records (EHRs) has become an important approach for clinical diagnosis and risk prediction. However, due to diverse clinical workflows and privacy constraints, raw EHRs are inherently multi-level incomplete, including irregular sampling, missing modalities, and sparse labels. These issues cause temporal misalignment, modality imbalance, and limited supervision. Most existing multimodal methods assume relatively complete data, and even methods designed for incompleteness usually address only one or two of these issues in isolation. As a result, they often rely on rigid temporal/modal alignment or discard incomplete data, which may distort raw clinical semantics. To address this problem, we propose HealthPoint (HP), a unified clinical point cloud paradigm for multi-level incomplete EHRs. HP represents heterogeneous clinical events as points in a continuous 4D space defined by content, time, modality, and case. To model interactions between arbitrary point pairs, we introduce a Low-Rank Relational Attention mechanism that efficiently captures high-order dependencies across these four dimensions. We further develop a hierarchical interaction and sampling strategy to balance fine-grained modeling and computational efficiency. Built on this framework, HP enables flexible event-level interaction and fine-grained self-supervision, supporting robust modality recovery and effective use of unlabeled data. Experiments on large-scale EHR datasets for risk prediction show that HP consistently achieves state-of-the-art performance and strong robustness under varying degrees of incompleteness.",
       "published": "2026-04-06",
-      "updated": "2026-04-06",
+      "updated": "2026-04-08",
       "categories": [
         "cs.LG",
         "cs.AI"
@@ -1022,30 +1041,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2507.14847",
       "pdf_url": "https://arxiv.org/pdf/2507.14847.pdf"
-    },
-    {
-      "id": "2507.03433",
-      "title": "Improving Social Determinants of Health Documentation in French EHRs Using Large Language Models",
-      "authors": [
-        "Adrien Bazoge",
-        "Pacôme Constant dit Beaufils",
-        "Mohammed Hmitouch",
-        "Romain Bourcier",
-        "Emmanuel Morin",
-        "Richard Dufour",
-        "Béatrice Daille",
-        "Pierre-Antoine Gourraud",
-        "Matilde Karakachoff"
-      ],
-      "abstract": "Social determinants of health (SDoH) significantly influence health outcomes, shaping disease progression, treatment adherence, and health disparities. However, their documentation in structured electronic health records (EHRs) is often incomplete or missing. This study presents an approach based on large language models (LLMs) for extracting 13 SDoH categories from French clinical notes. We trained Flan-T5-Large on annotated social history sections from clinical notes at Nantes University Hospital, France. We evaluated the model at two levels: (i) identification of SDoH categories and associated values, and (ii) extraction of detailed SDoH with associated temporal and quantitative information. The model performance was assessed across four datasets, including two that we publicly release as open resources. The model achieved strong performance for identifying well-documented categories such as living condition, marital status, descendants, job, tobacco, and alcohol use (F1 score > 0.80). Performance was lower for categories with limited training data or highly variable expressions, such as employment status, housing, physical activity, income, and education. Our model identified 95.8% of patients with at least one SDoH, compared to 2.8% for ICD-10 codes from structured EHR data. Our error analysis showed that performance limitations were linked to annotation inconsistencies, reliance on English-centric tokenizer, and reduced generalizability due to the model being trained on social history sections only. These results demonstrate the effectiveness of NLP in improving the completeness of real-world SDoH data in a non-English EHR system.",
-      "published": "2025-07-04",
-      "updated": "2025-07-04",
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2507.03433",
-      "pdf_url": "https://arxiv.org/pdf/2507.03433.pdf"
     }
   ]
 }
