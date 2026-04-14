@@ -1,6 +1,28 @@
 {
-  "generated_at": "2026-04-13T05:56:08.925240Z",
+  "generated_at": "2026-04-14T05:45:43.089307Z",
   "papers": [
+    {
+      "id": "2604.10386",
+      "title": "TrajOnco: a multi-agent framework for temporal reasoning over longitudinal EHR for multi-cancer early detection",
+      "authors": [
+        "Sihang Zeng",
+        "Young Won Kim",
+        "Wilson Lau",
+        "Ehsan Alipour",
+        "Ruth Etzioni",
+        "Meliha Yetisgen",
+        "Anand Oka"
+      ],
+      "abstract": "Accurate estimation of cancer risk from longitudinal electronic health records (EHRs) could support earlier detection and improved care, but modeling such complex patient trajectories remains challenging. We present TrajOnco, a training-free, multi-agent large language model (LLM) framework designed for scalable multi-cancer early detection. Using a chain-of-agents architecture with long-term memory, TrajOnco performs temporal reasoning over sequential clinical events to generate patient-level summaries, evidence-linked rationales, and predicted risk scores. We evaluated TrajOnco on de-identified Truveta EHR data across 15 cancer types using matched case-control cohorts, predicting risk of cancer diagnosis at 1 year. In zero-shot evaluation, TrajOnco achieved AUROCs of 0.64-0.80, performing comparably to supervised machine learning in a lung cancer benchmark while demonstrating better temporal reasoning than single-agent LLMs. The multi-agent design also enabled effective temporal reasoning with smaller-capacity models such as GPT-4.1-mini. The fidelity of TrajOnco's output was validated through human evaluation. Furthermore, TrajOnco's interpretable reasoning outputs can be aggregated to reveal population-level risk patterns that align with established clinical knowledge. These findings highlight the potential of multi-agent LLMs to execute interpretable temporal reasoning over longitudinal EHRs, advancing both scalable multi-cancer early detection and clinical insight generation.",
+      "published": "2026-04-12",
+      "updated": "2026-04-12",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2604.10386",
+      "pdf_url": "https://arxiv.org/pdf/2604.10386.pdf"
+    },
     {
       "id": "2604.06262",
       "title": "From Exposure to Internalization: Dual-Stream Calibration for In-context Clinical Reasoning",
@@ -1022,25 +1044,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2507.22533",
       "pdf_url": "https://arxiv.org/pdf/2507.22533.pdf"
-    },
-    {
-      "id": "2507.14847",
-      "title": "Time-Aware Attention for Enhanced Electronic Health Records Modeling",
-      "authors": [
-        "Junhan Yu",
-        "Zhunyi Feng",
-        "Junwei Lu",
-        "Tianxi Cai",
-        "Doudou Zhou"
-      ],
-      "abstract": "Electronic Health Records (EHR) contain valuable clinical information for predicting patient outcomes and guiding healthcare decisions. However, effectively modeling Electronic Health Records (EHRs) requires addressing data heterogeneity and complex temporal patterns. Standard approaches often struggle with irregular time intervals between clinical events. We propose TALE-EHR, a Transformer-based framework featuring a novel time-aware attention mechanism that explicitly models continuous temporal gaps to capture fine-grained sequence dynamics. To complement this temporal modeling with robust semantics, TALE-EHR leverages embeddings derived from standardized code descriptions using a pre-trained Large Language Model (LLM), providing a strong foundation for understanding clinical concepts. Experiments on the MIMIC-IV and PIC dataset demonstrate that our approach outperforms state-of-the-art baselines on tasks such as disease progression forecasting. TALE-EHR underscores the benefit of integrating explicit, continuous temporal modeling with strong semantic representations provides a powerful solution for advancing EHR analysis.",
-      "published": "2025-07-20",
-      "updated": "2025-07-20",
-      "categories": [
-        "cs.LG"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2507.14847",
-      "pdf_url": "https://arxiv.org/pdf/2507.14847.pdf"
     }
   ]
 }
