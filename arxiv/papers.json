@@ -1,6 +1,53 @@
 {
-  "generated_at": "2026-04-20T05:55:33.986489Z",
+  "generated_at": "2026-04-21T05:47:10.930577Z",
   "papers": [
+    {
+      "id": "2604.18570",
+      "title": "A multimodal and temporal foundation model for virtual patient representations at healthcare system scale",
+      "authors": [
+        "Andrew Zhang",
+        "Tong Ding",
+        "Sophia J. Wagner",
+        "Caiwei Tian",
+        "Ming Y. Lu",
+        "Rowland Pettit",
+        "Joshua E. Lewis",
+        "Alexandre Misrahi",
+        "Dandan Mo",
+        "Long Phi Le",
+        "Faisal Mahmood"
+      ],
+      "abstract": "Modern medicine generates vast multimodal data across siloed systems, yet no existing model integrates the full breadth and temporal depth of the clinical record into a unified patient representation. We introduce Apollo, a multimodal temporal foundation model trained and evaluated on over three decades of longitudinal hospital records from a major US hospital system, composed of 25 billion records from 7.2 million patients, representing 28 distinct medical modalities and 12 major medical specialties. Apollo learns a unified representation space integrating over 100 thousand unique medical events in our clinical vocabulary as well as images and clinical text. This \"atlas of medical concepts\" forms a computational substrate for modeling entire patient care journeys comprised of sequences of structured and unstructured events, which are compressed by Apollo into virtual patient representations. To assess the potential of these whole-patient representations, we created 322 prognosis and retrieval tasks from a held-out test set of 1.4 million patients. We demonstrate the generalized clinical forecasting potential of Apollo embeddings, including predicting new disease onset risk up to five years in advance (95 tasks), disease progression (78 tasks), treatment response (59 tasks), risk of treatment-related adverse events (17 tasks), and hospital operations endpoints (12 tasks). Using feature attribution techniques, we show that model predictions align with clinically-interpretable multimodal biomarkers. We evaluate semantic similarity search on 61 retrieval tasks, and moreover demonstrate the potential of Apollo as a multimodal medical search engine using text and image queries. Together, these modeling capabilities establish the foundation for computable medicine, where the full context of patient care becomes accessible to computational reasoning.",
+      "published": "2026-04-20",
+      "updated": "2026-04-20",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2604.18570",
+      "pdf_url": "https://arxiv.org/pdf/2604.18570.pdf"
+    },
+    {
+      "id": "2604.17725",
+      "title": "RePrompT: Recurrent Prompt Tuning for Integrating Structured EHR Encoders with Large Language Models",
+      "authors": [
+        "Arya Hadizadeh Moghaddam",
+        "Drew Ross",
+        "Mohsen Nayebi Kerdabadi",
+        "Dongjie Wang",
+        "Zijun Yao"
+      ],
+      "abstract": "Large Language Models (LLMs) have shown strong promise for mining Electronic Health Records (EHRs) by reasoning over longitudinal clinical information to capture context-rich patient trajectories. However, leveraging LLMs for structured EHRs (e.g., standardized diagnosis and medication codes) presents two key challenges. First, translating time-stamped EHR sequences into plain text can obscure both temporal structure and code identities, weakening the ability to capture code co-occurrence and longitudinal regularities. Second, unlike cohort-trained predictive models that learn a shared, task-aligned representation space across patients, LLMs are often applied in a case-isolated inference setting where each patient is processed independently without leveraging population-level patterns. To address these challenges, we introduce RePrompT, a time-aware LLM framework that integrates structured EHR encoders through prompt tuning, without modifying underlying architectures. Specifically, RePrompT recurrently incorporates latent states from prior visits to preserve longitudinal information, and injects population-level information through trainable prompt tokens derived from a cohort-trained, task-aligned EHR encoder. Experiments on MIMIC-III and MIMIC-IV demonstrate that RePrompT consistently outperforms both EHR-based and LLM-based baselines across multiple clinical prediction tasks.",
+      "published": "2026-04-20",
+      "updated": "2026-04-20",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2604.17725",
+      "pdf_url": "https://arxiv.org/pdf/2604.17725.pdf"
+    },
     {
       "id": "2604.14547",
       "title": "Predicting Post-Traumatic Epilepsy from Clinical Records using Large Language Model Embeddings",
@@ -161,6 +208,30 @@
       "pdf_url": "https://arxiv.org/pdf/2603.21597.pdf"
     },
     {
+      "id": "2604.16364",
+      "title": "Clinical Note Bloat Reduction for Efficient LLM Use",
+      "authors": [
+        "Jordan L. Cahoon",
+        "Chloe Stanwyck",
+        "Asad Aali",
+        "Rachel Madding",
+        "Emma Sun",
+        "Yixing Jiang",
+        "Renumathy Dhanasekaran",
+        "Emily Alsentzer"
+      ],
+      "abstract": "Health systems are rapidly deploying large language models (LLMs) that use clinical notes for clinical decision support applications. However, modern documentation practices rely heavily on templates, copy--paste shortcuts, and auto-populated fields, producing extensive duplicated text (``note bloat'') that dilutes clinically meaningful signal and substantially increases the computational cost of LLM use. We introduce TRACE, a scalable preprocessing pipeline that removes note bloat by leveraging EHR attribution metadata to identify templated and copied content and applying frequency-based deduplication when metadata are unavailable. We evaluated TRACE across four real--world clinical cohorts spanning liver transplantation, obstetrics, and inpatient care (5.3 million notes) using blinded physician review and downstream modeling tasks. TRACE removed 47.3% of chart text while preserving performance for information extraction and clinical outcome prediction. At a large academic medical center, this reduction corresponds to an estimated $9.5 million annual decrease in LLM inference costs assuming one query per encounter. These findings show how underutilized EHR metadata can enable more scalable and cost-efficient deployment of LLM-based clinical systems.",
+      "published": "2026-03-21",
+      "updated": "2026-03-21",
+      "categories": [
+        "cs.CY",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2604.16364",
+      "pdf_url": "https://arxiv.org/pdf/2604.16364.pdf"
+    },
+    {
       "id": "2603.10180",
       "title": "DT-BEHRT: Disease Trajectory-aware Transformer for Interpretable Patient Representation Learning",
       "authors": [
@@ -297,15 +368,15 @@
     },
     {
       "id": "2602.10385",
-      "title": "Time-to-Event Transformer to Capture Timing Attention of Events in EHR Time Series",
+      "title": "Capture Timing-Attention of Events in Clinical Time Series",
       "authors": [
         "Jia Li",
         "Yu Hou",
         "Rui Zhang"
       ],
-      "abstract": "Automatically discovering personalized sequential events from large-scale time-series data is crucial for enabling precision medicine in clinical research, yet it remains a formidable challenge even for contemporary AI models. For example, while transformers capture rich associations, they are mostly agnostic to event timing and ordering, thereby bypassing potential causal reasoning. Intuitively, we need a method capable of evaluating the \"degree of alignment\" among patient-specific trajectories and identifying their shared patterns, i.e., the significant events in a consistent sequence. This necessitates treating timing as a true \\emph{computable} dimension, allowing models to assign ``relative timestamps'' to candidate events beyond their observed physical times. In this work, we introduce LITT, a novel Timing-Transformer architecture that enables temporary alignment of sequential events on a virtual ``relative timeline'', thereby enabling \\emph{event-timing-focused attention} and personalized interpretations of clinical trajectories. Its interpretability and effectiveness are validated on real-world longitudinal EHR data from 3,276 breast cancer patients to predict the onset timing of cardiotoxicity-induced heart disease. Furthermore, LITT outperforms both the benchmark and state-of-the-art survival analysis methods on public datasets, positioning it as a significant step forward for precision medicine in clinical AI.",
+      "abstract": "Automatically discovering personalized sequential events from large-scale time-series data is crucial for enabling precision medicine in clinical research, yet it remains a formidable challenge even for contemporary AI models. For example, while transformers capture rich associations, they are mostly agnostic to event timing and ordering, thereby bypassing potential causal reasoning. Intuitively, we need a method capable of evaluating the \"degree of alignment\" among patient-specific trajectories and identifying their shared patterns, i.e., the significant events in a consistent sequence. This necessitates treating timing as a true \\emph{computable} dimension, allowing models to assign ``relative timestamps'' to candidate events beyond their observed physical times. In this work, we introduce LITT (Individual-Level Time Transformation), a novel architecture that enables temporary alignment of sequential events on a virtual ``relative timeline'', thereby enabling \\emph{event-timing-focused attention} and personalized interpretations of clinical trajectories. Its interpretability and effectiveness are validated on real-world longitudinal EHR data from 3,276 breast cancer patients to predict the onset timing of cardiotoxicity-induced heart disease. Furthermore, LITT outperforms both the benchmark and state-of-the-art survival analysis methods on public datasets, positioning it as a significant step forward for precision medicine in clinical AI.",
       "published": "2026-02-11",
-      "updated": "2026-02-11",
+      "updated": "2026-04-18",
       "categories": [
         "cs.LG",
         "cs.AI"
@@ -333,6 +404,24 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2602.03569",
       "pdf_url": "https://arxiv.org/pdf/2602.03569.pdf"
+    },
+    {
+      "id": "2602.03562",
+      "title": "NPCNet: Navigator-Driven Pseudo Text for Deep Clustering of Early Sepsis Phenotyping",
+      "authors": [
+        "Pi-Ju Tsai",
+        "Charkkri Limbud",
+        "Kuan-Fu Chen",
+        "Yi-Ju Tseng"
+      ],
+      "abstract": "Electronic Health Records (EHRs) provide high-dimensional temporal data essential for patient modeling; however, conventional algorithmic approaches often rely on data aggregation or imputation, which distorts temporal disease trajectories. Such computational limitations are particularly critical in sepsis, a heterogeneous syndrome where clustering-based stratification plays a key role in identifying clinically distinct phenotypes for precise treatment strategies. Furthermore, existing clustering processes seldom incorporate domain-driven constraints, often resulting in phenotypes that lack clear clinical distinction. We propose a novel clustering network, NPCNet, that comprises a text embedding generator, a clustering operator, and a target navigator. We first transform EHRs into pseudo texts by discretizing continuous clinical measurements, then integrate them with static variables to construct the embeddings. The target navigator then infuses clinical knowledge into the embeddings through auxiliary tasks, constraining clustering results to better align sepsis phenotypes with clinical significance. Finally, the clustering operator employs an iterative refinement mechanism to jointly optimize phenotype centroids and patient representations under domain-driven constraints. Extensive experiments on public datasets validate that NPCNet achieves superior performance on both internal clustering benchmarks and clinical validity metrics, offering a viable pathway for precision treatment strategies in the management of sepsis.",
+      "published": "2026-02-03",
+      "updated": "2026-04-19",
+      "categories": [
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2602.03562",
+      "pdf_url": "https://arxiv.org/pdf/2602.03562.pdf"
     },
     {
       "id": "2602.03340",
@@ -952,96 +1041,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2508.13579",
       "pdf_url": "https://arxiv.org/pdf/2508.13579.pdf"
-    },
-    {
-      "id": "2508.06627",
-      "title": "Early Detection of Pancreatic Cancer Using Multimodal Learning on Electronic Health Records",
-      "authors": [
-        "Mosbah Aouad",
-        "Anirudh Choudhary",
-        "Awais Farooq",
-        "Steven Nevers",
-        "Lusine Demirkhanyan",
-        "Bhrandon Harris",
-        "Suguna Pappu",
-        "Christopher Gondi",
-        "Ravishankar Iyer"
-      ],
-      "abstract": "Pancreatic ductal adenocarcinoma (PDAC) is one of the deadliest cancers, and early detection remains a major clinical challenge due to the absence of specific symptoms and reliable biomarkers. In this work, we propose a new multimodal approach that integrates longitudinal diagnosis code histories and routinely collected laboratory measurements from electronic health records to detect PDAC up to one year prior to clinical diagnosis. Our method combines neural controlled differential equations to model irregular lab time series, pretrained language models and recurrent networks to learn diagnosis code trajectory representations, and cross-attention mechanisms to capture interactions between the two modalities. We develop and evaluate our approach on a real-world dataset of nearly 4,700 patients and achieve significant improvements in AUC ranging from 6.5% to 15.5% over state-of-the-art methods. Furthermore, our model identifies diagnosis codes and laboratory panels associated with elevated PDAC risk, including both established and new biomarkers. Our code is available at https://github.com/MosbahAouad/EarlyPDAC-MML.",
-      "published": "2025-08-08",
-      "updated": "2025-08-18",
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2508.06627",
-      "pdf_url": "https://arxiv.org/pdf/2508.06627.pdf"
-    },
-    {
-      "id": "2508.01970",
-      "title": "Improving Hospital Risk Prediction with Knowledge-Augmented Multimodal EHR Modeling",
-      "authors": [
-        "Rituparna Datta",
-        "Jiaming Cui",
-        "Zihan Guan",
-        "Vishal G. Reddy",
-        "Joshua C. Eby",
-        "Gregory Madden",
-        "Rupesh Silwal",
-        "Anil Vullikanti"
-      ],
-      "abstract": "Accurate prediction of clinical outcomes using Electronic Health Records (EHRs) is critical for early intervention, efficient resource allocation, and improved patient care. EHRs contain multimodal data, including both structured data and unstructured clinical notes that provide rich, context-specific information. In this work, we introduce a unified framework that seamlessly integrates these diverse modalities, leveraging all relevant available information through a two-stage architecture for clinical risk prediction. In the first stage, a fine-tuned Large Language Model (LLM) extracts crucial, task-relevant information from clinical notes, which is enhanced by graph-based retrieval of external domain knowledge from sources such as a medical corpus like PubMed, grounding the LLM's understanding. The second stage combines both unstructured representations and features derived from the structured data to generate the final predictions. This approach supports a wide range of clinical tasks. Here, we demonstrate its effectiveness on 30-day readmission and in-hospital mortality prediction. Experimental results show that our framework achieves strong performance, with AUC scores of $0.84$ and $0.92$, respectively, despite these tasks involving severely imbalanced datasets, with positive rates ranging from approximately $4\\%$ to $13\\%$. Moreover, it outperforms all existing baselines and clinical practices, including established risk scoring systems. To the best of our knowledge, this is one of the first frameworks for healthcare prediction which enhances the power of an LLM-based graph-guided knowledge retrieval method by combining it with structured data for improved clinical outcome prediction.",
-      "published": "2025-08-04",
-      "updated": "2025-08-27",
-      "categories": [
-        "cs.LG"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2508.01970",
-      "pdf_url": "https://arxiv.org/pdf/2508.01970.pdf"
-    },
-    {
-      "id": "2508.01956",
-      "title": "Scaling Clinician-Grade Feature Generation from Clinical Notes with Multi-Agent Language Models",
-      "authors": [
-        "Jiayi Wang",
-        "Jacqueline Jil Vallon",
-        "Nikhil V. Kotha",
-        "Neil Panjwani",
-        "Xi Ling",
-        "Margaret Redfield",
-        "Sushmita Vij",
-        "Sandy Srinivas",
-        "John Leppert",
-        "Mark K. Buyyounouski",
-        "Mohsen Bayati"
-      ],
-      "abstract": "Developing accurate clinical prediction models is often bottlenecked by the difficulty of deriving meaningful structured features from unstructured EHR notes, a process that traditionally requires manual, unscalable clinical abstraction. In this study, we first established a rigorous patient-level Clinician Feature Generation (CFG) protocol, in which domain experts manually reviewed notes to define and extract nuanced features for a cohort of 147 patients with prostate cancer. As a high-fidelity ground truth, this labor-intensive process provided the blueprint for SNOW (Scalable Note-to-Outcome Workflow), a transparent multi-agent large language model (LLM) system designed to autonomously mimic the iterative reasoning and validation workflow of clinical experts. On 5-year cancer recurrence prediction, SNOW (AUC-ROC 0.767) achieved performance comparable to manual CFG (0.762) and outperformed structured baselines, clinician-guided LLM extraction, and six representational feature generation (RFG) approaches. Once configured, SNOW produced the full patient-level feature table in 12 hours with 5 hours of clinician oversight, reducing human expert effort by approximately 48-fold versus manual CFG. To test scalability where manual CFG is infeasible, we deployed SNOW on an external heart failure with preserved ejection fraction (HFpEF) cohort from MIMIC-IV (n=2,084); without task-specific tuning, SNOW generated prognostic features that outperformed baseline and RFG methods for 30-day (SNOW: 0.851) and 1-year (SNOW: 0.763) mortality prediction. These results demonstrate that a modular LLM agent-based system can scale expert-level feature generation from clinical notes, while enabling interpretable use of unstructured EHR text in outcome prediction and preserving generalizability across a variety of settings and conditions.",
-      "published": "2025-08-03",
-      "updated": "2025-12-28",
-      "categories": [
-        "cs.AI",
-        "cs.LG",
-        "cs.MA"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2508.01956",
-      "pdf_url": "https://arxiv.org/pdf/2508.01956.pdf"
-    },
-    {
-      "id": "2508.00615",
-      "title": "Similarity-Based Self-Construct Graph Model for Predicting Patient Criticalness Using Graph Neural Networks and EHR Data",
-      "authors": [
-        "Mukesh Kumar Sahu",
-        "Pinki Roy"
-      ],
-      "abstract": "Accurately predicting the criticalness of ICU patients (such as in-ICU mortality risk) is vital for early intervention in critical care. However, conventional models often treat each patient in isolation and struggle to exploit the relational structure in Electronic Health Records (EHR). We propose a Similarity-Based Self-Construct Graph Model (SBSCGM) that dynamically builds a patient similarity graph from multi-modal EHR data, and a HybridGraphMedGNN architecture that operates on this graph to predict patient mortality and a continuous criticalness score. SBSCGM uses a hybrid similarity measure (combining feature-based and structural similarities) to connect patients with analogous clinical profiles in real-time. The HybridGraphMedGNN integrates Graph Convolutional Network (GCN), GraphSAGE, and Graph Attention Network (GAT) layers to learn robust patient representations, leveraging both local and global graph patterns. In experiments on 6,000 ICU stays from the MIMIC-III dataset, our model achieves state-of-the-art performance (AUC-ROC $0.94$) outperforming baseline classifiers and single-type GNN models. We also demonstrate improved precision/recall and show that the attention mechanism provides interpretable insights into model predictions. Our framework offers a scalable and interpretable solution for critical care risk prediction, with potential to support clinicians in real-world ICU deployment.",
-      "published": "2025-08-01",
-      "updated": "2025-08-01",
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2508.00615",
-      "pdf_url": "https://arxiv.org/pdf/2508.00615.pdf"
     }
   ]
 }
