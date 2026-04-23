@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-22T05:46:56.340099Z",
+  "generated_at": "2026-04-23T05:48:51.780894Z",
   "papers": [
     {
       "id": "2604.18570",
@@ -19,7 +19,7 @@
       ],
       "abstract": "Modern medicine generates vast multimodal data across siloed systems, yet no existing model integrates the full breadth and temporal depth of the clinical record into a unified patient representation. We introduce Apollo, a multimodal temporal foundation model trained and evaluated on over three decades of longitudinal hospital records from a major US hospital system, composed of 25 billion records from 7.2 million patients, representing 28 distinct medical modalities and 12 major medical specialties. Apollo learns a unified representation space integrating over 100 thousand unique medical events in our clinical vocabulary as well as images and clinical text. This \"atlas of medical concepts\" forms a computational substrate for modeling entire patient care journeys comprised of sequences of structured and unstructured events, which are compressed by Apollo into virtual patient representations. To assess the potential of these whole-patient representations, we created 322 prognosis and retrieval tasks from a held-out test set of 1.4 million patients. We demonstrate the generalized clinical forecasting potential of Apollo embeddings, including predicting new disease onset risk up to five years in advance (95 tasks), disease progression (78 tasks), treatment response (59 tasks), risk of treatment-related adverse events (17 tasks), and hospital operations endpoints (12 tasks). Using feature attribution techniques, we show that model predictions align with clinically-interpretable multimodal biomarkers. We evaluate semantic similarity search on 61 retrieval tasks, and moreover demonstrate the potential of Apollo as a multimodal medical search engine using text and image queries. Together, these modeling capabilities establish the foundation for computable medicine, where the full context of patient care becomes accessible to computational reasoning.",
       "published": "2026-04-20",
-      "updated": "2026-04-20",
+      "updated": "2026-04-21",
       "categories": [
         "cs.LG",
         "cs.AI",
@@ -628,6 +628,32 @@
       "pdf_url": "https://arxiv.org/pdf/2601.06140.pdf"
     },
     {
+      "id": "2512.15808",
+      "title": "Foundation Models in Biomedical Imaging: Turning Hype into Reality",
+      "authors": [
+        "Amgad Muneer",
+        "Kai Zhang",
+        "Ibraheem Hamdi",
+        "Rizwan Qureshi",
+        "Muhammad Waqas",
+        "Shereen Fouad",
+        "Hazrat Ali",
+        "Syed Muhammad Anwar",
+        "Jia Wu"
+      ],
+      "abstract": "Foundation models (FMs) are driving a prominent shift in biomedical imaging from task-specific models to unified backbone models for diverse tasks. This opens an avenue to integrate imaging, pathology, clinical records, and genomics data into a composite system. However, this vision contrasts sharply with modern medicine's trajectory toward more granular sub-specialization. This tension, coupled with data scarcity, domain heterogeneity, and limited interpretability, creates a gap between benchmark success and real-world clinical value. We argue that the immediate role of FMs lies in augmenting, not replacing, clinical expertise. To separate hype from reality, we introduce REAL-FM (Real-world Evaluation and Assessment of Foundation Models), a multi-dimensional framework for assessing data, technical readiness, clinical value, workflow integration, and responsible AI. Using REAL-FM, we find that while FMs excel in pattern recognition, they fall short in causal reasoning, domain robustness, and safety. Clinical translation is hindered by scarce representative data for model training, unverified generalization beyond oversimplified benchmark settings, and a lack of prospective outcome-based validation. We further examine FM reasoning paradigms, including sequential logic, spatial understanding, and symbolic domain knowledge. We envision that the path forward lies not in a monolithic medical oracle, but in coordinated subspecialist AI systems that are transparent, safe, and clinically grounded.",
+      "published": "2025-12-17",
+      "updated": "2026-04-22",
+      "categories": [
+        "q-bio.QM",
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2512.15808",
+      "pdf_url": "https://arxiv.org/pdf/2512.15808.pdf"
+    },
+    {
       "id": "2512.14563",
       "title": "Residual GRU+MHSA: A Lightweight Hybrid Recurrent Attention Model for Cardiovascular Disease Detection",
       "authors": [
@@ -1015,32 +1041,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2508.17554",
       "pdf_url": "https://arxiv.org/pdf/2508.17554.pdf"
-    },
-    {
-      "id": "2508.13579",
-      "title": "Toward Better EHR Reasoning in LLMs: Reinforcement Learning with Expert Attention Guidance",
-      "authors": [
-        "Yue Fang",
-        "Yuxin Guo",
-        "Jiaran Gao",
-        "Hongxin Ding",
-        "Xinke Jiang",
-        "Weibin Liao",
-        "Yongxin Xu",
-        "Yinghao Zhu",
-        "Zhibang Yang",
-        "Liantao Ma",
-        "Junfeng Zhao",
-        "Yasha Wang"
-      ],
-      "abstract": "Improving large language models (LLMs) for electronic health record (EHR) reasoning is essential for enabling accurate and generalizable clinical predictions. While LLMs excel at medical text understanding, they underperform on EHR-based prediction tasks due to challenges in modeling temporally structured, high-dimensional data. Existing approaches often rely on hybrid paradigms, where LLMs serve merely as frozen prior retrievers while downstream deep learning (DL) models handle prediction, failing to improve the LLM's intrinsic reasoning capacity and inheriting the generalization limitations of DL models. To this end, we propose EAG-RL, a novel two-stage training framework designed to intrinsically enhance LLMs' EHR reasoning ability through expert attention guidance, where expert EHR models refer to task-specific DL models trained on EHR data. Concretely, EAG-RL first constructs high-quality, stepwise reasoning trajectories using expert-guided Monte Carlo Tree Search to effectively initialize the LLM's policy. Then, EAG-RL further optimizes the policy via reinforcement learning by aligning the LLM's attention with clinically salient features identified by expert EHR models. Extensive experiments on two real-world EHR datasets show that EAG-RL improves the intrinsic EHR reasoning ability of LLMs by an average of 14.62%, while also enhancing robustness to feature perturbations and generalization to unseen clinical domains. These results demonstrate the practical potential of EAG-RL for real-world deployment in clinical prediction tasks. Our code have been available at https://github.com/devilran6/EAG-RL.",
-      "published": "2025-08-19",
-      "updated": "2025-08-19",
-      "categories": [
-        "cs.AI"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2508.13579",
-      "pdf_url": "https://arxiv.org/pdf/2508.13579.pdf"
     }
   ]
 }
