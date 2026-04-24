@@ -1,6 +1,24 @@
 {
-  "generated_at": "2026-04-23T05:48:51.780894Z",
+  "generated_at": "2026-04-24T05:51:34.633669Z",
   "papers": [
+    {
+      "id": "2604.21027",
+      "title": "HypEHR: Hyperbolic Modeling of Electronic Health Records for Efficient Question Answering",
+      "authors": [
+        "Yuyu Liu",
+        "Sarang Rajendra Patil",
+        "Mengjia Xu",
+        "Tengfei Ma"
+      ],
+      "abstract": "Electronic health record (EHR) question answering is often handled by LLM-based pipelines that are costly to deploy and do not explicitly leverage the hierarchical structure of clinical data. Motivated by evidence that medical ontologies and patient trajectories exhibit hyperbolic geometry, we propose HypEHR, a compact Lorentzian model that embeds codes, visits, and questions in hyperbolic space and answers queries via geometry-consistent cross-attention with type-specific pointer heads. HypEHR is pretrained with next-visit diagnosis prediction and hierarchy-aware regularization to align representations with the ICD ontology. On two MIMIC-IV-based EHR-QA benchmarks, HypEHR approaches LLM-based methods while using far fewer parameters. Our code is publicly available at https://github.com/yuyuliu11037/HypEHR.",
+      "published": "2026-04-22",
+      "updated": "2026-04-22",
+      "categories": [
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2604.21027",
+      "pdf_url": "https://arxiv.org/pdf/2604.21027.pdf"
+    },
     {
       "id": "2604.18570",
       "title": "A multimodal and temporal foundation model for virtual patient representations at healthcare system scale",
@@ -1023,24 +1041,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2509.04485",
       "pdf_url": "https://arxiv.org/pdf/2509.04485.pdf"
-    },
-    {
-      "id": "2508.17554",
-      "title": "Bridging Graph and State-Space Modeling for Intensive Care Unit Length of Stay Prediction",
-      "authors": [
-        "Shuqi Zi",
-        "Haitz Sáez de Ocáriz Borde",
-        "Emma Rocheteau",
-        "Pietro Lio'"
-      ],
-      "abstract": "Predicting a patient's length of stay (LOS) in the intensive care unit (ICU) is a critical task for hospital resource management, yet remains challenging due to the heterogeneous and irregularly sampled nature of electronic health records (EHRs). In this work, we propose S$^2$G-Net, a novel neural architecture that unifies state-space sequence modeling with multi-view Graph Neural Networks (GNNs) for ICU LOS prediction. The temporal path employs Mamba state-space models (SSMs) to capture patient trajectories, while the graph path leverages an optimized GraphGPS backbone, designed to integrate heterogeneous patient similarity graphs derived from diagnostic, administrative, and semantic features. Experiments on the large-scale MIMIC-IV cohort dataset show that S$^2$G-Net consistently outperforms sequence models (BiLSTM, Mamba, Transformer), graph models (classic GNNs, GraphGPS), and hybrid approaches across all primary metrics. Extensive ablation studies and interpretability analyses highlight the complementary contributions of each component of our architecture and underscore the importance of principled graph construction. These results demonstrate that S$^2$G-Net provides an effective and scalable solution for ICU LOS prediction with multi-modal clinical data. The code can be found at https://github.com/ShuqiZi1/S2G-Net.",
-      "published": "2025-08-24",
-      "updated": "2025-10-11",
-      "categories": [
-        "cs.LG"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2508.17554",
-      "pdf_url": "https://arxiv.org/pdf/2508.17554.pdf"
     }
   ]
 }
