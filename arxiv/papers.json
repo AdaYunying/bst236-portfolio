@@ -1,6 +1,25 @@
 {
-  "generated_at": "2026-05-03T06:04:08.350731Z",
+  "generated_at": "2026-05-04T06:05:58.856768Z",
   "papers": [
+    {
+      "id": "2605.00708",
+      "title": "Deep Kernel Learning for Stratifying Glaucoma Trajectories",
+      "authors": [
+        "Bruce Rushing",
+        "Angela Danquah",
+        "Alireza Namazi",
+        "Arjun Dirghangi",
+        "Heman Shakeri"
+      ],
+      "abstract": "Effectively stratifying patient risk in chronic diseases like glaucoma is a major clinical challenge. Clinicians need tools to identify patients at high risk of progression from sparse and irregularly-sampled electronic health records (EHRs). We propose a novel deep kernel learning (DKL) architecture that leverages a Gaussian Process (GP) backend. The GP's kernel is defined by a transformer-based feature extractor applied to clinical-BERT embeddings to model glaucoma patient trajectories from multimodal EHR data. Our method successfully identifies three clinically distinct patient subgroups. Crucially, the model learns to decouple disease progression from current severity, identifying a high-risk group with a worsening trajectory despite having better average visual acuity than a second, stably poor group. This reveals that the model learns to identify progression risk rather than just the current disease state. This ability to stratify patients based on their risk trajectory progression offers a powerful tool for clinical decision support, enabling targeted interventions for high-risk individuals and improving the management of glaucoma care.",
+      "published": "2026-05-01",
+      "updated": "2026-05-01",
+      "categories": [
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2605.00708",
+      "pdf_url": "https://arxiv.org/pdf/2605.00708.pdf"
+    },
     {
       "id": "2604.24547",
       "title": "Dialysis Risk Prediction and Treatment Effect Estimation for AKI patients using Longitudinal Electronic Health Records",
@@ -1023,29 +1042,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2509.10538",
       "pdf_url": "https://arxiv.org/pdf/2509.10538.pdf"
-    },
-    {
-      "id": "2509.03643",
-      "title": "CEHR-XGPT: A Scalable Multi-Task Foundation Model for Electronic Health Records",
-      "authors": [
-        "Chao Pang",
-        "Jiheum Park",
-        "Xinzhuo Jiang",
-        "Nishanth Parameshwar Pavinkurve",
-        "Krishna S. Kalluri",
-        "Shalmali Joshi",
-        "Noémie Elhadad",
-        "Karthik Natarajan"
-      ],
-      "abstract": "Electronic Health Records (EHRs) provide a rich, longitudinal view of patient health and hold significant potential for advancing clinical decision support, risk prediction, and data-driven healthcare research. However, most artificial intelligence (AI) models for EHRs are designed for narrow, single-purpose tasks, limiting their generalizability and utility in real-world settings. Here, we present CEHR-XGPT, a general-purpose foundation model for EHR data that unifies three essential capabilities - feature representation, zero-shot prediction, and synthetic data generation - within a single architecture. To support temporal reasoning over clinical sequences, CEHR-XGPT incorporates a novel time-token-based learning framework that explicitly encodes patients' dynamic timelines into the model structure. CEHR-XGPT demonstrates strong performance across all three tasks and generalizes effectively to external datasets through vocabulary expansion and fine-tuning. Its versatility enables rapid model development, cohort discovery, and patient outcome forecasting without the need for task-specific retraining.",
-      "published": "2025-09-03",
-      "updated": "2025-09-05",
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2509.03643",
-      "pdf_url": "https://arxiv.org/pdf/2509.03643.pdf"
     }
   ]
 }
