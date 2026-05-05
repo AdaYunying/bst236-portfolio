@@ -1,6 +1,25 @@
 {
-  "generated_at": "2026-05-04T06:05:58.856768Z",
+  "generated_at": "2026-05-05T05:56:46.787015Z",
   "papers": [
+    {
+      "id": "2605.01474",
+      "title": "ReMedi: Reasoner for Medical Clinical Prediction",
+      "authors": [
+        "Yushi Cao",
+        "Yiming Chen",
+        "Hongchao Jiang",
+        "Hung-yi Lee",
+        "Robby T. Tan"
+      ],
+      "abstract": "Predicting future clinical outcomes from electronic health records (EHR) remains challenging due to the complexity and heterogeneity of patient data. LLMs have shown strong potential for such predictive tasks, yet existing approaches mainly focus on enhancing medical knowledge through distillation or RAG while relying on the model's internal ability to interpret contextual information. In this work, we present ReMedi (Reasoner for Medical Clinical Prediction), a framework for improving clinical outcome prediction from EHR. ReMedi generates rationale-answer pairs using a challenging sample regeneration mechanism for complex clinical questions, which leverages ground-truth answers as hints to enhance reasoning for further fine-tuning and preference tuning. ReMedi integrates ground-truth outcome guidance into the preference data construction loop, regenerating rationale-answer variants. By tuning on these rationale-answer pairs, the model improves its predictive performance. Experiments on multiple EHR prediction tasks demonstrate substantial gains of up to 19.9 percent over state-of-the-art baselines in terms of F1 score, underscoring ReMedi's effectiveness in real-world clinical prediction.",
+      "published": "2026-05-02",
+      "updated": "2026-05-02",
+      "categories": [
+        "cs.CL"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2605.01474",
+      "pdf_url": "https://arxiv.org/pdf/2605.01474.pdf"
+    },
     {
       "id": "2605.00708",
       "title": "Deep Kernel Learning for Stratifying Glaucoma Trajectories",
@@ -454,7 +473,7 @@
       ],
       "abstract": "Automatically discovering personalized sequential events from large-scale time-series data is crucial for enabling precision medicine in clinical research, yet it remains a formidable challenge even for contemporary AI models. For example, while transformers capture rich associations, they are mostly agnostic to event timing and ordering, thereby bypassing potential causal reasoning. Intuitively, we need a method capable of evaluating the \"degree of alignment\" among patient-specific trajectories and identifying their shared patterns, i.e., the significant events in a consistent sequence. This necessitates treating timing as a true \\emph{computable} dimension, allowing models to assign ``relative timestamps'' to candidate events beyond their observed physical times. In this work, we introduce LITT (Individual-Level Time Transformation), a novel architecture that enables temporary alignment of sequential events on a virtual ``relative timeline'', thereby enabling \\emph{event-timing-focused attention} and personalized interpretations of clinical trajectories. Its interpretability and effectiveness are validated on real-world longitudinal EHR data from 3,276 breast cancer patients to predict the onset timing of cardiotoxicity-induced heart disease. Furthermore, LITT outperforms both the benchmark and state-of-the-art survival analysis methods on public datasets, positioning it as a significant step forward for precision medicine in clinical AI.",
       "published": "2026-02-11",
-      "updated": "2026-04-18",
+      "updated": "2026-05-01",
       "categories": [
         "cs.LG",
         "cs.AI"
@@ -1022,26 +1041,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2509.22920",
       "pdf_url": "https://arxiv.org/pdf/2509.22920.pdf"
-    },
-    {
-      "id": "2509.10538",
-      "title": "DualAlign: Generating Clinically Grounded Synthetic Data",
-      "authors": [
-        "Rumeng Li",
-        "Xun Wang",
-        "Hong Yu"
-      ],
-      "abstract": "Synthetic clinical data are increasingly important for advancing AI in healthcare, given strict privacy constraints on real-world EHRs, limited availability of annotated rare-condition data, and systemic biases in observational datasets. While large language models (LLMs) can generate fluent clinical text, producing synthetic data that is both realistic and clinically meaningful remains challenging. We introduce DualAlign, a framework that enhances statistical fidelity and clinical plausibility through dual alignment: (1) statistical alignment, which conditions generation on patient demographics and risk factors; and (2) semantic alignment, which incorporates real-world symptom trajectories to guide content generation. Using Alzheimer's disease (AD) as a case study, DualAlign produces context-grounded symptom-level sentences that better reflect real-world clinical documentation. Fine-tuning an LLaMA 3.1-8B model with a combination of DualAlign-generated and human-annotated data yields substantial performance gains over models trained on gold data alone or unguided synthetic baselines. While DualAlign does not fully capture longitudinal complexity, it offers a practical approach for generating clinically grounded, privacy-preserving synthetic data to support low-resource clinical text analysis.",
-      "published": "2025-09-05",
-      "updated": "2025-09-05",
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "cs.CL",
-        "cs.CY"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2509.10538",
-      "pdf_url": "https://arxiv.org/pdf/2509.10538.pdf"
     }
   ]
 }
