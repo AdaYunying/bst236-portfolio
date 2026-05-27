@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-26T06:26:45.639370Z",
+  "generated_at": "2026-05-27T06:33:30.654723Z",
   "papers": [
     {
       "id": "2605.20176",
@@ -575,14 +575,14 @@
     },
     {
       "id": "2602.12833",
-      "title": "TRACE: Temporal Reasoning via Agentic Context Evolution for Streaming Electronic Health Records (EHRs)",
+      "title": "Vital Trace: Protocol-Constrained Patient-State Reasoning for Longitudinal Clinical Trajectories",
       "authors": [
         "Zhan Qu",
         "Michael Färber"
       ],
-      "abstract": "Large Language Models (LLMs) encode extensive medical knowledge but struggle to apply it reliably to longitudinal patient trajectories, where evolving clinical states, irregular timing, and heterogeneous events degrade performance over time. Existing adaptation strategies rely on fine-tuning or retrieval-based augmentation, which introduce computational overhead, privacy constraints, or instability under long contexts. We introduce TRACE (Temporal Reasoning via Agentic Context Evolution), a framework that enables temporal clinical reasoning with frozen LLMs by explicitly structuring and maintaining context rather than extending context windows or updating parameters. TRACE operates over a dual-memory architecture consisting of a static Global Protocol encoding institutional clinical rules and a dynamic Individual Protocol tracking patient-specific state. Four agentic components, Router, Reasoner, Auditor, and Steward, coordinate over this structured memory to support temporal inference and state evolution. The framework maintains bounded inference cost via structured state compression and selectively audits safety-critical clinical decisions. Evaluated on longitudinal clinical event streams from MIMIC-IV, TRACE significantly improves next-event prediction accuracy, protocol adherence, and clinical safety over long-context and retrieval-augmented baselines, while producing interpretable and auditable reasoning traces.",
+      "abstract": "Longitudinal clinical reasoning over electronic health records requires tracking evolving physiological measurements, laboratory results, and interventions across extended patient trajectories. Existing LLM-based clinical reasoning systems often rely on repeatedly serializing patient histories or exchanging unconstrained textual agent messages, leading to context drift, unstable reasoning, and growing inference cost over long horizons. We present Vital Trace, a protocol-constrained multi-agent framework for future clinical risk prediction over evolving ICU trajectories. Instead of maintaining unbounded textual histories, Vital Trace uses a compact persistent patient-state memory together with staged reasoning performed by four coordinated agents: a Router, Reasoner, Auditor, and Steward. To support temporally coherent reasoning, we introduce a manually curated Global Protocol containing physiological state-transition rules and a dynamic patient-state representation that tracks hemodynamic, respiratory, renal, metabolic, and inflammatory instability over time. We evaluate Vital Trace on MIMIC-IV and eICU using future vasopressor-support, respiratory-support, renal-support, and deterioration prediction tasks. Results show that structured protocol-constrained reasoning improves temporal consistency, communication stability, calibration, and interpretability compared with free-form multi-agent baselines while achieving strong predictive performance across long ICU trajectories.",
       "published": "2026-02-13",
-      "updated": "2026-02-13",
+      "updated": "2026-05-26",
       "categories": [
         "cs.LG",
         "cs.AI",
