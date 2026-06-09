@@ -1,6 +1,51 @@
 {
-  "generated_at": "2026-06-08T06:35:05.843506Z",
+  "generated_at": "2026-06-09T06:27:10.622411Z",
   "papers": [
+    {
+      "id": "2606.09030",
+      "title": "TRIAGE: Dialectical Reasoning for Explainable Risk Prediction on Irregularly Sampled Medical Time Series with LLMs",
+      "authors": [
+        "Hyeongwon Jang",
+        "Gyouk Chu",
+        "Changhun Kim",
+        "Joonhyung Park",
+        "Hangyul Yoon",
+        "Eunho Yang"
+      ],
+      "abstract": "Clinical early warning systems built on electronic health records, in which clinical observations are recorded as irregularly sampled medical time series (ISMTS), must deliver both calibrated risk scores for patient triage and interpretable rationales that clinicians can verify. Large Language Models (LLMs) have been explored for this task, yet they collapse graded clinical risk into overconfident binary predictions. This risk polarization undermines both calibration and cross-patient comparability. To address this, we propose TRIAGE, a framework that trains an LLM to generate dialectical reasoning over competing clinical outcomes by eliciting outcome-specific rationales. This dialectical formulation mitigates risk polarization, enabling a single LLM to yield continuous risk scores grounded in explicit clinical reasoning. Evaluated on three ISMTS benchmarks, TRIAGE achieves an average AUPRC improvement of 3.3% and reduces calibration error by 81% compared to the competitive baselines. An LLM-as-a-judge assessment further shows that our rationales surpass post-hoc explanations from the baseline by 20% in clinical reasoning quality. The source code is available at https://github.com/HyeongWon-Jang/TRIAGE .",
+      "published": "2026-06-08",
+      "updated": "2026-06-08",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2606.09030",
+      "pdf_url": "https://arxiv.org/pdf/2606.09030.pdf"
+    },
+    {
+      "id": "2606.08501",
+      "title": "Back on Track: Aligning Rewards and States for Reasoning in Diffusion Large Language Models",
+      "authors": [
+        "Yawen Shao",
+        "Jie Xiao",
+        "Kai Zhu",
+        "Yu Liu",
+        "Hongchen Luo",
+        "Xueyang Fu",
+        "Yang Cao",
+        "Wei Zhai",
+        "Zheng-Jun Zha"
+      ],
+      "abstract": "Reinforcement learning (RL) holds immense promise for enhancing the reasoning capabilities of diffusion large language models (dLLMs). However, progress is fundamentally constrained by a dual misalignment between authentic generation trajectory and the gradient update process: (i) Process-reward misalignment. Sparse, terminal rewards are indiscriminately assigned to all intermediate steps of the generation process, failing to provide discriminative credit assignment. (ii) State-trajectory misalignment. Policy updates are often diverted toward artificial, out-of-trajectory states, squandering gradients on less informative samples. To address these limitations, we introduce Process Aligned Policy Optimization (PAPO), a novel framework that holistically aligns the RL update with the dLLM's generative trajectory via Step-Aware Process Rewards (SPR) that transform sparse terminal rewards into dense, step-wise credit, and Entropy-Guided Historical Re-enactment (EHR) that replays authentic trajectories at high-uncertainty steps. Extensive experiments on four benchmarks demonstrate that PAPO significantly outperforms baselines, achieving gains of up to 4.5% on GSM8K, 4.8% on MATH500, 42.2% on Countdown and 16.1% on Sudoku.",
+      "published": "2026-06-07",
+      "updated": "2026-06-07",
+      "categories": [
+        "cs.CL"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2606.08501",
+      "pdf_url": "https://arxiv.org/pdf/2606.08501.pdf"
+    },
     {
       "id": "2606.04499",
       "title": "Modeling and Interpreting Teamwork Dynamics in Cancer Care Outcome Prediction",
@@ -1000,45 +1045,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2511.22199",
       "pdf_url": "https://arxiv.org/pdf/2511.22199.pdf"
-    },
-    {
-      "id": "2511.22038",
-      "title": "Early Risk Prediction with Temporally and Contextually Grounded Clinical Language Processing",
-      "authors": [
-        "Rochana Chaturvedi",
-        "Yue Zhou",
-        "Andrew D. Boyd",
-        "Brian T. Layden",
-        "Mudassir Rashid",
-        "Lu Cheng",
-        "Ali Cinar",
-        "Barbara Di Eugenio"
-      ],
-      "abstract": "Clinical notes in Electronic Health Records (EHRs) capture rich temporal information on events, clinician reasoning, and lifestyle factors often missing from structured data. Leveraging them for predictive modeling can be impactful for timely identification of chronic diseases. However, they present core natural language processing (NLP) challenges: long text, irregular event distribution, complex temporal dependencies, privacy constraints, and resource limitations. We present two complementary methods for temporally and contextually grounded risk prediction from longitudinal notes. First, we introduce HiTGNN, a hierarchical temporal graph neural network that integrates intra-note temporal event structures, inter-visit dynamics, and medical knowledge to model patient trajectories with fine-grained temporal granularity. Second, we propose ReVeAL, a lightweight test-time framework that distills LLMs' reasoning into smaller verifier models. Applied to opportunistic screening for Type 2 Diabetes (T2D) using temporally realistic cohorts curated from private and public hospital corpora, HiTGNN achieves the highest predictive accuracy, especially for near-term risk, while preserving privacy and limiting reliance on large proprietary models. ReVeAL enhances sensitivity to true T2D cases and retains explanatory reasoning. Our ablations confirm the value of temporal structure and knowledge augmentation, and fairness analysis shows HiTGNN performs more equitably across subgroups.",
-      "published": "2025-11-27",
-      "updated": "2026-05-06",
-      "categories": [
-        "cs.CL"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2511.22038",
-      "pdf_url": "https://arxiv.org/pdf/2511.22038.pdf"
-    },
-    {
-      "id": "2511.21561",
-      "title": "Machine Learning Approaches to Clinical Risk Prediction: Multi-Scale Temporal Alignment in Electronic Health Records",
-      "authors": [
-        "Wei-Chen Chang",
-        "Lu Dai",
-        "Ting Xu"
-      ],
-      "abstract": "This study proposes a risk prediction method based on a Multi-Scale Temporal Alignment Network (MSTAN) to address the challenges of temporal irregularity, sampling interval differences, and multi-scale dynamic dependencies in Electronic Health Records (EHR). The method focuses on temporal feature modeling by introducing a learnable temporal alignment mechanism and a multi-scale convolutional feature extraction structure to jointly model long-term trends and short-term fluctuations in EHR sequences. At the input level, the model maps multi-source clinical features into a unified high-dimensional semantic space and employs temporal embedding and alignment modules to dynamically weight irregularly sampled data, reducing the impact of temporal distribution differences on model performance. The multi-scale feature extraction module then captures key patterns across different temporal granularities through multi-layer convolution and hierarchical fusion, achieving a fine-grained representation of patient states. Finally, an attention-based aggregation mechanism integrates global temporal dependencies to generate individual-level risk representations for disease risk prediction and health status assessment. Experiments conducted on publicly available EHR datasets show that the proposed model outperforms mainstream baselines in accuracy, recall, precision, and F1-Score, demonstrating the effectiveness and robustness of multi-scale temporal alignment in complex medical time-series analysis. This study provides a new solution for intelligent representation of high-dimensional asynchronous medical sequences and offers important technical support for EHR-driven clinical risk prediction.",
-      "published": "2025-11-26",
-      "updated": "2025-11-26",
-      "categories": [
-        "cs.LG"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2511.21561",
-      "pdf_url": "https://arxiv.org/pdf/2511.21561.pdf"
     }
   ]
 }
