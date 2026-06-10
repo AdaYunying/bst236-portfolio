@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T06:27:10.622411Z",
+  "generated_at": "2026-06-10T06:33:36.095106Z",
   "papers": [
     {
       "id": "2606.09030",
@@ -698,22 +698,22 @@
       "pdf_url": "https://arxiv.org/pdf/2602.12833.pdf"
     },
     {
-      "id": "2602.10385v4",
+      "id": "2602.10385v5",
       "title": "Capture Timing-Attention of Events in Clinical Time Series",
       "authors": [
         "Jia Li",
         "Yu Hou",
         "Rui Zhang"
       ],
-      "abstract": "Automatically discovering personalized trajectories (i.e., sequential event patterns) from longitudinal EHR data is crucial for enabling precision medicine in clinical research, yet it remains a formidable challenge even for contemporary AI models. For example, while the attention mechanism of transformers can capture rich associations, it is largely agnostic to event timing and ordering, thereby bypassing potential causal reasoning. Intuitively, we need a method capable of evaluating the ``degree of alignment'' among patient-specific trajectories and identifying their shared patterns, that is, the significant events in a consistent sequence. This necessitates treating timing as a true **computable** dimension, allowing models to assign ``relative timestamps'' to candidate events beyond their observed physical times. In this work, we introduce LITT (Individual-Level Time Transformation), a novel architecture that enables temporary alignment of sequential events on a virtual ``relative timeline'', thereby enabling **event-timing-focused attention** and personalized interpretations of clinical trajectories. Its interpretability and effectiveness are validated on real-world longitudinal EHR data from 3,276 breast cancer patients to predict the onset timing of cardiotoxicity-induced heart disease. Furthermore, LITT outperforms both the benchmark and state-of-the-art survival analysis methods on public datasets, positioning it as a significant step forward for precision medicine in clinical AI.",
+      "abstract": "The contemporary paradigm of trajectory learning operates fundamentally at the level of group dynamics, systematically reducing individual-level complexity to fit group-level models, thus rendering effective patient subtyping difficult and individual-level modeling largely out of reach. We propose a data-driven paradigm that introduces a dedicated individual-level temporal variable to capture \\emph{Timing Attention} (i.e., the degree of concentration of an event's timing distribution across the patient cohort), thereby rendering timing a \\emph{computable dimension} that enables individualized temporal features in trajectory learning. Instantiated as the Level-of-Individual Time Transformation (LITT) and applied to longitudinal EHR data from 3,276 breast cancer patients, the proposed paradigm demonstrates, for the first time to our knowledge: (1) automatic discovery of clinically significant patient trajectories, and (2) counterfactual timing deduction, that is, a \\emph{What-If Machine}. Both results are purely data-driven, requiring no prior domain knowledge. LITT further achieves strong performance on timing prediction and survival analysis tasks.",
       "published": "2026-02-11",
-      "updated": "2026-05-27",
+      "updated": "2026-06-09",
       "categories": [
         "cs.LG",
         "cs.AI"
       ],
-      "arxiv_url": "https://arxiv.org/abs/2602.10385v4",
-      "pdf_url": "https://arxiv.org/pdf/2602.10385v4.pdf"
+      "arxiv_url": "https://arxiv.org/abs/2602.10385v5",
+      "pdf_url": "https://arxiv.org/pdf/2602.10385v5.pdf"
     },
     {
       "id": "2602.03730",
