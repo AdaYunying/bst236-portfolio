@@ -1,6 +1,26 @@
 {
-  "generated_at": "2026-06-15T06:51:02.536596Z",
+  "generated_at": "2026-06-16T06:51:45.763721Z",
   "papers": [
+    {
+      "id": "2606.16872",
+      "title": "Towards Fair Predictions: Group Conditional Concordance Index to Quantify Fairness in Time-to-Event Prognostication",
+      "authors": [
+        "Haoyuan Wang",
+        "Riddhiman Bhattacharya",
+        "Richardo Henao",
+        "Daniel Wojdyla",
+        "Chuan Hong",
+        "Matthew Engelhard"
+      ],
+      "abstract": "Fairness metrics are essential for rigorously defining, quantifying, and mitigating biases in predictive models. While most existing metrics focus on binary classification tasks, fairness in time-to-event analyses has received limited attention. To address this gap, we propose a novel group fairness metric, the group-conditional Concordance Index (xCI), which extends Harrell's Concordance Index (CI) by conditioning on group membership. The xCI measures both within-group and cross-group ranking accuracy in the presence of right-censored data. We formally define the xCI, prove that CI is a weighted average of xCIs across all possible group pairs, and develop a consistent estimator using inverse probability of censoring weights (IPCW). We further investigate the relationship between xCI and predicted risk scores through analytical derivations and simulation studies. To demonstrate its practical utility, we present two case studies: (i) assessing the fairness of survival models trained on harmonized data from the Framingham Offspring, MESA, and ARIC studies, and (ii) evaluating fairness in existing cardiovascular disease (CVD) risk prediction models using Truveta, a large-scale electronic health record (EHR) database. Our results show that xCI effectively detects biases across demographic groups that are overlooked by existing metrics. Overall, xCI provides a valuable tool for fairness assessment in survival analysis, particularly in constrained resource allocation settings, and complements existing fairness evaluation approaches.",
+      "published": "2026-06-15",
+      "updated": "2026-06-15",
+      "categories": [
+        "stat.ME"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2606.16872",
+      "pdf_url": "https://arxiv.org/pdf/2606.16872.pdf"
+    },
     {
       "id": "2606.09030",
       "title": "TRIAGE: Dialectical Reasoning for Explainable Risk Prediction on Irregularly Sampled Medical Time Series with LLMs",
@@ -698,7 +718,7 @@
       "pdf_url": "https://arxiv.org/pdf/2602.12833.pdf"
     },
     {
-      "id": "2602.10385v5",
+      "id": "2602.10385v6",
       "title": "Capture Timing-Attention of Events in Clinical Time Series",
       "authors": [
         "Jia Li",
@@ -707,13 +727,13 @@
       ],
       "abstract": "The contemporary paradigm of trajectory learning operates fundamentally at the level of group dynamics, systematically reducing individual-level complexity to fit group-level models, thus rendering effective patient subtyping difficult and individual-level modeling largely out of reach. We propose a data-driven paradigm that introduces a dedicated individual-level temporal variable to capture \\emph{Timing Attention} (i.e., the degree of concentration of an event's timing distribution across the patient cohort), thereby rendering timing a \\emph{computable dimension} that enables individualized temporal features in trajectory learning. Instantiated as the Level-of-Individual Time Transformation (LITT) and applied to longitudinal EHR data from 3,276 breast cancer patients, the proposed paradigm demonstrates, for the first time to our knowledge: (1) automatic discovery of clinically significant patient trajectories, and (2) counterfactual timing deduction, that is, a \\emph{What-If Machine}. Both results are purely data-driven, requiring no prior domain knowledge. LITT further achieves strong performance on timing prediction and survival analysis tasks.",
       "published": "2026-02-11",
-      "updated": "2026-06-09",
+      "updated": "2026-06-15",
       "categories": [
         "cs.LG",
         "cs.AI"
       ],
-      "arxiv_url": "https://arxiv.org/abs/2602.10385v5",
-      "pdf_url": "https://arxiv.org/pdf/2602.10385v5.pdf"
+      "arxiv_url": "https://arxiv.org/abs/2602.10385v6",
+      "pdf_url": "https://arxiv.org/pdf/2602.10385v6.pdf"
     },
     {
       "id": "2602.03730",
@@ -1027,24 +1047,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2512.14563",
       "pdf_url": "https://arxiv.org/pdf/2512.14563.pdf"
-    },
-    {
-      "id": "2511.22199",
-      "title": "PULSE-ICU: A Pretrained Unified Long-Sequence Encoder for Multi-task Prediction in Intensive Care Units",
-      "authors": [
-        "Sejeong Jang",
-        "Joo Heung Yoon",
-        "Hyo Kyung Lee"
-      ],
-      "abstract": "Intensive care unit (ICU) data are highly irregular, heterogeneous, and temporally fragmented, posing challenges for generalizable clinical prediction. We present PULSE-ICU, a self-supervised foundation model that learns event-level ICU representations from large-scale EHR sequences without resampling or manual feature engineering. A unified embedding module encodes event identity, continuous values, units, and temporal attributes, while a Longformer-based encoder enables efficient modeling of long trajectories. PULSE-ICU was fine-tuned across 18 prediction tasks, including mortality, intervention forecasting, and phenotype identification, achieving strong performance across task types. External validation on eICU, HiRID, and P12 showed substantial improvements with minimal fine-tuning, demonstrating robustness to domain shift and variable constraints. These findings suggest that foundation-style modeling can improve data efficiency and adaptability, providing a scalable framework for ICU decision support across diverse clinical environments.",
-      "published": "2025-11-27",
-      "updated": "2025-11-27",
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2511.22199",
-      "pdf_url": "https://arxiv.org/pdf/2511.22199.pdf"
     }
   ]
 }
