@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-16T06:51:45.763721Z",
+  "generated_at": "2026-06-17T06:46:27.642606Z",
   "papers": [
     {
       "id": "2606.16872",
@@ -20,6 +20,28 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2606.16872",
       "pdf_url": "https://arxiv.org/pdf/2606.16872.pdf"
+    },
+    {
+      "id": "2606.17106",
+      "title": "Informative Missingness to Generate Irregular Clinical Time Series",
+      "authors": [
+        "Hadi Mehdizavareh",
+        "Gabriele Santangelo",
+        "Giovanna Nicora",
+        "Simon Lebech Cichosz",
+        "Arianna Dagliati",
+        "Arijit Khan",
+        "Riccardo Bellazzi"
+      ],
+      "abstract": "Laboratory tests in electronic health records are collected irregularly, and the absence of a test order can be as informative as the measurement itself. Such missingness reflects clinicians' decisions and patient physiology, making it important to model it directly rather than treat it as a preprocessing artifact. Here we present a diffusion-based approach for generating clinical time series that jointly models laboratory values and their observation patterns using the public Data Analytics Challenge on Missing Data Imputation (DACMI) benchmark derived from MIMIC-III. To preserve realistic sampling, we align chart times into 4-hour intervals and segment admissions into 7-day windows, producing trajectories that pair each lab value with a corresponding observation indicator. Standard transformations and normalization are applied to stabilize training. Our method extends the TimeDiff framework to learn continuous lab values and discrete missingness patterns through complementary diffusion objectives. Experiments show that the generated data closely match real patient trajectories across individual lab distributions and joint value-missingness embeddings, demonstrating that diffusion models can capture clinically meaningful dependencies between patient physiology and clinicians' testing behavior under MNAR-like (missing-not-at-random) missingness. These preliminary results indicate that our model can serve as an initial component toward developing clinical foundation models. By producing synthetic priors that preserve key physiology-missingness relationships, this work motivates the subsequent training of Prior-Data Fitted Networks capable of leveraging informative missingness, which we will investigate in the extended work.",
+      "published": "2026-06-14",
+      "updated": "2026-06-14",
+      "categories": [
+        "cs.LG",
+        "cs.CY"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2606.17106",
+      "pdf_url": "https://arxiv.org/pdf/2606.17106.pdf"
     },
     {
       "id": "2606.09030",
@@ -1024,29 +1046,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2512.15808",
       "pdf_url": "https://arxiv.org/pdf/2512.15808.pdf"
-    },
-    {
-      "id": "2512.14563",
-      "title": "Residual GRU+MHSA: A Lightweight Hybrid Recurrent Attention Model for Cardiovascular Disease Detection",
-      "authors": [
-        "Tejaswani Dash",
-        "Gautam Datla",
-        "Anudeep Vurity",
-        "Tazeem Ahmad",
-        "Mohd Adnan",
-        "Saima Rafi",
-        "Saisha Patro",
-        "Saina Patro"
-      ],
-      "abstract": "Cardiovascular disease (CVD) remains the leading cause of mortality worldwide, underscoring the need for reliable and efficient predictive tools that support early intervention. Traditional diagnostic approaches rely on handcrafted features and clinician expertise, while machine learning methods improve reproducibility but often struggle to generalize across noisy and heterogeneous clinical data. In this work, we propose Residual GRU with Multi-Head Self-Attention, a compact deep learning architecture designed for tabular clinical records. The model integrates residual bidirectional gated recurrent units for sequential modeling of feature columns, a channel reweighting block, and multi-head self-attention pooling with a learnable classification token to capture global context. We evaluate the model on the UCI Heart Disease dataset using 5-fold stratified cross-validation and compare it against classical methods such as Logistic Regression, Random Forest, and Support Vector Machines, as well as modern deep learning baselines including DeepMLP, convolutional networks, recurrent networks, and Transformers. The proposed model achieves an accuracy of 0.861, macro-F1 of 0.860, ROC-AUC of 0.908, and PR-AUC of 0.904, outperforming all baselines. Ablation studies confirm the individual contributions of residual recurrence, channel gating, and attention pooling. t-SNE visualizations further indicate that the learned embeddings exhibit clearer separation between disease and non-disease classes compared to raw features. These results demonstrate that lightweight hybrid recurrent and attention-based architectures provide a strong balance between accuracy and efficiency for clinical risk prediction, supporting deployment in resource-constrained healthcare settings.",
-      "published": "2025-12-16",
-      "updated": "2025-12-16",
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2512.14563",
-      "pdf_url": "https://arxiv.org/pdf/2512.14563.pdf"
     }
   ]
 }
