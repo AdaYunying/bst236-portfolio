@@ -1,6 +1,23 @@
 {
-  "generated_at": "2026-06-17T06:46:27.642606Z",
+  "generated_at": "2026-06-18T06:38:17.285969Z",
   "papers": [
+    {
+      "id": "2606.19183",
+      "title": "Language Models as Interfaces, Not Oracles: A Hybrid LLM-ML System for Pediatric Appendicitis",
+      "authors": [
+        "Soheyl Bateni",
+        "Maryam Abdolali"
+      ],
+      "abstract": "Large language models (LLMs) can make clinical decision support more accessible by interpreting free-text documentation, but their direct use as diagnostic engines is limited by sensitivity to prompts, information order, and plausible but incorrect outputs. Structured machine-learning models offer more stable risk prediction, yet they require tabular inputs that are difficult to integrate with narrative clinical workflows. We present ClaMPAPP (Clinical Language-assisted Machine-learning Pipeline for Appendicitis), a hybrid system that uses an LLM as an interface rather than as the final decision-maker. ClaMPAPP extracts schema-constrained clinical features from note-like narratives, applies deterministic plausibility checks, and passes validated features to an XGBoost classifier trained on clinical, laboratory, and ultrasound variables. We evaluated ClaMPAPP on two independent pediatric appendicitis cohorts from German hospitals and compared it with end-to-end LLM baselines, including open-source and proprietary models. To preserve ground truth while testing free-text input, narratives were generated from structured electronic health records through template rendering and constrained LLM rewriting, with additional sentence-order permutation to assess positional robustness. ClaMPAPP achieved the strongest overall diagnostic performance in both internal and external validation while minimizing missed appendicitis cases, the key safety concern in acute triage. End-to-end LLMs showed unstable sensitivity-specificity trade-offs and greater degradation under narrative reordering. These results support an LLM-as-interface, ML-as-predictor design that separates natural-language usability from predictive inference and provides a more auditable pathway for clinical decision support.",
+      "published": "2026-06-17",
+      "updated": "2026-06-17",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2606.19183",
+      "pdf_url": "https://arxiv.org/pdf/2606.19183.pdf"
+    },
     {
       "id": "2606.16872",
       "title": "Towards Fair Predictions: Group Conditional Concordance Index to Quantify Fairness in Time-to-Event Prognostication",
@@ -1020,32 +1037,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2601.06140",
       "pdf_url": "https://arxiv.org/pdf/2601.06140.pdf"
-    },
-    {
-      "id": "2512.15808",
-      "title": "Foundation Models in Biomedical Imaging: Turning Hype into Reality",
-      "authors": [
-        "Amgad Muneer",
-        "Kai Zhang",
-        "Ibraheem Hamdi",
-        "Rizwan Qureshi",
-        "Muhammad Waqas",
-        "Shereen Fouad",
-        "Hazrat Ali",
-        "Syed Muhammad Anwar",
-        "Jia Wu"
-      ],
-      "abstract": "Foundation models (FMs) are driving a prominent shift in biomedical imaging from task-specific models to unified backbone models for diverse tasks. This opens an avenue to integrate imaging, pathology, clinical records, and genomics data into a composite system. However, this vision contrasts sharply with modern medicine's trajectory toward more granular sub-specialization. This tension, coupled with data scarcity, domain heterogeneity, and limited interpretability, creates a gap between benchmark success and real-world clinical value. We argue that the immediate role of FMs lies in augmenting, not replacing, clinical expertise. To separate hype from reality, we introduce REAL-FM (Real-world Evaluation and Assessment of Foundation Models), a multi-dimensional framework for assessing data, technical readiness, clinical value, workflow integration, and responsible AI. Using REAL-FM, we find that while FMs excel in pattern recognition, they fall short in causal reasoning, domain robustness, and safety. Clinical translation is hindered by scarce representative data for model training, unverified generalization beyond oversimplified benchmark settings, and a lack of prospective outcome-based validation. We further examine FM reasoning paradigms, including sequential logic, spatial understanding, and symbolic domain knowledge. We envision that the path forward lies not in a monolithic medical oracle, but in coordinated subspecialist AI systems that are transparent, safe, and clinically grounded.",
-      "published": "2025-12-17",
-      "updated": "2026-04-22",
-      "categories": [
-        "q-bio.QM",
-        "cs.AI",
-        "cs.CV",
-        "cs.LG"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2512.15808",
-      "pdf_url": "https://arxiv.org/pdf/2512.15808.pdf"
     }
   ]
 }
