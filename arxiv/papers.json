@@ -1,6 +1,27 @@
 {
-  "generated_at": "2026-06-22T06:51:27.305774Z",
+  "generated_at": "2026-06-23T06:27:02.350621Z",
   "papers": [
+    {
+      "id": "2606.23301",
+      "title": "EHR-Complex: Benchmarking Medical Agents for Complex Clinical Reasoning",
+      "authors": [
+        "Yitong Qiao",
+        "Lei Liu",
+        "Yue Shen",
+        "Jian Wang",
+        "Jinjie Gu",
+        "Zhixuan Chu",
+        "Kui Ren"
+      ],
+      "abstract": "Clinical agents promise to democratize access to electronic health records (EHRs), yet existing benchmarks fail to reflect the complexity of practical EHR analysis, e.g., often operating on idealized, clean EHRs via static SQL generation rather than interactive execution. In this work, we introduce EHR-Complex, a large-scale benchmark designed for interactive clinical database reasoning. Built on the large MIMIC-IV substrate (365K patients, 31 tables, 500M+ records), EHR-Complex comprises about 52K tasks spanning six clinical intents, supporting both patient-level and population-level queries, where each task requires an agent to interact with a sandboxed environment by executing SQL queries or Python code. Notably, EHR-Complex considers the real-world SQL task complexity for longitudinal multi-table aggregation and compositional reasoning, resulting in 31.93 SQL structural components per query on average. Evaluation results on EHR-Complex reveal the clinical difficulty of these EHR reasoning scenarios, with the top-performing model achieving only 62.3% exact-match accuracy. Pass^k consistency drops below 50% for nearly all evaluated models at k=4, exposing broad stochastic fragility. A fine-grained analysis of more than 3,800 failed trajectories for representative LLMs reveals three dominant failure modes: SQL logic errors, medical-code lookup failures, and semantic misunderstandings. EHR-Complex provides a rigorous testbed for clinical agents and highlights remaining gaps in robust reasoning for large-scale EHR analysis.",
+      "published": "2026-06-22",
+      "updated": "2026-06-22",
+      "categories": [
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2606.23301",
+      "pdf_url": "https://arxiv.org/pdf/2606.23301.pdf"
+    },
     {
       "id": "2606.19183",
       "title": "Language Models as Interfaces, Not Oracles: A Hybrid LLM-ML System for Pediatric Appendicitis",
@@ -1020,23 +1041,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2601.12981",
       "pdf_url": "https://arxiv.org/pdf/2601.12981.pdf"
-    },
-    {
-      "id": "2601.06140",
-      "title": "Causal and Federated Multimodal Learning for Cardiovascular Risk Prediction under Heterogeneous Populations",
-      "authors": [
-        "Rohit Kaushik",
-        "Eva Kaushik"
-      ],
-      "abstract": "Cardiovascular disease (CVD) continues to be the major cause of death globally, calling for predictive models that not only handle diverse and high-dimensional biomedical signals but also maintain interpretability and privacy. We create a single multimodal learning framework that integrates cross modal transformers with graph neural networks and causal representation learning to measure personalized CVD risk. The model combines genomic variation, cardiac MRI, ECG waveforms, wearable streams, and structured EHR data to predict risk while also implementing causal invariance constraints across different clinical subpopulations. To maintain transparency, we employ SHAP based feature attribution, counterfactual explanations and causal latent alignment for understandable risk factors. Besides, we position the design in a federated, privacy, preserving optimization protocol and establish rules for convergence, calibration and uncertainty quantification under distributional shift. Experimental studies based on large-scale biobank and multi institutional datasets reveal state discrimination and robustness, exhibiting fair performance across demographic strata and clinically distinct cohorts. This study paves the way for a principled approach to clinically trustworthy, interpretable and privacy respecting CVD prediction at the population level.",
-      "published": "2026-01-05",
-      "updated": "2026-01-05",
-      "categories": [
-        "cs.LG",
-        "stat.ML"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2601.06140",
-      "pdf_url": "https://arxiv.org/pdf/2601.06140.pdf"
     }
   ]
 }
