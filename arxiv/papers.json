@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T06:27:02.350621Z",
+  "generated_at": "2026-06-24T06:24:38.069216Z",
   "papers": [
     {
       "id": "2606.23301",
@@ -778,7 +778,7 @@
       "pdf_url": "https://arxiv.org/pdf/2602.12833.pdf"
     },
     {
-      "id": "2602.10385v6",
+      "id": "2602.10385v7",
       "title": "Capture Timing-Attention of Events in Clinical Time Series",
       "authors": [
         "Jia Li",
@@ -787,13 +787,13 @@
       ],
       "abstract": "The contemporary paradigm of trajectory learning operates fundamentally at the level of group dynamics, systematically reducing individual-level complexity to fit group-level models, thus rendering effective patient subtyping difficult and individual-level modeling largely out of reach. We propose a data-driven paradigm that introduces a dedicated individual-level temporal variable to capture \\emph{Timing Attention} (i.e., the degree of concentration of an event's timing distribution across the patient cohort), thereby rendering timing a \\emph{computable dimension} that enables individualized temporal features in trajectory learning. Instantiated as the Level-of-Individual Time Transformation (LITT) and applied to longitudinal EHR data from 3,276 breast cancer patients, the proposed paradigm demonstrates, for the first time to our knowledge: (1) automatic discovery of clinically significant patient trajectories, and (2) counterfactual timing deduction, that is, a \\emph{What-If Machine}. Both results are purely data-driven, requiring no prior domain knowledge. LITT further achieves strong performance on timing prediction and survival analysis tasks.",
       "published": "2026-02-11",
-      "updated": "2026-06-15",
+      "updated": "2026-06-22",
       "categories": [
         "cs.LG",
         "cs.AI"
       ],
-      "arxiv_url": "https://arxiv.org/abs/2602.10385v6",
-      "pdf_url": "https://arxiv.org/pdf/2602.10385v6.pdf"
+      "arxiv_url": "https://arxiv.org/abs/2602.10385v7",
+      "pdf_url": "https://arxiv.org/pdf/2602.10385v7.pdf"
     },
     {
       "id": "2602.03730",
