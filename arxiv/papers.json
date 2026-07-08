@@ -1,6 +1,27 @@
 {
-  "generated_at": "2026-07-07T06:24:27.752947Z",
+  "generated_at": "2026-07-08T06:01:59.785476Z",
   "papers": [
+    {
+      "id": "2607.06163",
+      "title": "X-FEMR: A Token-level Explainable Approach for Electronic Health Records Foundation Models using Transformer-based Models",
+      "authors": [
+        "Jie Huang",
+        "Pengfei Yin",
+        "Zihan Xu",
+        "Daniel Capurro",
+        "Mike Conway",
+        "Ting Dang"
+      ],
+      "abstract": "Foundation Models for Electronic Health Records (FEMRs) are pretrained on large-scale structured patient data, enabling them to convert longitudinal patient trajectories into generalizable representations for diverse clinical prediction tasks. Despite their effectiveness, FEMRs remain black-box models, raising concerns about bias, interpretability, and clinical trust. To address this, we propose the first token-level explainability approach for FEMRs. We train a Transformer-based surrogate model on input-output pairs from the FEMR across two prediction tasks, approximating its behavior while preserving temporal dynamics. We identify the most influential tokens, providing insights into how FEMRs leverage different aspects of patient history for predictions. To evaluate clinical relevance, we introduce a novel clinical alignment metric that quantifies the correspondence between the surrogate model's key tokens and clinically validated features. Our results demonstrate that the surrogate closely approximates FEMR predictions and that token-level explanations align well with clinical knowledge, offering a practical framework for interpretable and trustworthy clinical AI.",
+      "published": "2026-07-07",
+      "updated": "2026-07-07",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2607.06163",
+      "pdf_url": "https://arxiv.org/pdf/2607.06163.pdf"
+    },
     {
       "id": "2606.23301",
       "title": "EHR-Complex: Benchmarking Medical Agents for Complex Clinical Reasoning",
@@ -1023,24 +1044,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2601.13388",
       "pdf_url": "https://arxiv.org/pdf/2601.13388.pdf"
-    },
-    {
-      "id": "2601.12981",
-      "title": "Early Prediction of Type 2 Diabetes Using Multimodal data and Tabular Transformers",
-      "authors": [
-        "Sulaiman Khan",
-        "Md. Rafiul Biswas",
-        "Zubair Shah"
-      ],
-      "abstract": "This study introduces a novel approach for early Type 2 Diabetes Mellitus (T2DM) risk prediction using a tabular transformer (TabTrans) architecture to analyze longitudinal patient data. By processing patients` longitudinal health records and bone-related tabular data, our model captures complex, long-range dependencies in disease progression that conventional methods often overlook. We validated our TabTrans model on a retrospective Qatar BioBank (QBB) cohort of 1,382 subjects, comprising 725 men (146 diabetic, 579 healthy) and 657 women (133 diabetic, 524 healthy). The study integrated electronic health records (EHR) with dual-energy X-ray absorptiometry (DXA) data. To address class imbalance, we employed SMOTE and SMOTE-ENN resampling techniques. The proposed model`s performance is evaluated against conventional machine learning (ML) and generative AI models, including Claude 3.5 Sonnet (Anthropic`s constitutional AI), GPT-4 (OpenAI`s generative pre-trained transformer), and Gemini Pro (Google`s multimodal language model). Our TabTrans model demonstrated superior predictive performance, achieving ROC AUC $\\geq$ 79.7 % for T2DM prediction compared to both generative AI models and conventional ML approaches. Feature interpretation analysis identified key risk indicators, with visceral adipose tissue (VAT) mass and volume, ward bone mineral density (BMD) and bone mineral content (BMC), T and Z-scores, and L1-L4 scores emerging as the most important predictors associated with diabetes development in Qatari adults. These findings demonstrate the significant potential of TabTrans for analyzing complex tabular healthcare data, providing a powerful tool for proactive T2DM management and personalized clinical interventions in the Qatari population. Index Terms: tabular transformers, multimodal data, DXA data, diabetes, T2DM, feature interpretation, tabular data",
-      "published": "2026-01-19",
-      "updated": "2026-01-19",
-      "categories": [
-        "cs.CV",
-        "cs.LG"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2601.12981",
-      "pdf_url": "https://arxiv.org/pdf/2601.12981.pdf"
     }
   ]
 }
