@@ -1,6 +1,28 @@
 {
-  "generated_at": "2026-07-16T05:54:30.600036Z",
+  "generated_at": "2026-07-17T05:54:55.506495Z",
   "papers": [
+    {
+      "id": "2607.14191",
+      "title": "TEDDY: A Pediatric Foundation Model for Risk Forewarning from ICD-Coded Diagnostic Histories",
+      "authors": [
+        "Matthew Brady Neeley",
+        "Jorge Botas",
+        "Johnathan Jia",
+        "Lin Yao",
+        "Daniel Palacios",
+        "Benjamin Choi",
+        "Zhandong Liu",
+        "Hyun-Hwan Jeong"
+      ],
+      "abstract": "Pediatric electronic health records capture developmentally structured clinical trajectories, yet their potential for generative healthcare foundation models remains largely unexplored. Here we present TEDDY (Temporal Event Decoder for Disease in Youth), a 1.84-million-parameter decoder transformer trained on approximately 73 million ICD-10 diagnoses from 1.6 million children at a single pediatric institution. TEDDY models longitudinal diagnosis trajectories and visit timing. Predictions were made before visit codes were revealed, limited to first occurrences, and evaluated against sex- and age-matched controls. Across 797 disease-onset prediction tasks spanning 16 ICD-10 chapters, TEDDY achieved a median AUC of 72.0%, outperforming same-data DenseNet (50.0%), CNN (57.2%), RNN (60.1%), and LSTM (62.7%) baselines on 96-99% of tasks. Performance held across sex and age and was strongest among lower-prevalence diagnoses; 202 of the 225 rarest conditions (90%) had 95% confidence intervals above chance. Predictive signal remained detectable more than two years before first recorded diagnosis, with median AUCs of 59.7% in the unrestricted analysis and 64.4% in a fixed-cohort sensitivity analysis. In asthma and attention-deficit/hyperactivity disorder benchmarks, AUCs were 79.3% and 84.7%, compared with 62.7% and 71.7% for the strongest comparators, including a general-purpose language model three orders of magnitude larger. Visit-timing predictions had a 3.0-day mean absolute restricted mean survival-time error over 365 days, although median and long-tail return intervals remained miscalibrated. Together, these results establish pediatric diagnostic histories as a substrate for compact generative models supporting broad, rare-disease, and long-horizon risk forecasting without population-scale data or billion-parameter models.",
+      "published": "2026-07-15",
+      "updated": "2026-07-15",
+      "categories": [
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2607.14191",
+      "pdf_url": "https://arxiv.org/pdf/2607.14191.pdf"
+    },
     {
       "id": "2607.06163",
       "title": "X-FEMR: A Token-level Explainable Approach for Electronic Health Records Foundation Models using Transformer-based Models",
@@ -1026,24 +1048,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2601.17310",
       "pdf_url": "https://arxiv.org/pdf/2601.17310.pdf"
-    },
-    {
-      "id": "2601.13388",
-      "title": "Structured Insight from Unstructured Data: Large Language Models for SDOH-Driven Diabetes Risk Prediction",
-      "authors": [
-        "Sasha Ronaghi",
-        "Prerit Choudhary",
-        "David H Rehkopf",
-        "Bryant Lin"
-      ],
-      "abstract": "Social determinants of health (SDOH) play a critical role in Type 2 Diabetes (T2D) management but are often absent from electronic health records and risk prediction models. Most individual-level SDOH data is collected through structured screening tools, which lack the flexibility to capture the complexity of patient experiences and unique needs of a clinic's population. This study explores the use of large language models (LLMs) to extract structured SDOH information from unstructured patient life stories and evaluate the predictive value of both the extracted features and the narratives themselves for assessing diabetes control. We collected unstructured interviews from 65 T2D patients aged 65 and older, focused on their lived experiences, social context, and diabetes management. These narratives were analyzed using LLMs with retrieval-augmented generation to produce concise, actionable qualitative summaries for clinical interpretation and structured quantitative SDOH ratings for risk prediction modeling. The structured SDOH ratings were used independently and in combination with traditional laboratory biomarkers as inputs to linear and tree-based machine learning models (Ridge, Lasso, Random Forest, and XGBoost) to demonstrate how unstructured narrative data can be applied in conventional risk prediction workflows. Finally, we evaluated several LLMs on their ability to predict a patient's level of diabetes control (low, medium, high) directly from interview text with A1C values redacted. LLMs achieved 60% accuracy in predicting diabetes control levels from interview text. This work demonstrates how LLMs can translate unstructured SDOH-related data into structured insights, offering a scalable approach to augment clinical risk models and decision-making.",
-      "published": "2026-01-19",
-      "updated": "2026-01-19",
-      "categories": [
-        "cs.CL"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2601.13388",
-      "pdf_url": "https://arxiv.org/pdf/2601.13388.pdf"
     }
   ]
 }
