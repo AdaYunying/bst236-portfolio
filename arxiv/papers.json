@@ -1,6 +1,25 @@
 {
-  "generated_at": "2026-07-26T06:03:32.351518Z",
+  "generated_at": "2026-07-27T06:11:44.428127Z",
   "papers": [
+    {
+      "id": "2607.22114",
+      "title": "Pretraining EHR Foundation Models with Patient-Aware Sampling",
+      "authors": [
+        "Joshua Placidi",
+        "Yuxuan Liu",
+        "Jinpei Han",
+        "Marek Rei",
+        "A. Aldo Faisal"
+      ],
+      "abstract": "Autoregressive foundation models for electronic health records (EHRs) typically inherit pretraining methods from language modeling, where patient trajectories are concatenated into a single token stream and windows are sampled from that stream. In EHR data, this choice is consequential: windows may mix multiple patients, and patients with longer records contribute more optimization updates, potentially introducing bias. We propose Patient Sampling, a pretraining sequence-construction method that allows us to control how training signal is distributed across patients. We compare this method to the standard approach, which we refer to as Global Stream. We show that stochastic Patient Sampling with controllable weighting improves performance on real-world EHR data. Across downstream clinical tasks on MIMIC-IV v2.2 and v3.1, Patient Sampling improves Macro AUROC and AUPRC over the Global Stream baseline. These results identify training and validation sequence construction as important and underexplored design choices for autoregressive EHR foundation models.",
+      "published": "2026-07-24",
+      "updated": "2026-07-24",
+      "categories": [
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2607.22114",
+      "pdf_url": "https://arxiv.org/pdf/2607.22114.pdf"
+    },
     {
       "id": "2607.15447",
       "title": "LLM4EHR: Aligning Clinical Time Series with Medical Event Sequences via Large Language Models",
@@ -1019,37 +1038,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2602.02731",
       "pdf_url": "https://arxiv.org/pdf/2602.02731.pdf"
-    },
-    {
-      "id": "2602.00726",
-      "title": "Augmenting Clinical Decision-Making with an Interactive and Interpretable AI Copilot: A Real-World User Study with Clinicians in Nephrology and Obstetrics",
-      "authors": [
-        "Yinghao Zhu",
-        "Dehao Sui",
-        "Zixiang Wang",
-        "Xuning Hu",
-        "Lei Gu",
-        "Yifan Qi",
-        "Tianchen Wu",
-        "Ling Wang",
-        "Yuan Wei",
-        "Wen Tang",
-        "Zhihan Cui",
-        "Yasha Wang",
-        "Lequan Yu",
-        "Ewen M Harrison",
-        "Junyi Gao",
-        "Liantao Ma"
-      ],
-      "abstract": "Clinician skepticism toward opaque AI hinders adoption in high-stakes healthcare. We present AICare, an interactive and interpretable AI copilot for collaborative clinical decision-making. By analyzing longitudinal electronic health records, AICare grounds dynamic risk predictions in scrutable visualizations and LLM-driven diagnostic recommendations. Through a within-subjects counterbalanced study with 16 clinicians across nephrology and obstetrics, we comprehensively evaluated AICare using objective measures (task completion time and error rate), subjective assessments (NASA-TLX, SUS, and confidence ratings), and semi-structured interviews. Our findings indicate AICare's reduced cognitive workload. Beyond performance metrics, qualitative analysis reveals that trust is actively constructed through verification, with interaction strategies diverging by expertise: junior clinicians used the system as cognitive scaffolding to structure their analysis, while experts engaged in adversarial verification to challenge the AI's logic. This work offers design implications for creating AI systems that function as transparent partners, accommodating diverse reasoning styles to augment rather than replace clinical judgment.",
-      "published": "2026-01-31",
-      "updated": "2026-01-31",
-      "categories": [
-        "cs.HC",
-        "cs.AI"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2602.00726",
-      "pdf_url": "https://arxiv.org/pdf/2602.00726.pdf"
     }
   ]
 }
