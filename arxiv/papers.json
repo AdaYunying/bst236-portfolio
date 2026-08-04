@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T06:06:00.005955Z",
+  "generated_at": "2026-08-04T06:00:16.239401Z",
   "papers": [
     {
       "id": "2607.22114",
@@ -529,7 +529,7 @@
       ],
       "abstract": "Electronic health record (EHR) question answering is often handled by LLM-based pipelines that are costly to deploy and do not explicitly leverage the hierarchical structure of clinical data. Motivated by evidence that medical ontologies and patient trajectories exhibit hyperbolic geometry, we propose HypEHR, a compact Lorentzian model that embeds codes, visits, and questions in hyperbolic space and answers queries via geometry-consistent cross-attention with type-specific pointer heads. HypEHR is pretrained with next-visit diagnosis prediction and hierarchy-aware regularization to align representations with the ICD ontology. On two MIMIC-IV-based EHR-QA benchmarks, HypEHR approaches LLM-based methods while using far fewer parameters. Our code is publicly available at https://github.com/yuyuliu11037/HypEHR.",
       "published": "2026-04-22",
-      "updated": "2026-04-22",
+      "updated": "2026-08-02",
       "categories": [
         "cs.AI"
       ],
