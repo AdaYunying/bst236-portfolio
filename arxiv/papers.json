@@ -1,6 +1,25 @@
 {
-  "generated_at": "2026-08-18T05:11:49.234887Z",
+  "generated_at": "2026-08-19T05:11:43.534774Z",
   "papers": [
+    {
+      "id": "2608.16972",
+      "title": "MultiSigBERT: Beyond Survival Analysis through Multimodal and Sequential Modeling in Oncology",
+      "authors": [
+        "Paul Minchella",
+        "Stéphane Chrétien",
+        "Guillaume Metzler",
+        "Loïc Verlingue",
+        "Rémi Vaucher"
+      ],
+      "abstract": "Machine learning has become an essential component of modern healthcare, where the integration of heterogeneous data sources offers unprecedented opportunities to improve clinical decision-making. Electronic Health Records (EHR) contain complementary information -- including narrative clinical reports, numerical measurements, and structured variables -- yet most survival models remain limited to a single modality or fail to exploit the temporal nature of patient trajectories. We propose MultiSigBERT, a unified framework for multimodal sequential survival modeling in oncology based on path signature representations. Here, narrative medical reports (free-text) are converted into sentence embeddings by extracting and averaging contextual word embeddings. These representations are then compressed via modality-specific PCA and concatenated with structured covariates to form joint temporal trajectories which are then encoded using the Signature transform, a tool from Rough Paths theory that efficiently captures higher-order temporal interactions across modalities without supervision needed. The computed Signature features are finally incorporated as high dimensional features into a LASSO-regularized Cox model to estimate individualized risk scores. The performance of our novel MultiSigBERT pipeline is illustrated on the analysis of a real-world oncology cohort from the Léon Bérard Center, comprising over 120,000 medical reports and structured records from more than 2,500 patients. The model achieves a concordance index of 0.743 (sd 0.029) on an independent test set, demonstrating the benefit of jointly modeling multimodal temporal dynamics together with patient-level geometric structure for survival prediction.",
+      "published": "2026-08-17",
+      "updated": "2026-08-17",
+      "categories": [
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2608.16972",
+      "pdf_url": "https://arxiv.org/pdf/2608.16972.pdf"
+    },
     {
       "id": "2608.06430",
       "title": "MiGHT-EHR: A Multi-task Graph Transformer for Heterogeneous Temporal Electronic Health Records",
@@ -18,6 +37,22 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2608.06430",
       "pdf_url": "https://arxiv.org/pdf/2608.06430.pdf"
+    },
+    {
+      "id": "2608.16929",
+      "title": "Mr.Dec: Daily-Scale Longitudinal Multimodal Modeling for 30-Day Readmission Prediction",
+      "authors": [
+        "Minjun Kim",
+        "Jong Hak Moon"
+      ],
+      "abstract": "Predicting 30-day hospital readmission is essential for assessing patient stability and optimizing healthcare resources. As clinical risk evolves with the accumulation of evidence during hospitalization, capturing these dynamic trajectories is essential. However, many existing approaches compress the complex longitudinal history into fixed representations, often losing the granular, day-level clinical signals that reflect a patient's evolving physiological state. To address this, we propose Mr.Dec (Multimodal Readmission-risk prediction Decoder), which models each admission as a natural chronological sequence of daily multimodal events. By leveraging a Transformer Decoder, Mr.Dec integrates daily Electronic Health Record(EHR) updates and intermittent Chest X-ray(CXR) findings in a time-aligned stream, reflecting the actual clinical workflow. To ensure robustness, we utilize Disease-Specific Supervised Contrastive Learning as an auxiliary regularization to induce a diagnosis-aware structure in the latent space. Evaluations on the MIMIC-IV and MIMIC-CXR datasets show that Mr.Dec achieves state-of-the-art performance by preserving the integrity of the clinical sequence. Furthermore, our model identifies \"Critical Days\" within an admission, providing actionable and clinically grounded interpretations for real-time risk stratification. Code is available at: https://github.com/yejix-ai/MR.DEC",
+      "published": "2026-08-05",
+      "updated": "2026-08-05",
+      "categories": [
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2608.16929",
+      "pdf_url": "https://arxiv.org/pdf/2608.16929.pdf"
     },
     {
       "id": "2607.22114",
@@ -997,46 +1032,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2602.03562",
       "pdf_url": "https://arxiv.org/pdf/2602.03562.pdf"
-    },
-    {
-      "id": "2602.03340",
-      "title": "MentalSeek-Dx: Towards Progressive Hypothetico-Deductive Reasoning for Real-world Psychiatric Diagnosis",
-      "authors": [
-        "Xiao Sun",
-        "Yuming Yang",
-        "Junnan Zhu",
-        "Jiang Zhong",
-        "Xinyu Zhou",
-        "Kaiwen Wei"
-      ],
-      "abstract": "Mental health disorders represent a burgeoning global public health challenge. While Large Language Models (LLMs) have demonstrated potential in psychiatric assessment, their clinical utility is severely constrained by benchmarks that lack ecological validity and fine-grained diagnostic supervision. To bridge this gap, we introduce \\textbf{MentalDx Bench}, the first benchmark dedicated to disorder-level psychiatric diagnosis within real-world clinical settings. Comprising 712 de-identified electronic health records annotated by board-certified psychiatrists under ICD-11 guidelines, the benchmark covers 76 disorders across 16 diagnostic categories. Evaluation of 18 LLMs reveals a critical \\textit{paradigm misalignment}: strong performance at coarse diagnostic categorization contrasts with systematic failure at disorder-level diagnosis, underscoring a gap between pattern-based modeling and clinical hypothetico-deductive reasoning. In response, we propose \\textbf{MentalSeek-Dx}, a medical-specialized LLM trained to internalize this clinical reasoning process through supervised trajectory construction and curriculum-based reinforcement learning. Experiments on MentalDx Bench demonstrate that MentalSeek-Dx achieves state-of-the-art (SOTA) performance with only 14B parameters, establishing a clinically grounded framework for reliable psychiatric diagnosis.",
-      "published": "2026-02-03",
-      "updated": "2026-02-03",
-      "categories": [
-        "cs.AI"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2602.03340",
-      "pdf_url": "https://arxiv.org/pdf/2602.03340.pdf"
-    },
-    {
-      "id": "2602.02766",
-      "title": "Privately Fine-Tuned LLMs Preserve Temporal Dynamics in Tabular Data",
-      "authors": [
-        "Lucas Rosenblatt",
-        "Peihan Liu",
-        "Ryan McKenna",
-        "Natalia Ponomareva"
-      ],
-      "abstract": "Research on differentially private synthetic tabular data has largely focused on independent and identically distributed rows where each record corresponds to a unique individual. This perspective neglects the temporal complexity in longitudinal datasets, such as electronic health records, where a user contributes an entire (sub) table of sequential events. While practitioners might attempt to model such data by flattening user histories into high-dimensional vectors for use with standard marginal-based mechanisms, we demonstrate that this strategy is insufficient. Flattening fails to preserve temporal coherence even when it maintains valid marginal distributions. We introduce PATH, a novel generative framework that treats the full table as the unit of synthesis and leverages the autoregressive capabilities of privately fine-tuned large language models. Extensive evaluations show that PATH effectively captures long-range dependencies that traditional methods miss. Empirically, our method reduces the distributional distance to real trajectories by over 60% and reduces state transition errors by nearly 50% compared to leading marginal mechanisms while achieving similar marginal fidelity.",
-      "published": "2026-02-02",
-      "updated": "2026-02-02",
-      "categories": [
-        "cs.LG",
-        "cs.CL",
-        "cs.CR"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2602.02766",
-      "pdf_url": "https://arxiv.org/pdf/2602.02766.pdf"
     }
   ]
 }
