@@ -1,6 +1,27 @@
 {
-  "generated_at": "2026-08-24T05:17:33.559280Z",
+  "generated_at": "2026-08-25T05:13:34.429656Z",
   "papers": [
+    {
+      "id": "2608.21673",
+      "title": "SynEHR: Joint Modeling Inter-visit Temporal Evolution and Intra-visit Clinical Structure for Longitudinal EHR Synthesis",
+      "authors": [
+        "Ximiao Li",
+        "Lin Jiang",
+        "Rongchao Xu",
+        "Dahai Yu",
+        "Zhe He",
+        "Guang Wang"
+      ],
+      "abstract": "Longitudinal electronic health records (EHRs) document patients' sequences of clinical visits over time, preserving the temporal evolution of disease progression and care delivery. However, real longitudinal EHRs are difficult to access because they contain large amounts of fine-grained, patient-specific information. Synthetic EHR generation therefore provides a valuable approach for preserving the statistical patterns and clinical structure of patient visit trajectories, enabling broader modeling and analysis when real records are limited. Although recent generative models have made progress in producing future visit sequences, they remain limited in explicitly integrating inter-visit irregular temporal evolution and intra-visit clinical event structures in EHRs, leading to clinically inconsistent and temporally unrealistic visit sequences. In this work, we propose SynEHR, a lightweight adaptive LLM-based framework for longitudinal EHR synthesis. There are two novel designs in SynEHR, i.e., a Temporal State Conditioning Module captures irregular temporal states across visits and a Temporal-Relational Adaptation Module combines these states with patient history to dynamically construct patient-specific relational representations. SynEHR then builds on a parameter-efficient LoRA-adapted language-model generator with next-visit generation capability to train the two modules for temporally and clinically informed generation. Extensive experiments on real-world EHR datasets across fidelity, privacy, and downstream utility evaluations demonstrate that SynEHR outperforms state-of-the-art models by generating more clinically coherent and temporally faithful longitudinal EHR data.",
+      "published": "2026-08-21",
+      "updated": "2026-08-21",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2608.21673",
+      "pdf_url": "https://arxiv.org/pdf/2608.21673.pdf"
+    },
     {
       "id": "2608.16972",
       "title": "MultiSigBERT: Beyond Survival Analysis through Multimodal and Sequential Modeling in Oncology",
@@ -754,7 +775,7 @@
       ],
       "abstract": "Clinical prediction from structured electronic health records (EHRs) is challenging due to high dimensionality, heterogeneity, class imbalance, and distribution shift. While tabular in-context learning (TICL) and retrieval-augmented methods perform well on generic benchmarks, their behavior in clinical settings remains unclear. We present a multi-cohort EHR benchmark comparing classical, deep tabular, and TICL models across varying data scale, feature dimensionality, outcome rarity, and cross-cohort generalization. PFN-based TICL models are sample-efficient in low-data regimes but degrade under naive distance-based retrieval as heterogeneity and imbalance increase. We propose AWARE, a task-aligned retrieval framework using supervised embedding learning and lightweight adapters. AWARE improves AUPRC by up to 12.2% under extreme imbalance, with gains increasing with data complexity. Our results identify retrieval quality and retrieval-inference alignment as key bottlenecks for deploying tabular in-context learning in clinical prediction.",
       "published": "2026-04-02",
-      "updated": "2026-05-31",
+      "updated": "2026-08-22",
       "categories": [
         "cs.AI"
       ],
@@ -1014,24 +1035,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2602.03569",
       "pdf_url": "https://arxiv.org/pdf/2602.03569.pdf"
-    },
-    {
-      "id": "2602.03562",
-      "title": "NPCNet: Navigator-Driven Pseudo Text for Deep Clustering of Early Sepsis Phenotyping",
-      "authors": [
-        "Pi-Ju Tsai",
-        "Charkkri Limbud",
-        "Kuan-Fu Chen",
-        "Yi-Ju Tseng"
-      ],
-      "abstract": "Electronic Health Records (EHRs) provide high-dimensional temporal data essential for patient modeling; however, conventional algorithmic approaches often rely on data aggregation or imputation, which distorts temporal disease trajectories. Such computational limitations are particularly critical in sepsis, a heterogeneous syndrome where clustering-based stratification plays a key role in identifying clinically distinct phenotypes for precise treatment strategies. Furthermore, existing clustering processes seldom incorporate domain-driven constraints, often resulting in phenotypes that lack clear clinical distinction. We propose a novel clustering network, NPCNet, that comprises a text embedding generator, a clustering operator, and a target navigator. We first transform EHRs into pseudo texts by discretizing continuous clinical measurements, then integrate them with static variables to construct the embeddings. The target navigator then infuses clinical knowledge into the embeddings through auxiliary tasks, constraining clustering results to better align sepsis phenotypes with clinical significance. Finally, the clustering operator employs an iterative refinement mechanism to jointly optimize phenotype centroids and patient representations under domain-driven constraints. Extensive experiments on public datasets validate that NPCNet achieves superior performance on both internal clustering benchmarks and clinical validity metrics, offering a viable pathway for precision treatment strategies in the management of sepsis.",
-      "published": "2026-02-03",
-      "updated": "2026-04-19",
-      "categories": [
-        "cs.LG"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2602.03562",
-      "pdf_url": "https://arxiv.org/pdf/2602.03562.pdf"
     }
   ]
 }
