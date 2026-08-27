@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T05:13:22.611440Z",
+  "generated_at": "2026-08-27T07:37:38.313836Z",
   "papers": [
     {
       "id": "2608.23666",
@@ -95,6 +95,30 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2608.16929",
       "pdf_url": "https://arxiv.org/pdf/2608.16929.pdf"
+    },
+    {
+      "id": "2608.24911",
+      "title": "Visualizing Patient Trajectories and Disorder Co-occurrences in Child and Adolescent Mental Health",
+      "authors": [
+        "Dipendra Pant",
+        "Kaban Koochakpour",
+        "Odd Sverre Westbye",
+        "Carolyn Clausen",
+        "Bennett L. Leventhal",
+        "Roman Koposov",
+        "Thomas Brox Røst",
+        "Norbert Skokauskas",
+        "Øystein Nytrø"
+      ],
+      "abstract": "Understanding patient trajectories and identifying patterns in episodes of care is critical for effective healthcare decision-making. We present a patient timeline visualization using clustered episodes of care derived from over 35 years of Child and Adolescent Mental Health Services (CAMHS) data. Patients were categorized into 12 groups based on three features: age group (preschoolers, middle childhood, teenagers) at the start of the first episode, gender, and presence or absence of Attention-Deficit Hyperactivity Disorder (ADHD), in order to group similar patients. The patients, timeline with demographics, and episode of care information are displayed in the trajectory to facilitate understanding of the patient and associated events, allowing observation of temporal patterns and variations. These plots reveal similarities and differences in care needs and patterns across groups. Females without ADHD have a steady increase in the number of episodes of care with age. Females with ADHD and all males experienced a peak in the number of episodes during middle childhood, followed by a decline in the teenage years. To compare and understand the intensity and co-occurring disorders with ADHD across different groups, we plotted an ADHD co-occurrence graph, and Tourette's syndrome was co-occurring predominantly in all age groups. We evaluated and refined our visualizations with the involvement of clinicians, who found them useful for understanding the context of CAMHS care. These visual tools make the population data in the Electronic Health Records (EHR) available for decision-making and enhancing the understanding of care and disorder patterns across groups.",
+      "published": "2026-07-25",
+      "updated": "2026-07-25",
+      "categories": [
+        "cs.HC",
+        "cs.CY"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2608.24911",
+      "pdf_url": "https://arxiv.org/pdf/2608.24911.pdf"
     },
     {
       "id": "2607.22114",
@@ -1014,27 +1038,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2602.10385v7",
       "pdf_url": "https://arxiv.org/pdf/2602.10385v7.pdf"
-    },
-    {
-      "id": "2602.03730",
-      "title": "Efficient Generative Prediction for EHR Foundation Models: The SCOPE and REACH Estimators",
-      "authors": [
-        "Luke Solo",
-        "Matthew B. A. McDermott",
-        "William F. Parker",
-        "Bashar Ramadan",
-        "Michael C. Burkhart",
-        "Brett K. Beaulieu-Jones"
-      ],
-      "abstract": "Generative foundation models trained on tokenized electronic health record (EHR) timelines show promise for clinical outcome prediction via Monte Carlo sampling of simulated future trajectories. However, this approach suffers from three coupled limitations: sparse estimate distributions that poorly differentiate patient risk levels, extreme computational cost, and high sampling variance. We propose two new estimators that leverage next-token probability distributions underutilized by standard Monte Carlo: the Sum of Conditional Outcome Probability Estimator (SCOPE) and Risk Estimation from Anticipated Conditional Hazards (REACH). We prove both are unbiased, that REACH guarantees variance reduction over Monte Carlo for any model and outcome, and that REACH is a Rao-Blackwellization of any naive importance sampling scheme that preserves the non-outcome token distribution. Empirically, across $11$ clinically important outcomes in MIMIC-IV and the UChicago health system, SCOPE and REACH match $100$-sample Monte Carlo accuracy with median token reductions of $2.5\\times$ to $3.4\\times$ and reductions exceeding $80\\times$ for the rarest outcomes, with calibration preserved throughout. Because SCOPE reuses a single sampled pool across an arbitrary number of outcomes at no marginal generation cost while REACH provides a per-task variance guarantee, the two estimators are complementary in deployment and together meaningfully reduce the inference budget required for generative EHR foundation models, particularly for rare, high-impact outcomes in healthcare.",
-      "published": "2026-02-03",
-      "updated": "2026-05-12",
-      "categories": [
-        "stat.ML",
-        "cs.LG"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2602.03730",
-      "pdf_url": "https://arxiv.org/pdf/2602.03730.pdf"
     }
   ]
 }
