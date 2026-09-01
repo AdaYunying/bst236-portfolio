@@ -1,6 +1,49 @@
 {
-  "generated_at": "2026-08-31T05:16:23.227451Z",
+  "generated_at": "2026-09-01T05:16:11.775495Z",
   "papers": [
+    {
+      "id": "2608.31128",
+      "title": "DIASENTINEL: An Auditable Multi-Agent System for Guideline-Grounded Diabetes Risk Screening",
+      "authors": [
+        "Yung Wei Shueh",
+        "Zhi-Jie Chen",
+        "Chia-Hsuan Hsu",
+        "Hsin-Ling Hsu",
+        "Donghua Zhang",
+        "Chenwei Wu",
+        "Jun-En Ding",
+        "Tongze Zhang",
+        "Shihao Yang",
+        "Pengfei Hu",
+        "Fang-Ming Hung",
+        "Feng Liu"
+      ],
+      "abstract": "Large language models (LLMs) offer promising clinical decision support but remain vulnerable to hallucinated facts, unsupported recommendations, and citation errors. We present DIASENTINEL, a fully on-premise multi-agent system for one-year type 2 diabetes mellitus (T2DM) risk screening and guideline-grounded report generation from electronic health records (EHRs). The system integrates calibrated risk prediction, deterministic clinical signal extraction, Reciprocal Rank Fusion over American Diabetes Association (ADA) guidelines, and a hybrid verification layer combining rule-based checks with LLM entailment. The demonstration provides a real-time batch-screening dashboard and an interactive patient report interface with cited recommendations, verification results, and raw EHR comparison. DIASENTINEL demonstrates a practical framework for reliable, auditable, and privacy-preserving LLM-based clinical decision support.",
+      "published": "2026-08-31",
+      "updated": "2026-08-31",
+      "categories": [
+        "cs.CL"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2608.31128",
+      "pdf_url": "https://arxiv.org/pdf/2608.31128.pdf"
+    },
+    {
+      "id": "2608.29901",
+      "title": "INTERVenE: Temporal-Abstraction-Interval Based Transformers for Short-Horizon Medical Event Prediction",
+      "authors": [
+        "Shahar Oded",
+        "Yuval Shahar"
+      ],
+      "abstract": "Electronic Health Record (EHR) prediction models in the intensive care unit must learn from sparse and irregular measurements while preserving the clinical meaning of time and supporting transparent decision-making. We present INTERVenE, a family of Transformer architectures whose input is an interval-based, knowledge-based temporal abstraction (KBTA), a token stream of named clinical concepts (states, trends, events, contexts) drawn from a curated medical ontology, rather than an unnamed bin index or a raw measurement triplet. This naming layer is what we ask KBTA to do: it makes the model's per-token attributions resolve to clinical concepts by construction. INTERVenE offers two complementary variants: an auto-regressive decoder that generates future abstraction trajectories with a per-step risk readout (localizing \\emph{when} and \\emph{after which events} risk rises), and a bidirectional encoder for single-pass joint risk and time-to-event prediction. Evaluated on 57,078 MIMIC-IV admissions against GRU-D, STraTS, and KarmaLego, INTERVenE-Enc reaches a support-weighted AUPRC$_w$ of 0.672, improving by 0.041 over the strongest neural baseline with non-overlapping 95\\% bootstrap CIs, while also taking the best AUROC$_w$ (0.901) and length-of-stay MAE (44.4\\,h). INTERVenE-Ar (AUROC$_w$ $0.854$, AUPRC$_w$ $0.587$ under the same evaluation contract - a strictly harder generative readout) provides a complementary token-level risk trajectory. An input-representation ablation confirms the lift transfers across structured discretizations, positioning KBTA-based intervals as the interpretable substrate that makes per-token attributions resolve to meaningful clinical concepts within the deployed model.",
+      "published": "2026-08-30",
+      "updated": "2026-08-30",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2608.29901",
+      "pdf_url": "https://arxiv.org/pdf/2608.29901.pdf"
+    },
     {
       "id": "2608.23666",
       "title": "Gated Activation Steering for Reducing Sycophancy & Hallucination in Medical Question Answering",
@@ -1002,42 +1045,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2603.06605",
       "pdf_url": "https://arxiv.org/pdf/2603.06605.pdf"
-    },
-    {
-      "id": "2602.12833",
-      "title": "Vital Trace: Protocol-Constrained Patient-State Reasoning for Longitudinal Clinical Trajectories",
-      "authors": [
-        "Zhan Qu",
-        "Michael Färber"
-      ],
-      "abstract": "Longitudinal clinical reasoning over electronic health records requires tracking evolving physiological measurements, laboratory results, and interventions across extended patient trajectories. Existing LLM-based clinical reasoning systems often rely on repeatedly serializing patient histories or exchanging unconstrained textual agent messages, leading to context drift, unstable reasoning, and growing inference cost over long horizons. We present Vital Trace, a protocol-constrained multi-agent framework for future clinical risk prediction over evolving ICU trajectories. Instead of maintaining unbounded textual histories, Vital Trace uses a compact persistent patient-state memory together with staged reasoning performed by four coordinated agents: a Router, Reasoner, Auditor, and Steward. To support temporally coherent reasoning, we introduce a manually curated Global Protocol containing physiological state-transition rules and a dynamic patient-state representation that tracks hemodynamic, respiratory, renal, metabolic, and inflammatory instability over time. We evaluate Vital Trace on MIMIC-IV and eICU using future vasopressor-support, respiratory-support, renal-support, and deterioration prediction tasks. Results show that structured protocol-constrained reasoning improves temporal consistency, communication stability, calibration, and interpretability compared with free-form multi-agent baselines while achieving strong predictive performance across long ICU trajectories.",
-      "published": "2026-02-13",
-      "updated": "2026-05-26",
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "cs.MA"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2602.12833",
-      "pdf_url": "https://arxiv.org/pdf/2602.12833.pdf"
-    },
-    {
-      "id": "2602.10385v7",
-      "title": "Capture Timing-Attention of Events in Clinical Time Series",
-      "authors": [
-        "Jia Li",
-        "Yu Hou",
-        "Rui Zhang"
-      ],
-      "abstract": "The contemporary paradigm of trajectory learning operates fundamentally at the level of group dynamics, systematically reducing individual-level complexity to fit group-level models, thus rendering effective patient subtyping difficult and individual-level modeling largely out of reach. We propose a data-driven paradigm that introduces a dedicated individual-level temporal variable to capture \\emph{Timing Attention} (i.e., the degree of concentration of an event's timing distribution across the patient cohort), thereby rendering timing a \\emph{computable dimension} that enables individualized temporal features in trajectory learning. Instantiated as the Level-of-Individual Time Transformation (LITT) and applied to longitudinal EHR data from 3,276 breast cancer patients, the proposed paradigm demonstrates, for the first time to our knowledge: (1) automatic discovery of clinically significant patient trajectories, and (2) counterfactual timing deduction, that is, a \\emph{What-If Machine}. Both results are purely data-driven, requiring no prior domain knowledge. LITT further achieves strong performance on timing prediction and survival analysis tasks.",
-      "published": "2026-02-11",
-      "updated": "2026-06-22",
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2602.10385v7",
-      "pdf_url": "https://arxiv.org/pdf/2602.10385v7.pdf"
     }
   ]
 }
