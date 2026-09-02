@@ -1,6 +1,23 @@
 {
-  "generated_at": "2026-09-01T05:16:11.775495Z",
+  "generated_at": "2026-09-02T05:15:19.831735Z",
   "papers": [
+    {
+      "id": "2609.01111",
+      "title": "ClinTraceBench: Source-Verifiable Longitudinal Clinical Reasoning over EHR-Derived Dialogues",
+      "authors": [
+        "Huimin Wang",
+        "Zhengyi Zhao",
+        "Yutian Zhao"
+      ],
+      "abstract": "Clinical LLM assistants must reason over multi-visit patient trajectories, yet whether the compact history representations used to scale them---retrieval, structured timelines, LLM summaries, agentic memory---preserve the longitudinal signal clinical reasoning needs has not been measured. We introduce ClinTraceBench: 385 MIMIC-IV-derived verified dialogues with event-ID provenance, a nine-task taxonomy (T1--T9), and L0--L4 deterministic + L5 human-audit validation (98.92\\% agreement). We evaluate eight history representation strategies---a no-context floor, \\textit{last-visit-only}, \\textit{full-context}, BGE-M3 \\textit{dense-retrieval}, two compression schemes, and two agentic-memory systems (\\textit{Mem0}, \\textit{A-Mem})---across four backbones (DeepSeek-V3, GPT-4o-mini, Haiku~4.5, Sonnet~4.6) on 6{,}271 questions: 32 cells, 200{,}672 predictions. Four findings: (SP4) a controlled T3 injection probe isolates compression-induced \\textit{relation} loss---with the attribution sentence present \\textit{before} construction, \\textit{Mem0}, \\textit{A-Mem} and \\textit{llm-summary} still recover only 0--5.3\\% of the injected positives; (SP1) compressed strategies pay an aggregation tax on multi-visit trends and cross-patient comparisons; (SP2) the blind-to-full gap spans $+29.8$~pp (GPT-4o-mini) to $+62.7$~pp (Haiku); (SP3) abstention scales non-monotonically with context length. On the Pareto frontier Haiku dominates Sonnet under \\textit{full-context} (\\$25.76 vs.\\ \\$106.21), inverting the ``biggest backbone wins'' heuristic.",
+      "published": "2026-09-01",
+      "updated": "2026-09-01",
+      "categories": [
+        "cs.CL"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2609.01111",
+      "pdf_url": "https://arxiv.org/pdf/2609.01111.pdf"
+    },
     {
       "id": "2608.31128",
       "title": "DIASENTINEL: An Auditable Multi-Agent System for Guideline-Grounded Diabetes Risk Screening",
@@ -1027,24 +1044,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2603.06902",
       "pdf_url": "https://arxiv.org/pdf/2603.06902.pdf"
-    },
-    {
-      "id": "2603.06605",
-      "title": "Structure-Aware Set Transformers: Temporal and Variable-Type Attention Biases for Asynchronous Clinical Time Series",
-      "authors": [
-        "Joohyung Lee",
-        "Kwanhyung Lee",
-        "Changhun Kim",
-        "Eunho Yang"
-      ],
-      "abstract": "Electronic health records (EHR) are irregular, asynchronous multivariate time series. As time-series foundation models increasingly tokenize events rather than discretizing time, the input layout becomes a key design choice. Grids expose time$\\times$variable structure but require imputation or missingness masks, risking error or sampling-policy shortcuts. Point-set tokenization avoids discretization but loses within-variable trajectories and time-local cross-variable context (Fig.1). We restore these priors in STructure-AwaRe (STAR) Set Transformer by adding parameter-efficient soft attention biases: a temporal locality penalty $-|Δt|/τ$ with learnable timescales and a variable-type affinity $B_{s_i,s_j}$ from a learned feature-compatibility matrix. We benchmark 10 depth-wise fusion schedules (Fig.2). On three ICU prediction tasks, STAR-Set achieves AUC/APR of 0.7158/0.0026 (CPR), 0.9164/0.2033 (mortality), and 0.8373/0.1258 (vasopressor use), outperforming regular-grid, event-time grid, and prior set baselines. Learned $τ$ and $B$ provide interpretable summaries of temporal context and variable interactions, offering a practical plug-in for context-informed time-series models.",
-      "published": "2026-02-18",
-      "updated": "2026-03-12",
-      "categories": [
-        "cs.LG"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2603.06605",
-      "pdf_url": "https://arxiv.org/pdf/2603.06605.pdf"
     }
   ]
 }
