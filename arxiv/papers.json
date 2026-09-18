@@ -1,6 +1,28 @@
 {
-  "generated_at": "2026-09-17T05:16:13.982182Z",
+  "generated_at": "2026-09-18T05:15:15.016863Z",
   "papers": [
+    {
+      "id": "2609.19385",
+      "title": "Mammography Foundation Models for Opportunistic Prediction of Major Adverse Cardiovascular Events",
+      "authors": [
+        "Paula Feldman",
+        "Nusrat Binta Nizam",
+        "Sunwoo Kwak",
+        "Batuhan Karaman",
+        "Katerina Dodelzon",
+        "Mert Sabuncu"
+      ],
+      "abstract": "Cardiovascular disease (CVD) remains the leading cause of death among women, yet cardiovascular risk assessment often relies on clinical variables that may be missing, outdated, or unavailable in routine care. Screening mammography offers an opportunity for opportunistic cardiovascular risk stratification because it is routinely acquired and contains vascular features, including breast arterial calcifications (BAC), that are associated with cardiovascular risk and events. We evaluate whether mammography specific foundation models, originally pretrained for breast cancer-related tasks, can transfer to cardiovascular risk prediction without cardiovascular specific supervision or explicit BAC annotation. We constructed a 5-year major adverse cardiovascular event (MACE) cohort of 22,497 women linked to electronic health record outcomes, including 500 events (2.22% prevalence). The foundation models achieved AUROCs of 0.823 and 0.822 substantially exceeding an age-only model (AUROC 0.765), despite using only the screening mammogram as input, with no clinical variables. Both foundation models evaluated assigned substantially higher predicted risk to patients with radiologist-documented BAC, despite BAC never being used as a training label, and showed activation patterns consistent with vascular findings. Together, these findings suggest that mammography foundation models can recover clinically relevant cardiovascular risk information directly from mammographic pixels and suggest that screening mammography may provide an opportunistic source of cardiovascular risk information to complement conventional clinical assessment without additional imaging. Code is available in https://github.com/PauFeld/MammoCVD",
+      "published": "2026-09-16",
+      "updated": "2026-09-16",
+      "categories": [
+        "eess.IV",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2609.19385",
+      "pdf_url": "https://arxiv.org/pdf/2609.19385.pdf"
+    },
     {
       "id": "2609.12277",
       "title": "Reinforcement Learning over Patient Trajectories for Clinical Reasoning in EHR Foundation Models",
@@ -644,6 +666,35 @@
       "pdf_url": "https://arxiv.org/pdf/2605.11958.pdf"
     },
     {
+      "id": "2605.10840v5",
+      "title": "Clin-JEPA: A Multi-Phase Co-Training Framework for Joint-Embedding Predictive Pretraining on EHR Patient Trajectories",
+      "authors": [
+        "Yixuan Yang",
+        "Mehak Arora",
+        "Ryan Zhang",
+        "Baraa Abed",
+        "Junseob Kim",
+        "Tilendra Choudhary",
+        "Md Hassanuzzaman",
+        "Kevin Zhu",
+        "Ayman Ali",
+        "Chengkun Yang",
+        "Alasdair Edward Gent",
+        "Victor Moas",
+        "Rishikesan Kamaleswaran"
+      ],
+      "abstract": "Joint-embedding predictive architectures (JEPA) learn representations by predicting in latent space, as in computer vision; retaining the action-conditioned predictor at inference turns them into latent world models, enabling planning in robotics (V-JEPA 2-AC). Bringing this design to EHR patient trajectories---a predictor that simulates a patient's trajectory in latent space---has not been explored. We use an LLM as the encoder, reading the hourly record as text, avoiding feature engineering and vocabulary harmonisation. But an LLM adapted by supervised fine-tuning does not organise its latent space around physiological dynamics, and freezing it to train the predictor, as in V-JEPA 2-AC, leaves the encoder unaware of the rollout signal: the predictor degrades under rollout. We instead co-train encoder and predictor under one latent-prediction objective, grounding the encoder in the dynamics its predictor must follow. Naïve co-training, however, is unstable: the untrained predictor drags the encoder toward collapse, and the predictor's rollout diverges as its target space moves. We present Clin-JEPA, a five-phase curriculum that stably co-trains an LLM encoder with a latent trajectory predictor on MIMIC-IV. Three evaluations support the design: (1) under 48-hour autoregressive rollout the co-trained predictor degrades least (predictor degradation $\\times$1.06, against $\\times$1.23--1.36 for two-stage designs and $\\times$6.3--66 for curriculum ablations) while the co-trained encoder resolves the progression of patient state most sharply (largest state displacement); (2) the co-trained encoder separates deteriorating from stable patients in its latent space with Cohen's $d{=}1.59$, against $\\leq$0.50 for two-stage encoders; (3) one set of embeddings serves 34 downstream tasks across three benchmarks, outperforming strong per-task tuned baselines and a pretrained EHR foundation model.",
+      "published": "2026-05-11",
+      "updated": "2026-09-16",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "q-bio.QM"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2605.10840v5",
+      "pdf_url": "https://arxiv.org/pdf/2605.10840v5.pdf"
+    },
+    {
       "id": "2605.10286",
       "title": "AgentRx: A Benchmark Study of LLM Agents for Multimodal Clinical Prediction Tasks",
       "authors": [
@@ -1009,44 +1060,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2604.16364",
       "pdf_url": "https://arxiv.org/pdf/2604.16364.pdf"
-    },
-    {
-      "id": "2605.20188",
-      "title": "GraphDiffMed: Knowledge-Constrained Differential Attention with Pharmacological Graph Priors for Medication Recommendation",
-      "authors": [
-        "Krati Saxena",
-        "Tomohiro Shibata"
-      ],
-      "abstract": "Recommending safe and effective medication combinations from electronic health records (EHRs) is a core clinical AI problem, yet it remains difficult because patient trajectories are long, noisy, and clinically heterogeneous. Existing methods typically excel at either temporal modeling across visits or pharmacological knowledge integration (e.g., drug-drug interactions, DDIs), but rarely achieve both while robustly suppressing noise. We present GraphDiffMed, a knowledge-constrained medication recommendation framework built on dual-scale Differential Attention v2. Differential attention is applied at both intra-visit and inter-visit levels to filter spurious signals within encounters and across longitudinal history, while pharmacological constraints are incorporated during learning. Experiments on MIMIC-III and ablation studies show that this design consistently improves recommendation quality and ranking over strong baselines while achieving a more favorable safety performance balance. We further find that the strongest-performing configuration uses only demographic auxiliary features under our experimental setting. Overall, GraphDiffMed demonstrates that combining noise-aware attention with pharmacological constraints yields more reliable and clinically meaningful medication recommendation. We open-source our code at https://github.com/saxenakrati09/GraphDiffMed.",
-      "published": "2026-03-21",
-      "updated": "2026-03-21",
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2605.20188",
-      "pdf_url": "https://arxiv.org/pdf/2605.20188.pdf"
-    },
-    {
-      "id": "2603.10180",
-      "title": "DT-BEHRT: Disease Trajectory-aware Transformer for Interpretable Patient Representation Learning",
-      "authors": [
-        "Deyi Li",
-        "Zijun Yao",
-        "Qi Xu",
-        "Muxuan Liang",
-        "Lingyao Li",
-        "Zijian Xu",
-        "Mei Liu"
-      ],
-      "abstract": "The growing adoption of electronic health record (EHR) systems has provided unprecedented opportunities for predictive modeling to guide clinical decision making. Structured EHRs contain longitudinal observations of patients across hospital visits, where each visit is represented by a set of medical codes. While sequence-based, graph-based, and graph-enhanced sequence approaches have been developed to capture rich code interactions over time or within the same visits, they often overlook the inherent heterogeneous roles of medical codes arising from distinct clinical characteristics and contexts. To this end, in this study we propose the Disease Trajectory-aware Transformer for EHR (DT-BEHRT), a graph-enhanced sequential architecture that disentangles disease trajectories by explicitly modeling diagnosis-centric interactions within organ systems and capturing asynchronous progression patterns. To further enhance the representation robustness, we design a tailored pre-training methodology that combines trajectory-level code masking with ontology-informed ancestor prediction, promoting semantic alignment across multiple modeling modules. Extensive experiments on multiple benchmark datasets demonstrate that DT-BEHRT achieves strong predictive performance and provides interpretable patient representations that align with clinicians' disease-centered reasoning. The source code is publicly accessible at https://github.com/GatorAIM/DT-BEHRT.git.",
-      "published": "2026-03-10",
-      "updated": "2026-03-10",
-      "categories": [
-        "cs.LG"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2603.10180",
-      "pdf_url": "https://arxiv.org/pdf/2603.10180.pdf"
     }
   ]
 }
