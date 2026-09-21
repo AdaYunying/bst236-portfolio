@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T05:14:24.885582Z",
+  "generated_at": "2026-09-21T05:17:04.130429Z",
   "papers": [
     {
       "id": "2609.19385",
@@ -285,6 +285,29 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2607.22114",
       "pdf_url": "https://arxiv.org/pdf/2607.22114.pdf"
+    },
+    {
+      "id": "2609.20825",
+      "title": "HERMES: Contrast-Aware Knowledge Graph Reasoning from Clinical Notes for Patient Outcome Prediction",
+      "authors": [
+        "Gia-Bach Nguyen",
+        "Hoang-Ha Nguyen",
+        "Tuan-Cuong Vuong",
+        "Trang Mai Xuan",
+        "Duy Quoc Ngo",
+        "Tien-Cuong Nguyen",
+        "Huan Vu",
+        "Thien Van Luong"
+      ],
+      "abstract": "Clinical predictive models often rely on structured Electronic Health Record data, such as time-series and procedure codes. While recent approaches have begun leveraging unstructured clinical notes, they typically encode them as flat sequences, which may lose explicit relational and temporal structure present in clinical narratives. In response, we propose HERMES, a graph-based framework that operates exclusively on clinical text while preserving clinical relationships. This approach builds on two key ideas. First, personalized Knowledge Graphs (KGs) are constructed through Large-Language-Model-guided extraction from clinical notes with Contrastive Logic Modeling that explicitly captures temporal dynamics and treatment failures and changes in outcomes. Second, a Graph Attention Network synthesizes patient representations through graph-based learning over the KGs. Experiments on MIMIC-III and MIMIC-IV for in-hospital mortality and 30-day readmission prediction show that HERMES consistently outperforms strong text-only baselines. Our findings demonstrate that explicit relational modeling with Contrastive Logic Modeling significantly advances predictive performance.",
+      "published": "2026-07-22",
+      "updated": "2026-07-22",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2609.20825",
+      "pdf_url": "https://arxiv.org/pdf/2609.20825.pdf"
     },
     {
       "id": "2607.15447",
@@ -1036,30 +1059,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2603.21597",
       "pdf_url": "https://arxiv.org/pdf/2603.21597.pdf"
-    },
-    {
-      "id": "2604.16364",
-      "title": "Clinical Note Bloat Reduction for Efficient LLM Use",
-      "authors": [
-        "Jordan L. Cahoon",
-        "Chloe Stanwyck",
-        "Asad Aali",
-        "Rachel Madding",
-        "Emma Sun",
-        "Yixing Jiang",
-        "Renumathy Dhanasekaran",
-        "Emily Alsentzer"
-      ],
-      "abstract": "Health systems are rapidly deploying large language models (LLMs) that use clinical notes for clinical decision support applications. However, modern documentation practices rely heavily on templates, copy--paste shortcuts, and auto-populated fields, producing extensive duplicated text (``note bloat'') that dilutes clinically meaningful signal and substantially increases the computational cost of LLM use. We introduce TRACE, a scalable preprocessing pipeline that removes note bloat by leveraging EHR attribution metadata to identify templated and copied content and applying frequency-based deduplication when metadata are unavailable. We evaluated TRACE across four real--world clinical cohorts spanning liver transplantation, obstetrics, and inpatient care (5.3 million notes) using blinded physician review and downstream modeling tasks. TRACE removed 47.3% of chart text while preserving performance for information extraction and clinical outcome prediction. At a large academic medical center, this reduction corresponds to an estimated $9.5 million annual decrease in LLM inference costs assuming one query per encounter. These findings show how underutilized EHR metadata can enable more scalable and cost-efficient deployment of LLM-based clinical systems.",
-      "published": "2026-03-21",
-      "updated": "2026-03-21",
-      "categories": [
-        "cs.CY",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2604.16364",
-      "pdf_url": "https://arxiv.org/pdf/2604.16364.pdf"
     }
   ]
 }
