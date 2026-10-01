@@ -1,6 +1,67 @@
 {
-  "generated_at": "2026-09-30T05:17:07.068977Z",
+  "generated_at": "2026-10-01T05:16:49.613294Z",
   "papers": [
+    {
+      "id": "2609.39566",
+      "title": "From Given to Gathered Evidence: Agentic Learning for Longitudinal Medical Reasoning",
+      "authors": [
+        "Minye Shao",
+        "Chaohui Yu",
+        "Yixuan Wu",
+        "Fan Wang",
+        "Ling Shao",
+        "Yang Long"
+      ],
+      "abstract": "Foundation models can serve as clinical agents through tool-use harnesses. However, conventional medical benchmarks assess reasoning over preselected evidence rather than the ability to seek it across clinical records and longitudinal imaging. We propose CASE: a series of role-specific Clinical Agents for Seeking Evidence, together with a tool-use harness and an agentic post-training framework for compact vision-language policy models. We further introduce a longitudinal multimodal benchmark built on UK Biobank, comprising 50,401 clinical questions derived from real-world ICD-10-coded diagnoses of 4,739 participants. Each question links to a patient-specific environment containing clinical context and multi-sequence MRI from baseline and follow-up visits, where agents autonomously select which visits, organs, modalities, slices, and specialist tools to inspect and compare. Supervised fine-tuning transfers evidence-seeking workflows from 14,734 frontier-model interaction trajectories, followed by agentic reinforcement learning on the learner's own environment interactions. Privileged on-policy self-distillation and rubric-based LLM feedback refine evidence-to-conclusion reasoning without prescribing tool sequences. Experiments show that CASE moves beyond question-answer imitation toward transferable investigation policies, strengthening evidence-grounded longitudinal reasoning. Under matched evaluation conditions, our Qwen3-VL-8B based agent achieves over 16% and 10% relative improvements in answer accuracy over GPT-5.4 and Claude Opus 4.8. Code will be available at https://github.com/VinyehShaw/CASE.",
+      "published": "2026-09-30",
+      "updated": "2026-09-30",
+      "categories": [
+        "cs.CV"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2609.39566",
+      "pdf_url": "https://arxiv.org/pdf/2609.39566.pdf"
+    },
+    {
+      "id": "2609.39371",
+      "title": "EHR-RobustGym: Benchmarking and Training Agents for Robust Clinical Reasoning",
+      "authors": [
+        "Yitong Qiao",
+        "Yancheng Jin",
+        "Lei Liu",
+        "Yue Shen",
+        "Jian Wang",
+        "Jinjie Gu",
+        "Zhixuan Chu"
+      ],
+      "abstract": "In hospital workflows, electronic health records (EHRs) are often noisy, and may not contain the evidence needed to confirm events or measurements referenced in a clinical query. Even when database retrieval succeeds, clinical agents can overlook such discrepancies and return plausible but unsupported answers. We introduce EHR-RobustGym, a scalable and interactive environment for evaluating and training robust clinical agents grounded in noisy EHRs. Built on MIMIC-IV hospital records (365K patients, 31 tables, and over 500M records), EHR-RobustGym comprises 5,486 Clean-Noise pairs spanning six clinical intents and both patient-level and population-level queries. The pairs test robustness to Record-level, Value-level, and Query-level noise, while interactive SQL/Python execution and outcome verification support trajectory collection and training. Evaluating multiple LLMs reveals substantial robustness gaps: average task success across proprietary and large-scale open-weight models drops from 62.2% on Clean questions to 37.9% on Noise questions. At k=4, pass^k consistency falls below 50% for most evaluated models, exposing instability in clinical task completion. Supervised fine-tuning and reinforcement learning in EHR-RobustGym improve performance, with gains generalizing to five external EHR benchmarks. Together, these results position EHR-RobustGym as a testbed for evaluating and improving the evidence-grounded robustness of clinical agents.",
+      "published": "2026-09-30",
+      "updated": "2026-09-30",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2609.39371",
+      "pdf_url": "https://arxiv.org/pdf/2609.39371.pdf"
+    },
+    {
+      "id": "2609.38490",
+      "title": "Personalized State-Transition-Aware Memory for Clinical Agents",
+      "authors": [
+        "Maryam Haghifam",
+        "Zahra Rajabi",
+        "Yizhou Sun",
+        "Carlos Morato"
+      ],
+      "abstract": "Large language model (LLM) agents that reason over clinical records must track changes in a patient's state while preserving the history needed to understand them. Simply accumulating memories leaves it unclear which information still applies, whereas overwriting earlier memories can erase evidence needed to reconstruct treatment history and clinical trajectories. We introduce STAM, a state-transition-aware memory framework that records state changes as new clinical entries arrive. STAM combines semantic retrieval with typed clinical relations to identify affected memories, maintaining current information in Active and superseded or resolved information in History. At read time, a query-dependent gate selectively serves historical memory. Across four longitudinal clinical benchmarks, we evaluate STAM with downstream question answering, direct state-maintenance diagnostics, and comparisons at approximately matched context lengths.",
+      "published": "2026-09-29",
+      "updated": "2026-09-29",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2609.38490",
+      "pdf_url": "https://arxiv.org/pdf/2609.38490.pdf"
+    },
     {
       "id": "2609.19385",
       "title": "Mammography Foundation Models for Opportunistic Prediction of Major Adverse Cardiovascular Events",
@@ -624,6 +685,28 @@
       "pdf_url": "https://arxiv.org/pdf/2605.20176.pdf"
     },
     {
+      "id": "2605.20292",
+      "title": "Learning to Select Source-Traceable Evidence for Language-Model Prediction from Irregular Clinical Time Series",
+      "authors": [
+        "Kwanhyung Lee",
+        "Juhwan Choi",
+        "Jongheon Kim",
+        "Joohyung Lee",
+        "Hyeongwon Jang",
+        "Jeonguk Lee",
+        "Jisoo Jung",
+        "Eunho Yang"
+      ],
+      "abstract": "Numerical time-series models effectively process irregular electronic health record (EHR) trajectories, but do not expose which temporal patterns support each prediction as readable evidence. Existing text-based interfaces either serialize observations, preserving source traceability but offering limited clinical interpretation, or generate patient-level summaries that improve readability but can obscure links to source measurements. We introduce STEP-CTS (Source-Traceable Evidence for Prediction from Clinical Time-Series), which learns to select source-traceable text evidence for a language-model predictor. Multi-scale window statistics of each trajectory are verbalized as sets of deterministic threshold predicates, each set linked to its source window (e.g., \"[5-7 h]: last temperature at least 38C\"). An offline LLM, run once per unique predicate set without access to patient records, the prediction task, or outcome labels, attaches clinical concepts such as \"fever\" to their supporting predicates and abstains when none applies. Each predicate set, together with its concepts, forms an evidence unit. A learned Evidence Selector selects a fixed-size subset of the evidence units, which a pretrained clinical language-model encoder reads to make the prediction, with no patient-level text generation. Across three ICU benchmarks, STEP-CTS outperforms evaluated text-based baselines, improving AUPRC over the strongest by 5.1, 3.7, and 11.7 percentage points on P2012, MIMIC-III, and P2019, respectively, and is competitive with dedicated numerical time-series models. Ablations show that clinical concepts and learned evidence selection each contribute to predictive performance. In a blinded clinician study, the selected evidence is rated as traceable as deterministic serialization, near the ceiling of the scale, and above generated summaries on clinical interpretation.",
+      "published": "2026-05-19",
+      "updated": "2026-09-30",
+      "categories": [
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2605.20292",
+      "pdf_url": "https://arxiv.org/pdf/2605.20292.pdf"
+    },
+    {
       "id": "2605.14227",
       "title": "DT-Transformer: A Foundation Model for Disease Trajectory Prediction on a Real-world Health System",
       "authors": [
@@ -960,105 +1043,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2604.06262",
       "pdf_url": "https://arxiv.org/pdf/2604.06262.pdf"
-    },
-    {
-      "id": "2604.04614",
-      "title": "A Clinical Point Cloud Paradigm for In-Hospital Mortality Prediction from Multi-Level Incomplete Multimodal EHRs",
-      "authors": [
-        "Bohao Li",
-        "Tao Zou",
-        "Junchen Ye",
-        "Yan Gong",
-        "Bowen Du"
-      ],
-      "abstract": "Deep learning-based modeling of multimodal Electronic Health Records (EHRs) has become an important approach for clinical diagnosis and risk prediction. However, due to diverse clinical workflows and privacy constraints, raw EHRs are inherently multi-level incomplete, including irregular sampling, missing modalities, and sparse labels. These issues cause temporal misalignment, modality imbalance, and limited supervision. Most existing multimodal methods assume relatively complete data, and even methods designed for incompleteness usually address only one or two of these issues in isolation. As a result, they often rely on rigid temporal/modal alignment or discard incomplete data, which may distort raw clinical semantics. To address this problem, we propose HealthPoint (HP), a unified clinical point cloud paradigm for multi-level incomplete EHRs. HP represents heterogeneous clinical events as points in a continuous 4D space defined by content, time, modality, and case. To model interactions between arbitrary point pairs, we introduce a Low-Rank Relational Attention mechanism that efficiently captures high-order dependencies across these four dimensions. We further develop a hierarchical interaction and sampling strategy to balance fine-grained modeling and computational efficiency. Built on this framework, HP enables flexible event-level interaction and fine-grained self-supervision, supporting robust modality recovery and effective use of unlabeled data. Experiments on large-scale EHR datasets for risk prediction show that HP consistently achieves state-of-the-art performance and strong robustness under varying degrees of incompleteness.",
-      "published": "2026-04-06",
-      "updated": "2026-04-08",
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2604.04614",
-      "pdf_url": "https://arxiv.org/pdf/2604.04614.pdf"
-    },
-    {
-      "id": "2604.01924",
-      "title": "Is Clinical Text Enough? A Multimodal Study on Mortality Prediction in Heart Failure Patients",
-      "authors": [
-        "Oumaima El Khettari",
-        "Virgile Barthet",
-        "Guillaume Hocquet",
-        "Joconde Weller",
-        "Emmanuel Morin",
-        "Pierre Zweigenbaum"
-      ],
-      "abstract": "Accurate short-term mortality prediction in heart failure (HF) remains challenging, particularly when relying on structured electronic health record (EHR) data alone. We evaluate transformer-based models on a French HF cohort, comparing text-only, structured-only, multimodal, and LLM-based approaches. Our results show that enriching clinical text with entity-level representations improves prediction over CLS embeddings alone, and that supervised multimodal fusion of text and structured variables achieves the best overall performance. In contrast, large language models perform inconsistently across modalities and decoding strategies, with text-only prompts outperforming structured or multimodal inputs. These findings highlight that entity-aware multimodal transformers offer the most reliable solution for short-term HF outcome prediction, while current LLM prompting remains limited for clinical decision support.",
-      "published": "2026-04-02",
-      "updated": "2026-04-02",
-      "categories": [
-        "cs.CL"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2604.01924",
-      "pdf_url": "https://arxiv.org/pdf/2604.01924.pdf"
-    },
-    {
-      "id": "2604.01841v4",
-      "title": "Retrieval-aligned Tabular Foundation Models Enable Robust Clinical Risk Prediction in Electronic Health Records Under Real-world Constraints",
-      "authors": [
-        "Minh-Khoi Pham",
-        "Thang-Long Nguyen Ho",
-        "Thao Thi Phuong Dao",
-        "Tai Tan Mai",
-        "Minh-Triet Tran",
-        "Marie E. Ward",
-        "Una Geary",
-        "Rob Brennan",
-        "Nick McDonald",
-        "Martin Crane",
-        "Marija Bezbradica"
-      ],
-      "abstract": "Clinical prediction from structured electronic health records (EHRs) is challenging due to high dimensionality, heterogeneity, class imbalance, and distribution shift. While tabular in-context learning (TICL) and retrieval-augmented methods perform well on generic benchmarks, their behavior in clinical settings remains unclear. We present a multi-cohort EHR benchmark comparing classical, deep tabular, and TICL models across varying data scale, feature dimensionality, outcome rarity, and cross-cohort generalization. PFN-based TICL models are sample-efficient in low-data regimes but degrade under naive distance-based retrieval as heterogeneity and imbalance increase. We propose AWARE, a task-aligned retrieval framework using supervised embedding learning and lightweight adapters. AWARE improves AUPRC by up to 12.2% under extreme imbalance, with gains increasing with data complexity. Our results identify retrieval quality and retrieval-inference alignment as key bottlenecks for deploying tabular in-context learning in clinical prediction.",
-      "published": "2026-04-02",
-      "updated": "2026-08-25",
-      "categories": [
-        "cs.AI"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2604.01841v4",
-      "pdf_url": "https://arxiv.org/pdf/2604.01841v4.pdf"
-    },
-    {
-      "id": "2603.21597",
-      "title": "Cerebra: A Multidisciplinary AI Board for Multimodal Dementia Characterization and Risk Assessment",
-      "authors": [
-        "Sheng Liu",
-        "Long Chen",
-        "Zeyun Zhao",
-        "Qinglin Gou",
-        "Qingyue Wei",
-        "Arjun Masurkar",
-        "Kevin M. Spiegler",
-        "Philip Kuball",
-        "Stefania C. Bray",
-        "Megan Bernath",
-        "Deanna R. Willis",
-        "Jiang Bian",
-        "Lei Xing",
-        "Eric Topol",
-        "Kyunghyun Cho",
-        "Yu Huang",
-        "Ruogu Fang",
-        "Narges Razavian",
-        "James Zou"
-      ],
-      "abstract": "Modern clinical practice increasingly depends on reasoning over heterogeneous, evolving, and incomplete patient data. Although recent advances in multimodal foundation models have improved performance on various clinical tasks, most existing models remain static, opaque, and poorly aligned with real-world clinical workflows. We present Cerebra, an interactive multi-agent AI team that coordinates specialized agents for EHR, clinical notes, and medical imaging analysis. These outputs are synthesized into a clinician-facing dashboard that combines visual analytics with a conversational interface, enabling clinicians to interrogate predictions and contextualize risk at the point of care. Cerebra supports privacy-preserving deployment by operating on structured representations and remains robust when modalities are incomplete. We evaluated Cerebra using a massive multi-institutional dataset spanning 3 million patients from four independent healthcare systems. Cerebra consistently outperformed both state-of-the-art single-modality models and large multimodal language model baselines. In dementia risk prediction, it achieved AUROCs up to 0.80, compared with 0.74 for the strongest single-modality model and 0.68 for language model baselines. For dementia diagnosis, it achieved an AUROC of 0.86, and for survival prediction, a C-index of 0.81. In a reader study with experienced physicians, Cerebra significantly improved expert performance, increasing accuracy by 17.5 percentage points in prospective dementia risk estimation. These results demonstrate Cerebra's potential for interpretable, robust decision support in clinical care.",
-      "published": "2026-03-23",
-      "updated": "2026-03-24",
-      "categories": [
-        "cs.AI",
-        "cs.CV"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2603.21597",
-      "pdf_url": "https://arxiv.org/pdf/2603.21597.pdf"
     }
   ]
 }
