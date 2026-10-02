@@ -1,6 +1,22 @@
 {
-  "generated_at": "2026-10-01T05:16:49.613294Z",
+  "generated_at": "2026-10-02T05:16:44.747741Z",
   "papers": [
+    {
+      "id": "2610.01076",
+      "title": "GLoC-EHR: Evidence-Cited Clinical Reasoning over Global Context and Local EHR Events",
+      "authors": [
+        "Chaiho Shin",
+        "Kwangsoo Kim"
+      ],
+      "abstract": "Structured electronic health records (EHRs) contain a patient's clinical trajectory as a sequence of clinical codes. Answering clinical questions from such records requires both the context of the whole trajectory and the specific events that support the answer. We introduce GLoC-EHR, a multimodal language model that reads a contextual encoding of the record through a fixed-size global memory of the trajectory and a local memory of selected events. The model learns to generate hospital-course summaries from the global memory and descriptions of masked concepts from the local memory, aligning both with clinical text. It is then trained to cite evidence before answering, through rationale fine-tuning followed by group relative policy optimization (GRPO) with rewards for correct answers and record-supported evidence. On three MIMIC-IV outcome tasks, GLoC-EHR attains the highest macro AUROC among the compared models when it answers directly, whereas zero-shot LLMs reading the serialized record fall far behind. With evidence-cited reasoning, it stays close to its direct multi-task counterpart in macro AUROC, and the evidence terms of the objective reduce unsupported evidence at a similar macro AUROC. The local memory adds distinct supported findings, particularly under strict matching, without a detectable change in macro AUROC. Without retraining, GLoC-EHR transfers to EHRSHOT on par with EHR-BERT and answers two unseen laboratory questions better than zero-shot prompting of its own backbone.",
+      "published": "2026-10-01",
+      "updated": "2026-10-01",
+      "categories": [
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2610.01076",
+      "pdf_url": "https://arxiv.org/pdf/2610.01076.pdf"
+    },
     {
       "id": "2609.39566",
       "title": "From Given to Gathered Evidence: Agentic Learning for Longitudinal Medical Reasoning",
@@ -558,18 +574,19 @@
     },
     {
       "id": "2606.09030",
-      "title": "TRIAGE: Dialectical Reasoning for Explainable Risk Prediction on Irregularly Sampled Medical Time Series with LLMs",
+      "title": "TRIAGE: Dialectical LLM Reasoning for Explainable Risk Prediction on Irregularly Sampled Medical Time Series",
       "authors": [
         "Hyeongwon Jang",
         "Gyouk Chu",
         "Changhun Kim",
-        "Joonhyung Park",
         "Hangyul Yoon",
-        "Eunho Yang"
+        "Jeonguk Lee",
+        "Eunho Yang",
+        "Joonhyung Park"
       ],
-      "abstract": "Clinical early warning systems built on electronic health records, in which clinical observations are recorded as irregularly sampled medical time series (ISMTS), must deliver both calibrated risk scores for patient triage and interpretable rationales that clinicians can verify. Large Language Models (LLMs) have been explored for this task, yet they collapse graded clinical risk into overconfident binary predictions. This risk polarization undermines both calibration and cross-patient comparability. To address this, we propose TRIAGE, a framework that trains an LLM to generate dialectical reasoning over competing clinical outcomes by eliciting outcome-specific rationales. This dialectical formulation mitigates risk polarization, enabling a single LLM to yield continuous risk scores grounded in explicit clinical reasoning. Evaluated on three ISMTS benchmarks, TRIAGE achieves an average AUPRC improvement of 3.3% and reduces calibration error by 81% compared to the competitive baselines. An LLM-as-a-judge assessment further shows that our rationales surpass post-hoc explanations from the baseline by 20% in clinical reasoning quality. The source code is available at https://github.com/HyeongWon-Jang/TRIAGE .",
+      "abstract": "Clinical early warning systems built on irregularly sampled medical time series (ISMTS) from electronic health records must deliver continuous risk scores for patient triage as well as interpretable rationales that clinicians can verify. Large language models (LLMs) are uniquely positioned for both, deriving risk from their output probabilities and rationales from their medical knowledge. However, we find that conventional LLM reasoning collapses graded risk into overconfident predictions and thereby undermines the cross-patient comparability on which triage depends. We refer to this failure mode as risk polarization and identify two underlying behaviors: early commitment to a single outcome, and one-sided reasoning that focuses only on the evidence for that outcome. To address this, we propose TRIAGE, a framework that trains an LLM to reason dialectically over competing clinical outcomes by eliciting outcome-specific rationales. This dialectical formulation mitigates risk polarization, enabling a single LLM to jointly provide explicit clinical rationales and risk scores comparable across patients. Across five ISMTS benchmarks, TRIAGE improves mean AUPRC by 17.0% and reduces mean calibration error by 82.8% relative to the competitive LLM-based baseline, while surpassing the strongest ISMTS baseline by 3.5% in mean AUPRC.",
       "published": "2026-06-08",
-      "updated": "2026-06-08",
+      "updated": "2026-10-01",
       "categories": [
         "cs.LG",
         "cs.AI",
@@ -1024,25 +1041,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2604.10386",
       "pdf_url": "https://arxiv.org/pdf/2604.10386.pdf"
-    },
-    {
-      "id": "2604.06262",
-      "title": "From Exposure to Internalization: Dual-Stream Calibration for In-context Clinical Reasoning",
-      "authors": [
-        "Chuang Zhao",
-        "Hongke Zhao",
-        "Xiaofang Zhou",
-        "Xiaomeng Li"
-      ],
-      "abstract": "Contextual clinical reasoning demands robust inference grounded in complex, heterogeneous clinical records. While state-of-the-art fine-tuning, in-context learning (ICL), and retrieval-augmented generation (RAG) enable knowledge exposure, they often fall short of genuine contextual internalization: dynamically adjusting a model's internal representations to the subtle nuances of individual cases at inference time. To address this, we propose Dual-Stream Calibration (DSC), a test-time training framework that transcends superficial knowledge exposure to achieve deep internalization during inference. DSC facilitates input internalization by synergistically aligning two calibration streams. Unlike passive context exposure, the Semantic Calibration Stream enforces a deliberative reflection on core evidence, internalizing semantic anchors by minimizing entropy to stabilize generative trajectories. Simultaneously, the Structural Calibration Stream assimilates latent inferential dependencies through an iterative meta-learning objective. By training on specialized support sets at test-time, this stream enables the model to bridge the gap between external evidence and internal logic, synthesizing fragmented data into a coherent response. Our approach shifts the reasoning paradigm from passive attention-based matching to an active refinement of the latent inferential space. Validated against thirteen clinical datasets, DSC demonstrates superiority across three distinct task paradigms, consistently outstripping state-of-the-art baselines ranging from training-dependent models to test-time learning frameworks.",
-      "published": "2026-04-07",
-      "updated": "2026-04-07",
-      "categories": [
-        "q-bio.QM",
-        "cs.AI"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2604.06262",
-      "pdf_url": "https://arxiv.org/pdf/2604.06262.pdf"
     }
   ]
 }
