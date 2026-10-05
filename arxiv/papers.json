@@ -1,6 +1,42 @@
 {
-  "generated_at": "2026-10-04T06:56:22.041231Z",
+  "generated_at": "2026-10-05T05:30:18.469221Z",
   "papers": [
+    {
+      "id": "2610.02979",
+      "title": "RASPER: Reward-Aligned Summarization of Clinical Notes for EHR Outcome Prediction",
+      "authors": [
+        "Arya Hadizadeh Moghaddam",
+        "Mohsen Nayebi Kerdabadi",
+        "Chen Chen",
+        "Dongjie Wang",
+        "Zijun Yao"
+      ],
+      "abstract": "Unstructured discharge notes in Electronic Health Records (EHRs) often carry signal complementary to structured medical codes, holding patient-specific evidence that standardized cohort-level codes alone cannot capture. However, this evidence in notes is frequently buried in lengthy, noisy text that is not intentionally written with any specific clinical prediction in mind. Summarization is an obvious mitigation, but generic summaries, tuned for fluency rather than the outcome, routinely omit decisive evidence while retaining plausible but uninformative detail. To this end, we propose RASPER, a Reward-Aligned Summarizer for Prediction in EHR, that optimizes note summarization directly against the downstream clinical task. RASPER employs a tunable LLM-based summarizer to extract task-relevant evidence from discharge notes and trains it via reinforcement learning from prediction feedback, using a reward derived from the downstream predictor's loss. To ground the summarizer, a longitudinal encoder converts structured codes into soft prompts that incorporate each patient's clinical context into note summarization. By rewarding the quality of the resulting multimodal prediction, RASPER encourages the summarizer to retain patient-specific evidence that complements, rather than duplicates, information captured by structured codes. RASPER consistently outperforms strong baselines on both readmission prediction and medication recommendation across MIMIC-III and MIMIC-IV.",
+      "published": "2026-10-02",
+      "updated": "2026-10-02",
+      "categories": [
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2610.02979",
+      "pdf_url": "https://arxiv.org/pdf/2610.02979.pdf"
+    },
+    {
+      "id": "2610.02684",
+      "title": "Large language models exhibit unreliable updating of clinical judgment as patient evidence evolves",
+      "authors": [
+        "Min Zeng",
+        "Rui Zhang"
+      ],
+      "abstract": "Large language models (LLMs) are increasingly explored for clinical reasoning, but whether they appropriately revise judgments as patient evidence evolves remains unclear. We evaluated longitudinal belief updating using matched intensive-care trajectories from electronic health records. Across diverse LLMs, conditioning on a preceding judgment more often increased than reduced prediction error when estimates changed, replicated for a second endpoint. Controlled interventions revealed two failure modes. First, with preceding assessment fixed, models responded more strongly to worsening than matched improving respiratory evidence; this asymmetry persisted after headroom normalization at moderate and strong evidence levels. Second, with current evidence fixed, increasing prior risk from 10% to 90% shifted estimates by 26.2 percentage points, demonstrating causal influence of prior model beliefs. Prompting did not restore reliable updating. Evidence-Validated Longitudinal Update (EVLU) identified fewer, more reliable revisions, revealing a reliability-coverage trade-off. These findings establish longitudinal belief updating as a distinct dimension of LLM reliability.",
+      "published": "2026-10-02",
+      "updated": "2026-10-02",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2610.02684",
+      "pdf_url": "https://arxiv.org/pdf/2610.02684.pdf"
+    },
     {
       "id": "2610.01076",
       "title": "GLoC-EHR: Evidence-Cited Clinical Reasoning over Global Context and Local EHR Events",
@@ -1000,47 +1036,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2604.17725",
       "pdf_url": "https://arxiv.org/pdf/2604.17725.pdf"
-    },
-    {
-      "id": "2604.14547",
-      "title": "Predicting Post-Traumatic Epilepsy from Clinical Records using Large Language Model Embeddings",
-      "authors": [
-        "Wenhui Cui",
-        "Nicholas Swingle",
-        "Anand A. Joshi",
-        "Dileep Nair",
-        "Richard M. Leahy"
-      ],
-      "abstract": "Objective: Post-traumatic epilepsy (PTE) is a debilitating neurological disorder that develops after traumatic brain injury (TBI). Early prediction of PTE remains challenging due to heterogeneous clinical data, limited positive cases, and reliance on resource-intensive neuroimaging data. We investigate whether routinely collected acute clinical records alone can support early PTE prediction using language model-based approaches. Methods: Using a curated subset of the TRACK-TBI cohort, we developed an automated PTE prediction framework that implements pretrained large language models (LLMs) as fixed feature extractors to encode clinical records. Tabular features, LLM-generated embeddings, and hybrid feature representations were evaluated using gradient-boosted tree classifiers under stratified cross-validation. Results: LLM embeddings achieved performance improvements by capturing contextual clinical information compared to using tabular features alone. The best performance was achieved by a modality-aware feature fusion strategy combining tabular features and LLM embeddings, achieving an AUC-ROC of 0.892 and AUPRC of 0.798. Acute post-traumatic seizures, injury severity, neurosurgical intervention, and ICU stay are key contributors to the predictive performance. Significance: These findings demonstrate that routine acute clinical records contain information suitable for early PTE risk prediction using LLM embeddings in conjunction with gradient-boosted tree classifiers. This approach represents a promising complement to imaging-based prediction.",
-      "published": "2026-04-16",
-      "updated": "2026-04-16",
-      "categories": [
-        "cs.LG"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2604.14547",
-      "pdf_url": "https://arxiv.org/pdf/2604.14547.pdf"
-    },
-    {
-      "id": "2604.10386",
-      "title": "TrajOnco: a multi-agent framework for temporal reasoning over longitudinal EHR for multi-cancer early detection",
-      "authors": [
-        "Sihang Zeng",
-        "Young Won Kim",
-        "Wilson Lau",
-        "Ehsan Alipour",
-        "Ruth Etzioni",
-        "Meliha Yetisgen",
-        "Anand Oka"
-      ],
-      "abstract": "Accurate estimation of cancer risk from longitudinal electronic health records (EHRs) could support earlier detection and improved care, but modeling such complex patient trajectories remains challenging. We present TrajOnco, a training-free, multi-agent large language model (LLM) framework designed for scalable multi-cancer early detection. Using a chain-of-agents architecture with long-term memory, TrajOnco performs temporal reasoning over sequential clinical events to generate patient-level summaries, evidence-linked rationales, and predicted risk scores. We evaluated TrajOnco on de-identified Truveta EHR data across 15 cancer types using matched case-control cohorts, predicting risk of cancer diagnosis at 1 year. In zero-shot evaluation, TrajOnco achieved AUROCs of 0.64-0.80, performing comparably to supervised machine learning in a lung cancer benchmark while demonstrating better temporal reasoning than single-agent LLMs. The multi-agent design also enabled effective temporal reasoning with smaller-capacity models such as GPT-4.1-mini. The fidelity of TrajOnco's output was validated through human evaluation. Furthermore, TrajOnco's interpretable reasoning outputs can be aggregated to reveal population-level risk patterns that align with established clinical knowledge. These findings highlight the potential of multi-agent LLMs to execute interpretable temporal reasoning over longitudinal EHRs, advancing both scalable multi-cancer early detection and clinical insight generation.",
-      "published": "2026-04-12",
-      "updated": "2026-04-12",
-      "categories": [
-        "cs.AI",
-        "cs.MA"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2604.10386",
-      "pdf_url": "https://arxiv.org/pdf/2604.10386.pdf"
     }
   ]
 }
