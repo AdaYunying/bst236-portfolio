@@ -1,6 +1,25 @@
 {
-  "generated_at": "2026-10-07T05:17:21.771675Z",
+  "generated_at": "2026-10-08T05:17:46.319832Z",
   "papers": [
+    {
+      "id": "2610.09785",
+      "title": "UltraWorld: Learning Interactive Ultrasound World Models from Untracked Clinical Videos with Acoustic Sampling Map",
+      "authors": [
+        "Keke Yang",
+        "Erqi Wang",
+        "Sainan Guan",
+        "Hongliang Ren"
+      ],
+      "abstract": "World models can enable autonomous ultrasound scanning by predicting the outcomes of probe motions from local observations. Learning this action--observation relationship typically relies on synchronized video--pose pairs, which are costly to collect at scale and largely unavailable in routine clinical recordings. Reliable action following further requires modeling ultrasound's cross-sectional sampling geometry. We present UltraWorld, a self-distillation recipe that transfers priors from clinical ultrasound videos into interactive world models without real action annotations. Starting from clinical videos, we adapt a video foundation model into an ultrasound generator conditioned on reference images and anatomical masks. Anatomical masks sampled along programmable trajectories through 3D anatomy provide spatial guidance for synthesizing action--video pairs. We then use these synthetic pairs to self-distill the generator into a world model that predicts future observations from local observations and actions, without requiring anatomical masks or other 3D assets at inference time. To further improve action following, we introduce the Acoustic Sampling Map (AsMap), which represents probe poses and imaging settings as pixel-wise 3D sampling positions, beam directions, and depths. Experiments demonstrate improved prediction fidelity and action following. Across nine simulated closed-loop local planning episodes, UltraWorld reduces the mean final distance to the goal and orientation error by 29\\% and 38\\%, respectively, compared with visual servoing. Project Page: https://ultraworld-project.github.io/.",
+      "published": "2026-10-07",
+      "updated": "2026-10-07",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2610.09785",
+      "pdf_url": "https://arxiv.org/pdf/2610.09785.pdf"
+    },
     {
       "id": "2610.07739",
       "title": "Cite What You Explore: Budget-Aware LLM Reasoning over Medical KGs with Verifiable Evidence",
@@ -1006,27 +1025,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2604.24547",
       "pdf_url": "https://arxiv.org/pdf/2604.24547.pdf"
-    },
-    {
-      "id": "2604.23605",
-      "title": "Thinking Like a Clinician: A Cognitive AI Agent for Clinical Diagnosis via Panoramic Profiling and Adversarial Debate",
-      "authors": [
-        "Zhiqi Lv",
-        "Duofan Tu",
-        "Jun Li",
-        "Mingyue Zhao",
-        "Heqin Zhu",
-        "Wenliang Li",
-        "Shaohua Kevin Zhou"
-      ],
-      "abstract": "The application of large language models (LLMs) in clinical decision support faces significant challenges of \"tunnel vision\" and diagnostic hallucinations present in their processing unstructured electronic health records (EHRs). To address these challenges, we propose a novel chain-based clinical reasoning framework, called DxChain, which transforms the diagnostic workflow into an iterative process by mirroring a clinician's cognitive trajectory that consists of \"Memory Anchoring\", \"Navigation\" and \"Verification\" phases. DxChain introduces three key methodological innovations to elicit the potential of LLM: (i) a Profile-Then-Plan paradigm to mitigate cold-start hallucinations by establishing a panoramic patient baseline, (ii) a Medical Tree-of-Thoughts (Med-ToT) algorithm for strategic look ahead planning and resource aware navigation, and (iii) a Dialectical Diagnostic Verification procedure utilizing \"Angel-Devil\" adversarial debates to resolve complex evidence conflicts. Evaluated on two real world benchmarks, MIMIC-IV-Ext Cardiac Disease and MIMIC-IV-Ext CDM, DxChain achieves state-of-the-art performances in both diagnostic accuracy and logical consistency, offering a modular and reliable architecture for next-generation clinical AI. The code is at https://anonymous.4open.science/r/Dx-Chain.",
-      "published": "2026-04-26",
-      "updated": "2026-04-26",
-      "categories": [
-        "cs.AI"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2604.23605",
-      "pdf_url": "https://arxiv.org/pdf/2604.23605.pdf"
     }
   ]
 }
