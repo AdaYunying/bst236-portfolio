@@ -1,6 +1,27 @@
 {
-  "generated_at": "2026-10-08T05:17:46.319832Z",
+  "generated_at": "2026-10-09T05:18:00.891884Z",
   "papers": [
+    {
+      "id": "2610.10641",
+      "title": "Coverage-Aware Reasoning with Medical Tokens for Diagnosis Prediction",
+      "authors": [
+        "Kaisong Zhang",
+        "Haotian Fang",
+        "Junmeng Zhou",
+        "Hang Lv",
+        "Yulan Pan",
+        "Yanchao Tan"
+      ],
+      "abstract": "Large language models (LLMs) offer promising potential for next-visit diagnosis prediction, owing to their ability to integrate longitudinal clinical evidence and reason over it in natural language. However, reinforcement learning for LLM reasoning commonly rewards each trajectory according to the correctness of its final answer. In next-visit diagnosis prediction, multiple diagnoses can be simultaneously valid, but independently rewarding one diagnosis per trajectory does not distinguish repeated hits from coverage of different diagnoses. The policy can therefore concentrate on a few correct diagnoses, leaving others uncovered. Meanwhile, LLM tokenizers can split ICD codes into several generic tokens with limited clinical meaning, requiring multiple decoding steps to predict each diagnosis and hindering reasoning over a large disease vocabulary. To address both challenges, we propose CARing, a framework that represents diagnoses with compositional Semantic IDs (SIDs) and optimizes reasoning trajectories for multi-label coverage. Concretely, we first encode ontology-enriched disease semantics into compact SIDs through residual quantization, and ground the resulting SID tokens in natural language and longitudinal EHR contexts through multi-task alignment and reasoning-enriched training to unlock transferable LLM reasoning. CARing further improves unordered multi-label prediction through a coverage reward for reinforcement learning and multi-positive supervision. At inference time, the model supports both efficient direct constrained decoding and multi-chain reasoning with rank fusion. On MIMIC-III and MIMIC-IV, CARing exceeds all EHR-trained baselines in weighted F1 and attains the highest top-k recall at every reported cutoff, including R@30 of 46.04% and 46.52% in reasoning mode. Our codes and logs are available at https://github.com/zmlxzyh/CARing-Codes-Logs.",
+      "published": "2026-10-07",
+      "updated": "2026-10-07",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2610.10641",
+      "pdf_url": "https://arxiv.org/pdf/2610.10641.pdf"
+    },
     {
       "id": "2610.09785",
       "title": "UltraWorld: Learning Interactive Ultrasound World Models from Untracked Clinical Videos with Acoustic Sampling Map",
@@ -1005,26 +1026,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2605.00708",
       "pdf_url": "https://arxiv.org/pdf/2605.00708.pdf"
-    },
-    {
-      "id": "2604.24547",
-      "title": "Dialysis Risk Prediction and Treatment Effect Estimation for AKI patients using Longitudinal Electronic Health Records",
-      "authors": [
-        "Kalyani P. Pande",
-        "Evan Yang",
-        "Bryan Zhu",
-        "Sandeep K. Mallipattu",
-        "Alisa Yurovsky",
-        "Tengfei Ma"
-      ],
-      "abstract": "Progression to dialysis or end-stage renal disease is a rare but clinically important outcome. Clinicians need evidence on how medication exposures influence downstream risk. We constructed a fixed-window EHR cohort (90-day observation, 730-day prediction; N=81401; dialysis/ESRD prevalence: 1.1%) and modeled sequences of diagnoses, procedures, and medications with kidney laboratory trends (creatinine, BUN, eGFR). A transformer-based causal multi-head model was trained to estimate drug- and ingredient-level average treatment effects (ATEs) using counterfactual exposure removal and insertion under a full medication history setup. On test set, predictive performance reached an AUC of 0.694 and PR-AUC of 0.094. At the selected decision threshold (0.883), the model achieved an F1 score of 0.201 with a Brier score of 0.018. Post-hoc causal analyses of lab changes (eGFR, creatinine, BUN) using IPTW, AIPW, naive, and covariate-adjusted OLS methods assessed clinical directionality. Results showed partial protective-direction support for ACE/ARB exposures and worsening-direction signals for loop diuretics.",
-      "published": "2026-04-27",
-      "updated": "2026-04-27",
-      "categories": [
-        "cs.LG"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2604.24547",
-      "pdf_url": "https://arxiv.org/pdf/2604.24547.pdf"
     }
   ]
 }
