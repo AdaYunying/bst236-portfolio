@@ -1,6 +1,22 @@
 {
-  "generated_at": "2026-10-14T05:15:23.646923Z",
+  "generated_at": "2026-10-15T05:15:34.342288Z",
   "papers": [
+    {
+      "id": "2610.20502",
+      "title": "Graph-Enhanced Disease Trajectory Discovery and Temporal Endpoint Forecasting from Longitudinal Electronic Health Records",
+      "authors": [
+        "Jin-Jia Zheng",
+        "Vincent S. Tseng"
+      ],
+      "abstract": "Longitudinal electronic health records (EHRs) can reveal disease-progression structure, while useful forecasting requires leakage-controlled discovery, censor-aware outcomes, and inspectable trajectory evidence. We developed a graph-enhanced framework in MIMIC-IV v3.1 that splits patients before graph construction, learns train-only consecutive-admission transitions, and freezes endpoint-specific branching-motif policies selected on validation data. The final catalog contained 99,527 motifs, and a time-aware Transformer retrieved at most 24 patient-compatible motifs per endpoint through endpoint-specific cross-attention. Across five training seeds, micro-AUPRC increased from 0.9330 to 0.9357, while event-time MAE decreased from 676.9 to 657.7 days (reduction 19.2 days; 95% paired patient-cluster bootstrap CI, 13.8-24.8). Timing effects were heterogeneous: MAE worsened for events within 730 days but improved by 58.9 days for events occurring after 730 days. In an exploratory internal temporal split, branch conditioning reduced conditional event-time MAE by 26.9 days (95% CI, 23.0-30.8) without evidence of better micro-AUPRC. Corrected survival evaluation over the supported 0-2,555-day interval did not establish macro C-index or integrated Brier score superiority over a matched history-only discrete-hazard model. A directed, degree-matched GNN repair substantially improved unseen-edge discovery, yet replacing GNN-derived scores within fixed motif identities did not improve downstream forecasting. These results position branching motifs as structured trajectory context whose main value is long-range timing support rather than uniformly stronger endpoint discrimination, survival prediction, or causal explanation.",
+      "published": "2026-10-14",
+      "updated": "2026-10-14",
+      "categories": [
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2610.20502",
+      "pdf_url": "https://arxiv.org/pdf/2610.20502.pdf"
+    },
     {
       "id": "2610.17426",
       "title": "Reinforcement Learning In Partially Verifiable Environments for Colon Cancer Treatment Planning",
@@ -209,9 +225,9 @@
         "Hangjie Yuan",
         "Shang Liu"
       ],
-      "abstract": "Foundation models can serve as clinical agents through tool-use harnesses. However, conventional medical benchmarks assess reasoning over preselected evidence rather than the ability to seek it across clinical records and longitudinal imaging. We propose CASE: a series of role-specific Clinical Agents for Seeking Evidence, together with a tool-use harness and an agentic post-training framework for compact vision-language policy models. We further introduce a longitudinal multimodal benchmark built on UK Biobank, comprising 50,401 clinical questions derived from real-world ICD-10-coded diagnoses of 4,739 participants. Each question links to a patient-specific environment containing clinical context and multi-sequence MRI from baseline and follow-up visits, where agents autonomously select which visits, organs, modalities, slices, and specialist tools to inspect and compare. Supervised fine-tuning transfers evidence-seeking workflows from 14,734 frontier-model interaction trajectories, followed by agentic reinforcement learning on the learner's own environment interactions. Privileged on-policy self-distillation and rubric-based LLM feedback refine evidence-to-conclusion reasoning without prescribing tool sequences. Experiments show that CASE moves beyond question-answer imitation toward transferable investigation policies, strengthening evidence-grounded longitudinal reasoning. Under matched evaluation conditions, our Qwen3-VL-8B-Instruct based agent achieves over 16% and 10% relative improvements in answer accuracy over GPT-5.4 and Claude Opus 4.8. Project page available at: https://vinyehshaw.github.io/case-project/.",
+      "abstract": "Foundation models can serve as clinical agents through tool-use harnesses. However, conventional medical benchmarks assess reasoning over preselected evidence rather than the ability to seek it across clinical records and longitudinal imaging. We propose CASE: a series of role-specific Clinical Agents for Seeking Evidence, together with a tool-use harness and an agentic post-training framework for compact vision-language policy models. We further introduce a longitudinal multimodal benchmark built on UK Biobank, comprising 50,401 clinical questions derived from real-world ICD-10-coded diagnoses of 4,739 participants. Each question links to a patient-specific environment containing clinical context and multi-sequence MRI from baseline and follow-up visits, where agents autonomously select which visits, organs, modalities, slices, and specialist tools to inspect and compare. Supervised fine-tuning transfers evidence-seeking workflows from 147,434 frontier-model interaction trajectories, followed by agentic reinforcement learning on the learner's own environment interactions. Privileged on-policy self-distillation and rubric-based LLM feedback refine evidence-to-conclusion reasoning without prescribing tool sequences. Experiments show that CASE moves beyond question-answer imitation toward transferable investigation policies, strengthening evidence-grounded longitudinal reasoning. Under matched evaluation conditions, our Qwen3-VL-8B-Instruct based agent achieves over 16% and 10% relative improvements in answer accuracy over GPT-5.4 and Claude Opus 4.8. Project page available at: https://vinyehshaw.github.io/case-project/.",
       "published": "2026-09-30",
-      "updated": "2026-10-12",
+      "updated": "2026-10-14",
       "categories": [
         "cs.CV"
       ],
@@ -1011,30 +1027,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2605.10286",
       "pdf_url": "https://arxiv.org/pdf/2605.10286.pdf"
-    },
-    {
-      "id": "2605.09675",
-      "title": "CodeClinic: Evaluating Automation of Coding Skills for Clinical Reasoning Agents",
-      "authors": [
-        "Timothy Ossowski",
-        "Xinchi Liu",
-        "Danyal Maqbool",
-        "Vaibhav Dhanuka",
-        "Sheng Zhang",
-        "Hoifung Poon",
-        "Majid Afshar",
-        "Tyler Bradshaw",
-        "Junjie Hu"
-      ],
-      "abstract": "Clinical reasoning agents based on large language models (LLMs) aim to automate tasks such as intensive care unit (ICU) monitoring and patient state tracking from electronic health records (EHRs). Existing systems typically rely on manually curated clinical tools or skills for concepts such as sepsis detection and organ failure assessment. However, maintaining these tool libraries requires substantial expert effort, while zero-shot querying or code generation often produces inefficient and unreliable reasoning chains, especially under institution-specific clinical policies. We introduce CodeClinic, a benchmark built on MIMIC-IV for evaluating whether LLM agents can synthesize and compose reusable clinical skills instead of relying on fixed toolboxes. The benchmark contains two complementary tasks: longitudinal ICU surveillance and compositional information seeking. The longitudinal setting simulates monitoring patient trajectories with structured decisions every four hours across 25 findings and eight clinical families, while the compositional setting spans 63k instances across 259 tasks in nine domains and is stratified by compositional dependency depth to evaluate increasingly complex multi-step reasoning. We further propose an offline autoformalization pipeline that converts natural-language clinical guidelines into reusable and verified Python skill libraries through iterative LLM refinement. Compared with zero-shot code generation, the resulting libraries improve consistency while reducing per-query token usage by up to 40%.",
-      "published": "2026-05-10",
-      "updated": "2026-05-10",
-      "categories": [
-        "cs.AI",
-        "cs.MA"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2605.09675",
-      "pdf_url": "https://arxiv.org/pdf/2605.09675.pdf"
     }
   ]
 }
