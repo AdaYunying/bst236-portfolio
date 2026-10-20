@@ -1,6 +1,22 @@
 {
-  "generated_at": "2026-10-19T05:15:52.237027Z",
+  "generated_at": "2026-10-20T05:14:52.010747Z",
   "papers": [
+    {
+      "id": "2610.25765",
+      "title": "TRACE: Tracking Multimodal Clinical Trajectories for Inpatient Risk Prediction",
+      "authors": [
+        "Minjun Kim",
+        "Jong Hak Moon"
+      ],
+      "abstract": "Accurate inpatient risk prediction requires modeling heterogeneous clinical evidence that accumulates irregularly over time. This challenge spans in-hospital mortality, prolonged length of stay, and readmission, each with task-specific observation windows. Existing multimodal approaches combine structured health record data, chest x-rays, and clinical text, but primarily focus on modality fusion or missing-modality compensation, with limited attention to temporal trajectories over an admission. We propose TRACE (TRAjectory modeling of multimodal Clinical Events), a daily-scale framework organizing clinical events into day-level trajectories, separating day-invariant global context from day-specific local events drawn from EHR data, chest x-rays, radiology reports, and discharge summaries. The trajectory is encoded using temporal attention, allowing unavailable modalities to emit no tokens. A phenotype-guided contrastive objective further organizes admissions under heterogeneous disease distributions. Across cohorts from MIMIC-IV, eICU, and MIMIC-III comprising nearly 180,000 total stays, we evaluate TRACE on mortality, length of stay, and readmission prediction. TRACE achieves the highest AUROC across all nine dataset-task settings and the highest ACC in eight, outperforming baselines. Ablation studies validate our attention masks and contrastive learning, while trajectory-level attribution localizes risk-associated hospital days and modalities.",
+      "published": "2026-10-19",
+      "updated": "2026-10-19",
+      "categories": [
+        "cs.AI"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2610.25765",
+      "pdf_url": "https://arxiv.org/pdf/2610.25765.pdf"
+    },
     {
       "id": "2610.20502",
       "title": "Graph-Enhanced Disease Trajectory Discovery and Temporal Endpoint Forecasting from Longitudinal Electronic Health Records",
@@ -484,6 +500,26 @@
       "pdf_url": "https://arxiv.org/pdf/2608.16972.pdf"
     },
     {
+      "id": "2610.23862",
+      "title": "Forecasting Patient Trajectories from the Electronic Health Records with Action-Conditioned World Models",
+      "authors": [
+        "Simon A. Lee",
+        "Jiahang Hank Sha",
+        "Soomin Chung",
+        "Kai Akamatsu",
+        "Eran Halperin",
+        "Jeffrey N. Chiang"
+      ],
+      "abstract": "We introduce a predictive world model for electronic health records (EHR) that represents patient histories as action conditioned latent trajectories. Rather than modeling clinical events solely through autoregressive token prediction, our framework explicitly separates patient states from observed clinical actions and learns their evolution through a state and action conditioned transition operator. At its core is a state dependent linearization predictor that propagates local changes in latent patient state, enabling time resolved prediction, multi step rollout, and action conditioned simulation. Empirically, we show that generated latent trajectories preserve downstream predictive signal, temporal structure, and subgroup level statistical relationships present in encoder derived representations. We further decode free running rollouts into the original clinical feature space and evaluate future clinical measurements against observed values using task matched forecasting baselines, demonstrating that the learned dynamics retain predictive information beyond latent space agreement. Across binary classification and time to event tasks, EHR WM achieves competitive, though task dependent, performance relative to substantially larger EHR foundation models while using a 30x smaller parameter footprint. Finally, perturbing observed action sequences produces corresponding changes in generated trajectories, demonstrating the action sensitivity of the learned dynamics. Together, these results support world modeling as a complementary framework for learning explicit, time indexed representations of patient evolution from longitudinal EHR.",
+      "published": "2026-08-16",
+      "updated": "2026-08-16",
+      "categories": [
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2610.23862",
+      "pdf_url": "https://arxiv.org/pdf/2610.23862.pdf"
+    },
+    {
       "id": "2608.06430",
       "title": "MiGHT-EHR: A Multi-task Graph Transformer for Heterogeneous Temporal Electronic Health Records",
       "authors": [
@@ -885,11 +921,15 @@
         "Hardy Chen",
         "Zijun Wang",
         "Cihang Xie",
+        "Yufan He",
+        "Can Zhao",
+        "Daguang Xu",
+        "Yucheng Tang",
         "Yuyin Zhou"
       ],
-      "abstract": "Large language models (LLMs) and agentic systems have shown promise for clinical decision support, but existing works largely assume that evidence has already been curated and handed to the model. Real-world clinical workflows instead require agents to actively seek, iteratively plan, and synthesize multimodal evidence from heterogeneous sources. In this paper, we introduce ClinSeekAgent, an automated agentic framework for dynamic multimodal evidence seeking that shifts the paradigm from passive evidence consumption to active evidence acquisition. Given only a clinical query and access to raw data sources, ClinSeekAgent gathers evidence by querying medical knowledge bases, navigating raw EHRs, and invoking medical imaging tools; refines its hypotheses as new information emerges; and integrates the collected evidence into grounded clinical decisions. ClinSeekAgent serves both as an inference-time agent for frontier LLMs and as a training-time pipeline for distilling high-quality agent trajectories into compact open-source models. To validate its inference-time effectiveness, we construct ClinSeek-Bench, which pairs Curated Input reasoning from fixed pre-selected evidence with Automated Evidence-Seeking over raw clinical data. On text-only EHR tasks, ClinSeekAgent improves Claude Opus 4.6 from 60.0 to 63.2 overall F1 and MiniMax M2.5 from 43.1 to 47.3, with positive risk-prediction gains in 7 out of 9 evaluated host models. On multimodal tasks, ClinSeekAgent improves Claude Opus 4.6 from 47.5 to 62.6 (+15.1); all evaluated models improve across the three CXR-related task groups. We further validate ClinSeekAgent as a training pipeline by distilling agentic evidence-seeking trajectories into ClinSeek-35B-A3B, which achieves 34.0 average F1 on existing AgentEHR-Bench, improving over its Qwen3.5-35B-A3B baseline by +11.9 points and approaching Claude Opus 4.6.",
+      "abstract": "Large language models (LLMs) and agentic systems have shown promise for clinical decision support, but existing works largely assume that evidence has already been curated and handed to the model. Real-world clinical workflows instead require agents to actively seek, iteratively plan, and synthesize multimodal evidence from heterogeneous sources. In this paper, we introduce ClinSeekAgent, an automated agentic framework for dynamic multimodal evidence seeking that shifts the paradigm from passive evidence consumption to active evidence acquisition. Given a clinical task and access to raw patient data, ClinSeekAgent queries longitudinal EHR records and invokes imaging analysis tools when relevant; refines its hypotheses as new information emerges; and integrates the collected evidence into grounded clinical decisions. We validate ClinSeekAgent in two roles: as an inference-time agent for frontier LLMs and as a training pipeline for open-source models. For inference-time validation, we construct ClinSeek-Bench, which covers 13 text-only EHR task categories and 6 multimodal EHR--chest X-ray task categories, and pairs each question with both a Curated Input of pre-selected evidence and the raw patient data for automated evidence seeking. Without any benchmark-specific curation, ClinSeekAgent significantly outperforms curated input for both Claude Opus 5 and GPT-5.6 Sol, improving overall F1 from 66.5 to 68.8 and from 60.0 to 62.5 on multimodal tasks. The ablations show that the performance gain come from multi-round evidence seeking rather than from access to more of the patient record. For training-time validation, we fine-tune Qwen3.5-35B-A3B on ClinSeekAgent trajectories generated by GPT-5.6 Sol. The resulting ClinSeek-35B-A3B reaches 35.6 average F1 on AgentEHR-Bench, outperforming all evaluated open-source models, including ones more than ten times larger, as well as Claude Opus 5.",
       "published": "2026-05-19",
-      "updated": "2026-05-19",
+      "updated": "2026-10-16",
       "categories": [
         "cs.CL"
       ],
@@ -982,51 +1022,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2605.11958",
       "pdf_url": "https://arxiv.org/pdf/2605.11958.pdf"
-    },
-    {
-      "id": "2605.10840v5",
-      "title": "Clin-JEPA: A Multi-Phase Co-Training Framework for Joint-Embedding Predictive Pretraining on EHR Patient Trajectories",
-      "authors": [
-        "Yixuan Yang",
-        "Mehak Arora",
-        "Ryan Zhang",
-        "Baraa Abed",
-        "Junseob Kim",
-        "Tilendra Choudhary",
-        "Md Hassanuzzaman",
-        "Kevin Zhu",
-        "Ayman Ali",
-        "Chengkun Yang",
-        "Alasdair Edward Gent",
-        "Victor Moas",
-        "Rishikesan Kamaleswaran"
-      ],
-      "abstract": "Joint-embedding predictive architectures (JEPA) learn representations by predicting in latent space, as in computer vision; retaining the action-conditioned predictor at inference turns them into latent world models, enabling planning in robotics (V-JEPA 2-AC). Bringing this design to EHR patient trajectories---a predictor that simulates a patient's trajectory in latent space---has not been explored. We use an LLM as the encoder, reading the hourly record as text, avoiding feature engineering and vocabulary harmonisation. But an LLM adapted by supervised fine-tuning does not organise its latent space around physiological dynamics, and freezing it to train the predictor, as in V-JEPA 2-AC, leaves the encoder unaware of the rollout signal: the predictor degrades under rollout. We instead co-train encoder and predictor under one latent-prediction objective, grounding the encoder in the dynamics its predictor must follow. Naïve co-training, however, is unstable: the untrained predictor drags the encoder toward collapse, and the predictor's rollout diverges as its target space moves. We present Clin-JEPA, a five-phase curriculum that stably co-trains an LLM encoder with a latent trajectory predictor on MIMIC-IV. Three evaluations support the design: (1) under 48-hour autoregressive rollout the co-trained predictor degrades least (predictor degradation $\\times$1.06, against $\\times$1.23--1.36 for two-stage designs and $\\times$6.3--66 for curriculum ablations) while the co-trained encoder resolves the progression of patient state most sharply (largest state displacement); (2) the co-trained encoder separates deteriorating from stable patients in its latent space with Cohen's $d{=}1.59$, against $\\leq$0.50 for two-stage encoders; (3) one set of embeddings serves 34 downstream tasks across three benchmarks, outperforming strong per-task tuned baselines and a pretrained EHR foundation model.",
-      "published": "2026-05-11",
-      "updated": "2026-09-16",
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "q-bio.QM"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2605.10840v5",
-      "pdf_url": "https://arxiv.org/pdf/2605.10840v5.pdf"
-    },
-    {
-      "id": "2605.10286",
-      "title": "AgentRx: A Benchmark Study of LLM Agents for Multimodal Clinical Prediction Tasks",
-      "authors": [
-        "Baraa Al Jorf",
-        "Farah E. Shamout"
-      ],
-      "abstract": "Building effective clinical decision support systems requires the synthesis of complex heterogeneous multimodal data. Such modalities include temporal electronic health records data, medical images, radiology reports, and clinical notes. Large language model (LLM)-based agents have shown impressive performance in various healthcare tasks, especially those involving textual modalities. Considering the fragmentation of healthcare data across hospital systems, collaborative agent frameworks present a promising direction to mitigate data sharing challenges. However, the effectiveness of LLM agents for multimodal clinical risk prediction remains largely unexamined. In this work, we conduct a systematic evaluation of LLM-based agents for clinical prediction tasks using large-scale real-world data. We assess performance in unimodal and multimodal settings and quantify performance gaps between single agent and multi-agent systems. Our findings highlight that single agent frameworks outperform naive multi-agent systems, are better at handling multimodal data, and are better calibrated. This underscores a critical need for improving multi-agent collaboration to better handle heterogeneous inputs. By open-sourcing our code and evaluation framework, this work offers a new benchmark to support future developments relating to agentic systems in healthcare.",
-      "published": "2026-05-11",
-      "updated": "2026-05-11",
-      "categories": [
-        "cs.AI"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2605.10286",
-      "pdf_url": "https://arxiv.org/pdf/2605.10286.pdf"
     }
   ]
 }
