@@ -1,6 +1,26 @@
 {
-  "generated_at": "2026-10-26T05:17:12.353427Z",
+  "generated_at": "2026-10-27T05:15:42.582472Z",
   "papers": [
+    {
+      "id": "2610.34878",
+      "title": "ClinVerse: A Realistic Multi-Agent Diagnostic Environment for Training and Evaluating Medical Agents",
+      "authors": [
+        "Sirry Chen",
+        "Fangke Chen",
+        "Xuanwen Ding",
+        "Wei Chen",
+        "Zhongyu Wei"
+      ],
+      "abstract": "Disease diagnosis is a key application of large language model (LLM) agents in healthcare. However, existing medical agents are primarily trained and evaluated with static question-answering data, providing limited opportunities to learn active information acquisition, examination decision-making, and dynamic clinical interaction. To address this limitation, we present ClinVerse, an interactive, real-data-grounded multi-agent environment designed for training and evaluating medical diagnostic agents. Built on ClinPatient, a scalable dataset comprising 150k diagnostic cases derived from real-world electronic health records, ClinVerse supports coordinated interactions among six specialized clinical roles. Specifically, a doctor agent starts from an initial patient complaint, progressively gathers clinical evidence through patient interviews and examination requests, and ultimately produces a diagnosis. For each interaction trajectory, a rule-based scoring framework quantifies information acquisition, examination ordering, and diagnostic accuracy. These trajectory-level scores serve as reward signals for agent training while also enabling scalable evaluation. In experiments, we evaluate various general-purpose and medical-domain models and show that nine self-evolution methods across three categories consistently improve agents' diagnostic capabilities within ClinVerse. We further analyze the interplay among model capability, environment feedback, and self-evolution methods.",
+      "published": "2026-10-26",
+      "updated": "2026-10-26",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2610.34878",
+      "pdf_url": "https://arxiv.org/pdf/2610.34878.pdf"
+    },
     {
       "id": "2610.25765",
       "title": "TRACE: Tracking Multimodal Clinical Trajectories for Inpatient Risk Prediction",
@@ -996,32 +1016,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2605.12335",
       "pdf_url": "https://arxiv.org/pdf/2605.12335.pdf"
-    },
-    {
-      "id": "2605.11958",
-      "title": "From Trajectories to Phenotypes: Disease Progression as Structural Priors for Multi-organ Imaging Representation Learning",
-      "authors": [
-        "Zian Wang",
-        "Lizhen Lan",
-        "Guangming Wang",
-        "Haosen Zhang",
-        "Minxuan Xu",
-        "Qing Li",
-        "Tianxing He",
-        "Mo Yang",
-        "Wenyue Mao",
-        "Yajing Zhang",
-        "Yan Li",
-        "Chengyan Wang"
-      ],
-      "abstract": "Imaging-derived phenotypes (IDPs) summarize multi-organ physiology but provide only static snapshots of diseases that evolve over time. In contrast, longitudinal electronic health records encode disease trajectories through temporal dependencies among past diagnosis events and comorbidity structure. We hypothesize that IDPs and disease trajectories contain partially shared disease-relevant structure. We propose a trajectory-aware distillation framework that transfers structural knowledge from a generative disease trajectory Transformer into an organ-wise IDP encoder. A population-scale trajectory model trained on longitudinal diagnosis sequences produces subject-level embeddings that supervise IDP representation learning via geometry-preserving alignment. During downstream prediction, trajectory and imaging representations can also be fused via cross-attention. Across 159 diseases in the UK Biobank cohort, trajectory-aware pretraining consistently improves both discrimination (AUC) and time-to-onset prediction (MAE), with the largest gains for low-prevalence diseases. Similarity relationships in IDP embedding space also align with those in trajectory space, providing supportive evidence for partially aligned representation geometry. These results suggest that population-scale generative disease models can serve as structural priors for data-limited imaging modalities, improving robustness under realistic cohort constraints.",
-      "published": "2026-05-12",
-      "updated": "2026-05-12",
-      "categories": [
-        "cs.IR"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2605.11958",
-      "pdf_url": "https://arxiv.org/pdf/2605.11958.pdf"
     }
   ]
 }
