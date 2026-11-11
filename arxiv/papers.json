@@ -1,6 +1,27 @@
 {
-  "generated_at": "2026-11-10T05:10:13.683061Z",
+  "generated_at": "2026-11-11T05:09:55.464124Z",
   "papers": [
+    {
+      "id": "2611.13661",
+      "title": "SepsisFlow: an event-stream foundation model for continuous risk warning and trajectory modelling in ICU sepsis",
+      "authors": [
+        "Yawen Zhang",
+        "Wanzhe Xu",
+        "Zhenhua Zhang",
+        "Jinyu Wu",
+        "Yizhou Zhuang",
+        "Yitao Yang",
+        "Kenta Nakai"
+      ],
+      "abstract": "Sepsis is a leading cause of ICU death with heterogeneous onset and course, yet most warning models predict only whether sepsis will occur, leaving clinicians uncertain of its onset context and early trajectory once an alarm sounds. To answer these questions on one hourly clock from ICU admission, we built SepsisFlow: before onset, it combines a Mamba model pretrained on 2.57 million EHRs with about 1,700 hourly features in gradient-boosted trees to predict 6/12/24-h risk; at onset, it fuses Mamba and tabular encoders via a gated network into continuous patient states defining onset contexts; after onset, it encodes 72-h organ-support and physiological trajectories via an attention bidirectional recurrent network into early courses. For pre-onset warning in MIMIC-IV, SepsisFlow detected more cases than NEWS2, qSOFA, and SIRS at equal alarms, gaining about 8 cases per 100 from hourly updating, while outperforming 16 retrained algorithms and maintaining risk ranking in eICU. At onset, its contexts separated 2% cardiovascular-ICU from 15%-17% other 28-day mortality, and within each context after onset, persistent support carried fivefold higher mortality than de-escalation. SepsisFlow establishes a foundation-model paradigm for continuous risk and trajectory stratification in critical care.",
+      "published": "2026-11-10",
+      "updated": "2026-11-10",
+      "categories": [
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2611.13661",
+      "pdf_url": "https://arxiv.org/pdf/2611.13661.pdf"
+    },
     {
       "id": "2611.03826",
       "title": "Rethinking Next-Visit Diagnosis Prediction Beyond Aggregate Metrics: Retrieval--Memory Multi-Agent Adjudication",
@@ -384,9 +405,9 @@
         "Jianfeng Gao",
         "Xiaodong Liu"
       ],
-      "abstract": "Electronic health record (EHR) foundation models trained on longitudinal patient trajectories have demonstrated strong performance across diverse clinical prediction tasks. However, their clinical reasoning capabilities remain constrained by next-token prediction on limited and incomplete EHR data. To address this, we propose a reinforcement learning (RL) fine-tuning framework that treats EHR foundation models as generative policies over patient trajectories. We formulate common clinical prediction problems (e.g., hospital readmission) as event-conditioned, time-windowed reasoning tasks. We then design time-aware, rollout-sensitive rewards to account for finite rollout lengths and temporally inconclusive outcomes. We find that RL fine-tuning consistently improves over pre-trained backbones and strong baselines. Notably, it enables smaller models to surpass larger pre-trained models in data-limited regimes and induces positive transfer across tasks. Further analysis shows that RL fine-tuned models generate trajectories with stronger structural and semantic alignment to ground truth and greater downstream utility.",
+      "abstract": "Electronic health record (EHR) foundation models trained on longitudinal patient trajectories have demonstrated strong performance across diverse clinical prediction tasks. However, their clinical reasoning capabilities remain constrained by next-token prediction on limited and incomplete EHR data. To address this, we propose a reinforcement learning (RL) fine-tuning framework that treats EHR foundation models as generative policies over patient trajectories. We formulate common clinical prediction problems (e.g., hospital readmission) as event-conditioned, time-windowed reasoning tasks. We then design time-aware, rollout-sensitive rewards to account for finite rollout lengths and temporally inconclusive outcomes. We find that RL fine-tuning consistently improves over pre-trained backbones and strong baselines. Notably, it enables smaller models to match larger pre-trained models in data-limited regimes and induces positive transfer across tasks. Further analysis shows that RL fine-tuned models generate trajectories with stronger structural and semantic alignment to ground truth and greater downstream utility.",
       "published": "2026-09-10",
-      "updated": "2026-09-10",
+      "updated": "2026-11-10",
       "categories": [
         "cs.LG",
         "cs.AI",
@@ -994,28 +1015,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2605.20176",
       "pdf_url": "https://arxiv.org/pdf/2605.20176.pdf"
-    },
-    {
-      "id": "2605.20292",
-      "title": "Learning to Select Source-Traceable Evidence for Language-Model Prediction from Irregular Clinical Time Series",
-      "authors": [
-        "Kwanhyung Lee",
-        "Juhwan Choi",
-        "Jongheon Kim",
-        "Joohyung Lee",
-        "Hyeongwon Jang",
-        "Jeonguk Lee",
-        "Jisoo Jung",
-        "Eunho Yang"
-      ],
-      "abstract": "Numerical time-series models effectively process irregular electronic health record (EHR) trajectories, but do not expose which temporal patterns support each prediction as readable evidence. Existing text-based interfaces either serialize observations, preserving source traceability but offering limited clinical interpretation, or generate patient-level summaries that improve readability but can obscure links to source measurements. We introduce STEP-CTS (Source-Traceable Evidence for Prediction from Clinical Time-Series), which learns to select source-traceable text evidence for a language-model predictor. Multi-scale window statistics of each trajectory are verbalized as sets of deterministic threshold predicates, each set linked to its source window (e.g., \"[5-7 h]: last temperature at least 38C\"). An offline LLM, run once per unique predicate set without access to patient records, the prediction task, or outcome labels, attaches clinical concepts such as \"fever\" to their supporting predicates and abstains when none applies. Each predicate set, together with its concepts, forms an evidence unit. A learned Evidence Selector selects a fixed-size subset of the evidence units, which a pretrained clinical language-model encoder reads to make the prediction, with no patient-level text generation. Across three ICU benchmarks, STEP-CTS outperforms evaluated text-based baselines, improving AUPRC over the strongest by 5.1, 3.7, and 11.7 percentage points on P2012, MIMIC-III, and P2019, respectively, and is competitive with dedicated numerical time-series models. Ablations show that clinical concepts and learned evidence selection each contribute to predictive performance. In a blinded clinician study, the selected evidence is rated as traceable as deterministic serialization, near the ceiling of the scale, and above generated summaries on clinical interpretation.",
-      "published": "2026-05-19",
-      "updated": "2026-09-30",
-      "categories": [
-        "cs.LG"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2605.20292",
-      "pdf_url": "https://arxiv.org/pdf/2605.20292.pdf"
     }
   ]
 }
