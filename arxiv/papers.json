@@ -1,6 +1,22 @@
 {
-  "generated_at": "2026-11-24T05:11:00.335897Z",
+  "generated_at": "2026-11-25T05:10:49.957183Z",
   "papers": [
+    {
+      "id": "2611.33012",
+      "title": "Can LLM Judges Catch Unsafe Clinical Actions? A Fault-Injection Study",
+      "authors": [
+        "Neda Ghafouri"
+      ],
+      "abstract": "As clinical AI agents begin to interact with electronic health records (EHRs), large language models (LLMs) are increasingly used to evaluate their actions. But how reliably can these judges recognize clinically dangerous mistakes, especially when an agent appears to have completed its task successfully? We investigate this question using MedAgentBench by introducing controlled clinical errors into verified agent trajectories. The experiments include 416 faulty trajectories, eight error categories, and six open-weight LLM judges. By comparing each faulty trajectory with its correct counterpart, we measure whether judges genuinely recognize errors rather than simply flagging more actions as unsafe. The findings show that access to clinical evidence significantly improves judge reliability. When shown only the final answer, judges cannot distinguish errors that leave it unchanged, while flagging 56% of correct trajectories. With full trajectory information, the ability to distinguish unsafe actions from correct ones reaches a score of 0.75, and providing actual EHR responses improves discrimination by 0.39. Surprisingly, including the agent's reasoning does not improve overall performance and reduces detection of incorrectly reported clinical values by 0.18, which remain the hardest errors to detect. MedGemma performed worse than the general-purpose model and was the only judge to miss potentially dangerous medication overdoses. We also find that the benchmark's original grader accepts all 38 trajectories with an intentionally skipped laboratory check, while combining LLM judges with a rule-based checker informed by the full EHR record detects 97% of injected faults.",
+      "published": "2026-11-24",
+      "updated": "2026-11-24",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2611.33012",
+      "pdf_url": "https://arxiv.org/pdf/2611.33012.pdf"
+    },
     {
       "id": "2611.28804",
       "title": "Synthetic EHR Generators Should Be Audited Like LLMs",
@@ -982,24 +998,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2606.08501",
       "pdf_url": "https://arxiv.org/pdf/2606.08501.pdf"
-    },
-    {
-      "id": "2606.04499",
-      "title": "Modeling and Interpreting Teamwork Dynamics in Cancer Care Outcome Prediction",
-      "authors": [
-        "Yuhua Huang",
-        "Hsiao-Ying Lu",
-        "Kwan-Liu Ma"
-      ],
-      "abstract": "Cancer care requires a longitudinal approach in which treatments are planned and delivered over time according to the needs of each individual patient. While prior research has thoroughly explored how clinical and demographic factors, such as comorbidities and age, inform treatment planning, far less attention has been devoted to the delivery phase of care. Yet planning and delivery are both team-based processes that depend on coordinated efforts among multiple healthcare professionals (HCPs). As such, the human factors embedded in these collaborative practices are crucial to optimizing patient outcomes. Despite this importance, the existing literature on human factors in cancer care is limited, and very few studies have investigated how collaboration within care teams evolves over the course of treatment. To fill this gap, this work examine how HCPs' collaboration, captured through electronic health record (EHR) systems, affects cancer patient outcomes, with particular emphasis on teamwork dynamics. We represent EHR-mediated HCP interactions as networks and apply machine learning methods to identify predictive signals of patient survival embedded in these collaborative structures. We further interpret model predictions by pinpointing network characteristics and dynamic patterns associated with particular outcomes. We evaluate our model through robustness analyses to ensure that the findings are stable and not driven by stochastic variation in training. Additionally, our insights align with hypotheses proposed in the medical literature, and our results provide the empirical, data-driven evidence supporting these claims. Overall, our work contributes a practical workflow for leveraging digital traces of collaboration to evaluate and strengthen longitudinal team-based healthcare, offering actionable insights to guide data-informed interventions in healthcare delivery.",
-      "published": "2026-06-03",
-      "updated": "2026-06-03",
-      "categories": [
-        "cs.SI",
-        "cs.LG"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2606.04499",
-      "pdf_url": "https://arxiv.org/pdf/2606.04499.pdf"
     }
   ]
 }
