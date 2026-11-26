@@ -1,6 +1,32 @@
 {
-  "generated_at": "2026-11-25T05:10:49.957183Z",
+  "generated_at": "2026-11-26T05:10:47.532531Z",
   "papers": [
+    {
+      "id": "2611.33788",
+      "title": "InterGenEHR$^+$: An Interactive Framework for Natural Language-Conditioned Generation of Longitudinal Patient Trajectories",
+      "authors": [
+        "Yu Yang",
+        "Jiafeng Song",
+        "Baraa F Abed",
+        "Christina Creel",
+        "Sagar B Dave",
+        "Henry Foote",
+        "Lisa Lima",
+        "Victor Moas",
+        "Craig S Jabaley",
+        "Rishikesan Kamaleswaran",
+        "Pan Xu"
+      ],
+      "abstract": "Objective: To develop and validate InterGenEHR$^+$, an interactive framework for natural language-conditioned generation of synthetic tabular electronic health records (EHRs) and longitudinal trajectories for scenario-based evaluation of machine learning models. Methods: An optional large language model (LLM) parser converts clinical requests into structured constraints. Conditional variational autoencoders and diffusion models generate single-time-point records, while diffusion models generate longitudinal trajectories. We evaluate parsing, distributional fidelity, imputation, clinical-constraint adherence, mortality prediction, and clinical plausibility using a multi-institutional cohort of 874 patients receiving venovenous extracorporeal membrane oxygenation (VV-ECMO). Results: Gemma 3 4B with few-shot prompting achieves the highest parsing performance with a low spurious slot rate. IGE-TabDDPM and IGE-PMVAE perform well in single-time-point generation; IGE-CSDI, IGE-FGTI, and IGE-MTSCI lead on different longitudinal fidelity metrics. Across five random seeds and three classifiers, synthetic cohorts retain predictive utility for mortality prediction on real test data. Clinician ratings support trajectory plausibility and alignment with requested scenarios. Conclusion: InterGenEHR$^+$ supports clinician-specified generation of EHR trajectories with statistical fidelity and downstream predictive utility in the evaluated VV-ECMO cohort. Extension to other clinical settings requires further validation. Significance: The framework supports scenario-based evaluation of machine learning models in data-sparse critical care settings.",
+      "published": "2026-11-25",
+      "updated": "2026-11-25",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "arxiv_url": "https://arxiv.org/abs/2611.33788",
+      "pdf_url": "https://arxiv.org/pdf/2611.33788.pdf"
+    },
     {
       "id": "2611.33012",
       "title": "Can LLM Judges Catch Unsafe Clinical Actions? A Fault-Injection Study",
@@ -36,7 +62,7 @@
     },
     {
       "id": "2611.27028",
-      "title": "Toward a digital twin of the ICU patient: Forecasting and treatment response in a generative event model",
+      "title": "TWICE: Toward a digital twin of ICU patients with a generative event model for forecasting trajectories and simulating treatment response",
       "authors": [
         "Zhuoyang Lyu",
         "Yiming Li",
@@ -46,7 +72,7 @@
       ],
       "abstract": "A digital twin of a patient in intensive care would forecast the patient's course and what a treatment would change. Generative event models, trained to continue a patient's electronic health record (EHR), have been proposed as a path toward such twins. We trained TWICE, a 79M-parameter decoder-only transformer, on the ICU records of one academic health system (127,332 training patients and 1.57 billion tokens). We evaluated it on clinical prediction tasks, generation fidelity, individual trajectories and counterfactual validation. Reading 19 clinical outcomes off 50 simulated futures, with no task-specific training, TWICE matched the best of 144 supervised configurations on held-out patients (mean AUROC 0.836 vs. 0.834). It led on events that change care within a day and trailed on death. With the training data fixed, more and longer simulated futures were worth more than a 6.8-fold larger model. Its generated records matched real ones closely and were as specific to each patient as its own variability allowed. Its predicted risk rose as events approached. Pre-specified controls showed that it reproduced the side effects of drugs and was barely moved by an inert drug. On the values that treatments are given to correct, however, an opposite treatment moved its forecasts like the right one. TWICE forecasts ICU events about as well as task-specific models, and we see it as a step toward a digital twin of the ICU patient.",
       "published": "2026-11-20",
-      "updated": "2026-11-20",
+      "updated": "2026-11-24",
       "categories": [
         "cs.LG"
       ],
@@ -975,29 +1001,6 @@
       ],
       "arxiv_url": "https://arxiv.org/abs/2606.09030",
       "pdf_url": "https://arxiv.org/pdf/2606.09030.pdf"
-    },
-    {
-      "id": "2606.08501",
-      "title": "Back on Track: Aligning Rewards and States for Reasoning in Diffusion Large Language Models",
-      "authors": [
-        "Yawen Shao",
-        "Jie Xiao",
-        "Kai Zhu",
-        "Yu Liu",
-        "Hongchen Luo",
-        "Xueyang Fu",
-        "Yang Cao",
-        "Wei Zhai",
-        "Zheng-Jun Zha"
-      ],
-      "abstract": "Reinforcement learning (RL) holds immense promise for enhancing the reasoning capabilities of diffusion large language models (dLLMs). However, progress is fundamentally constrained by a dual misalignment between authentic generation trajectory and the gradient update process: (i) Process-reward misalignment. Sparse, terminal rewards are indiscriminately assigned to all intermediate steps of the generation process, failing to provide discriminative credit assignment. (ii) State-trajectory misalignment. Policy updates are often diverted toward artificial, out-of-trajectory states, squandering gradients on less informative samples. To address these limitations, we introduce Process Aligned Policy Optimization (PAPO), a novel framework that holistically aligns the RL update with the dLLM's generative trajectory via Step-Aware Process Rewards (SPR) that transform sparse terminal rewards into dense, step-wise credit, and Entropy-Guided Historical Re-enactment (EHR) that replays authentic trajectories at high-uncertainty steps. Extensive experiments on four benchmarks demonstrate that PAPO significantly outperforms baselines, achieving gains of 4.5% on GSM8K, 4.8% on MATH500, 42.2% on Countdown and 16.1% on Sudoku.",
-      "published": "2026-06-07",
-      "updated": "2026-09-06",
-      "categories": [
-        "cs.CL"
-      ],
-      "arxiv_url": "https://arxiv.org/abs/2606.08501",
-      "pdf_url": "https://arxiv.org/pdf/2606.08501.pdf"
     }
   ]
 }
